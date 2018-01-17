@@ -1,0 +1,1 @@
+ProtoGen ..\..\..\java\contidio-sdk\gpb\metadata.protobin -output_directory=..\Proto

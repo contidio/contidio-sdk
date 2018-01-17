@@ -1,0 +1,13 @@
+import Long = require('long');
+
+namespace {package} {
+	export interface Message {
+	}
+}
+
+{#messages}
+{>interface:./}{/messages}{#enums}
+{>enum:./}
+{/enums}
+
+export default {package};

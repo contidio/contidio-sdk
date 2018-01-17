@@ -1,0 +1,42 @@
+{
+  "name": "contidio-sdk",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/api.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "4.0.5",
+    "@types/core-js": "0.9.43",
+    "@types/long": "3.0.32",
+    "@types/mocha": "2.2.44",
+    "@types/node": "8.0.53",
+    "browserify": "14.5.0",
+    "chai": "4.1.2",
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.1",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-mocha": "4.3.1",
+    "gulp-typedoc": "2.1.1",
+    "gulp-typescript": "3.2.3",
+    "gulp-uglify": "3.0.0",
+    "load-gulp-tasks": "0.1.0",
+    "mocha": "4.0.1",
+    "proto2ts": "git+https://github.com/SaschaGalley/Proto2TypeScript.git",
+    "protobufjs": "5.0.2",
+    "source-map-loader": "0.2.3",
+    "ts-node": "3.3.0",
+    "tsify": "3.0.3",
+    "typedoc": "0.9.0",
+    "typescript": "2.5.3",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0"
+  },
+  "dependencies": {
+    "axios": "0.17.0",
+    "core-js": "2.5.1",
+    "long": "3.2.0",
+    "make-error": "1.3.0"
+  },
+  "typings": "./index.d.ts"
+}

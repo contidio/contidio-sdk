@@ -1,0 +1,14 @@
+node_modules
+.npm-debug.log
+.editorconfig
+metadata.json
+gulpfile.js
+config.json
+.npmignore
+test
+templates
+tasks
+.idea
+definitions
+src
+auto-definitions

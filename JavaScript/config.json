@@ -1,0 +1,25 @@
+{
+  "src": {
+    "main": "api.ts",
+    "path": "./src/",
+    "dest": "contidio-sdk.js"
+  },
+  "dist": "./dist/",
+  "normalEnums": [
+    "EntityType",
+    "BinaryPurpose",
+    "BinaryType",
+    "Orientation",
+    "Duration",
+    "Dimension",
+    "VideoFormat",
+    "VideoAspectRatio",
+    "Uploaded",
+    "PageCount",
+    "Source",
+    "CreditTransactionType",
+    "ServerTaskType",
+    "ContentCategory",
+    "QueryReviewState"
+  ]
+}

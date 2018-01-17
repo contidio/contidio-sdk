@@ -1,0 +1,2916 @@
+
+ÅÏ
+metadata.protocom.contidio.sdk.proto"ç
+Entity6
+type (2".com.contidio.sdk.proto.EntityTypeRtype
+uuid (	Ruuid 
+publishFlag (RpublishFlagF
+committedSet (2".com.contidio.sdk.proto.WorkingSetRcommittedSetB
+
+workingSet (2".com.contidio.sdk.proto.WorkingSetR
+workingSet8
+previewElementsAreReady (RpreviewElementsAreReadyE
+previewSize (2#.com.contidio.sdk.proto.PreviewSizeRpreviewSize0
+tags	 (2.com.contidio.sdk.proto.TagsRtags?
+	licensing
+ (2!.com.contidio.sdk.proto.LicensingR	licensingB
+
+readAccess (2".com.contidio.sdk.proto.ReadAccessR
+readAccessE
+writeAccess (2#.com.contidio.sdk.proto.WriteAccessRwriteAccess[
+resolvedInheritedData (2%.com.contidio.sdk.proto.InheritedDataRresolvedInheritedData_
+unresolvedInheritedData (2%.com.contidio.sdk.proto.InheritedDataRunresolvedInheritedData@
+
+entityPath (2 .com.contidio.sdk.proto.EntitiesR
+entityPath
+deleted (Rdeleted
+version (Rversion3
+brand (2.com.contidio.sdk.proto.BrandRbrand6
+folder (2.com.contidio.sdk.proto.FolderRfolder3
+asset (2.com.contidio.sdk.proto.AssetRasset3
+trash (2.com.contidio.sdk.proto.TrashRtrash-
+job (2.com.contidio.sdk.proto.JobRjobK
+participation (2%.com.contidio.sdk.proto.ParticipationRparticipation9
+project (2.com.contidio.sdk.proto.ProjectRproject$
+orderInParent (	RorderInParent(
+featurePriority (RfeaturePriorityT
+dereferencedData (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp6
+lastCommittedTimestamp (RlastCommittedTimestamp@
+redirectUserForRegistration (RredirectUserForRegistration
+name  (	Rname 
+description! (	Rdescription$
+editorialText" (	ReditorialTextM
+previewBinarySet# (2!.com.contidio.sdk.proto.BinarySetRpreviewBinarySet&
+binarySetCount$ (RbinarySetCountV
+workingSetBinaryType% (2".com.contidio.sdk.proto.BinaryTypeRworkingSetBinaryType(
+availableLocale& (	RavailableLocale4
+hasUnpublishedChanges' (RhasUnpublishedChanges
+score( (Rscore.
+userReadPermission) (RuserReadPermission0
+userWritePermission* (RuserWritePermission4
+userFollowSettingUuid+ (	RuserFollowSettingUuidZ
+publishRequestInfo, (2*.com.contidio.sdk.proto.PublishRequestInfoRpublishRequestInfo]
+collectedEntityInfo- (2+.com.contidio.sdk.proto.CollectedEntityInfoRcollectedEntityInfoZ
+licenseRequestInfo. (2*.com.contidio.sdk.proto.LicenseRequestInfoRlicenseRequestInfo"
+contextText1/ (	RcontextText1&
+applyWatermark0 (RapplyWatermark&
+userAccessUuid3 (	RuserAccessUuidH
+folderLayout4 (2$.com.contidio.sdk.proto.FolderLayoutRfolderLayoutE
+assetLayout5 (2#.com.contidio.sdk.proto.AssetLayoutRassetLayoutf
+richtextListViewLayout6 (2..com.contidio.sdk.proto.RichtextListViewLayoutRrichtextListViewLayoutT
+publishCondition7 (2(.com.contidio.sdk.proto.PublishConditionRpublishConditionc
+publishConditionState8 (2-.com.contidio.sdk.proto.PublishConditionStateRpublishConditionState2
+publicationTimestamp9 (RpublicationTimestamp
+
+isUnlocked: (R
+isUnlocked<
+external; (2 .com.contidio.sdk.proto.ExternalRexternal
+released< (Rreleased"
+canonicalUrl= (	RcanonicalUrl"‚
+EntityChangeSetB
+
+entityType (2".com.contidio.sdk.proto.EntityTypeR
+entityType
+uuid (	RuuidK
+	putLocale (2-.com.contidio.sdk.proto.EntityLocaleChangeSetR	putLocaleQ
+removeLocale (2-.com.contidio.sdk.proto.EntityLocaleChangeSetRremoveLocaleE
+previewSize (2#.com.contidio.sdk.proto.PreviewSizeRpreviewSize<
+	putNewTag (2.com.contidio.sdk.proto.NewTagR	putNewTag
+
+putTagUuid (	R
+putTagUuid$
+removeTagUuid (	RremoveTagUuidH
+	licensing	 (2*.com.contidio.sdk.proto.LicensingChangeSetR	licensingK
+
+readAccess
+ (2+.com.contidio.sdk.proto.ReadAccessChangeSetR
+readAccessN
+writeAccess (2,.com.contidio.sdk.proto.WriteAccessChangeSetRwriteAccessE
+	addParent (2'.com.contidio.sdk.proto.EntityReferenceR	addParentU
+changeParentOrder (2'.com.contidio.sdk.proto.EntityReferenceRchangeParentOrderK
+removeParent (2'.com.contidio.sdk.proto.EntityReferenceRremoveParent
+version (RversionK
+entityActions (2%.com.contidio.sdk.proto.EntityActionsRentityActions<
+brand (2&.com.contidio.sdk.proto.BrandChangeSetRbrand?
+folder (2'.com.contidio.sdk.proto.FolderChangeSetRfolder<
+asset (2&.com.contidio.sdk.proto.AssetChangeSetRasset<
+trash (2&.com.contidio.sdk.proto.TrashChangeSetRtrash6
+job (2$.com.contidio.sdk.proto.JobChangeSetRjobT
+participation (2..com.contidio.sdk.proto.ParticipationChangeSetRparticipationB
+project (2(.com.contidio.sdk.proto.ProjectChangeSetRproject(
+featurePriority (RfeaturePriority&
+applyWatermark (RapplyWatermark2
+removeApplyWatermark (RremoveApplyWatermarkQ
+folderLayout (2-.com.contidio.sdk.proto.FolderLayoutChangeSetRfolderLayoutN
+assetLayout (2,.com.contidio.sdk.proto.AssetLayoutChangeSetRassetLayout]
+publishCondition (21.com.contidio.sdk.proto.PublishConditionChangeSetRpublishCondition"s
+EntityReference6
+type (2".com.contidio.sdk.proto.EntityTypeRtype
+uuid (	Ruuid
+order (	Rorder"∂
+EntityActionsK
+publishAction (2%.com.contidio.sdk.proto.PublishActionRpublishAction(
+extractKeywords (RextractKeywords.
+extractDescription (RextractDescription"k
+EntityDeleteSet
+uuid (	Ruuid*
+allowFinalDelete (RallowFinalDelete
+version (Rversion"n
+EntityRestoreSet
+uuid (	Ruuid,
+restoreEntityUuid (	RrestoreEntityUuid
+version (Rversion"Ç
+Entities6
+entity (2.com.contidio.sdk.proto.EntityRentity>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"e
+EntityChangeSetsQ
+entityChangeSet (2'.com.contidio.sdk.proto.EntityChangeSetRentityChangeSet"i
+EntityRestoreSetsT
+entityRestoreSet (2(.com.contidio.sdk.proto.EntityRestoreSetRentityRestoreSet"e
+EntityDeleteSetsQ
+entityDeleteSet (2'.com.contidio.sdk.proto.EntityDeleteSetRentityDeleteSet"¯
+FolderLayoutE
+layoutModel (2#.com.contidio.sdk.proto.LayoutModelRlayoutModelT
+listViewLayout (2,.com.contidio.sdk.proto.FolderListViewLayoutRlistViewLayoutK
+innerLayout (2).com.contidio.sdk.proto.FolderInnerLayoutRinnerLayout"Å
+FolderLayoutChangeSetE
+layoutModel (2#.com.contidio.sdk.proto.LayoutModelRlayoutModelT
+listViewLayout (2,.com.contidio.sdk.proto.FolderListViewLayoutRlistViewLayoutK
+innerLayout (2).com.contidio.sdk.proto.FolderInnerLayoutRinnerLayout"à
+AssetLayoutE
+layoutModel (2#.com.contidio.sdk.proto.LayoutModelRlayoutModelf
+richtextListViewLayout (2..com.contidio.sdk.proto.RichtextListViewLayoutRrichtextListViewLayoutJ
+innerLayout (2(.com.contidio.sdk.proto.AssetInnerLayoutRinnerLayout"ë
+AssetLayoutChangeSetE
+layoutModel (2#.com.contidio.sdk.proto.LayoutModelRlayoutModelf
+richtextListViewLayout (2..com.contidio.sdk.proto.RichtextListViewLayoutRrichtextListViewLayoutJ
+innerLayout (2(.com.contidio.sdk.proto.AssetInnerLayoutRinnerLayout"€
+PublishConditionc
+publishConditionModel (2-.com.contidio.sdk.proto.PublishConditionModelRpublishConditionModel2
+publishFromTimestamp (RpublishFromTimestamp.
+publishToTimestamp (RpublishToTimestamp"‡
+PublishConditionChangeSetc
+publishConditionModel (2-.com.contidio.sdk.proto.PublishConditionModelRpublishConditionModel2
+publishFromTimestamp (RpublishFromTimestamp>
+removePublishFromTimestamp (RremovePublishFromTimestamp.
+publishToTimestamp (RpublishToTimestamp:
+removePublishToTimestamp (RremovePublishToTimestamp"Ë
+
+WorkingSet
+version (Rversion<
+locale (2$.com.contidio.sdk.proto.EntityLocaleRlocaleV
+workingSetBinaryType (2".com.contidio.sdk.proto.BinaryTypeRworkingSetBinaryType*
+minBinarySetUuid (RminBinarySetUuid"Æ
+EntityLocale
+locale (	Rlocale
+name (	Rname 
+description (	Rdescription$
+editorialText (	ReditorialTextE
+contactInfo (2#.com.contidio.sdk.proto.ContactInfoRcontactInfo?
+	binarySet (2!.com.contidio.sdk.proto.BinarySetR	binarySet"
+contextText1 (	RcontextText1"•
+EntityLocaleChangeSet
+locale (	Rlocale
+name (	Rname 
+description (	Rdescription$
+editorialText (	ReditorialTextN
+contactInfo (2,.com.contidio.sdk.proto.ContactInfoChangeSetRcontactInfoN
+putBinarySet (2*.com.contidio.sdk.proto.BinarySetChangeSetRputBinarySetT
+removeBinarySet (2*.com.contidio.sdk.proto.BinarySetChangeSetRremoveBinarySet"
+contextText1 (	RcontextText1"¶
+ContactInfo?
+	brandLink (2!.com.contidio.sdk.proto.BrandLinkR	brandLink"
+facebookLink (	RfacebookLink 
+twitterLink (	RtwitterLink&
+googlePlusLink (	RgooglePlusLink
+name (	Rname
+street (	Rstreet
+
+postalCode (	R
+postalCode
+city (	Rcity 
+countryCode	 (	RcountryCode
+phone
+ (	Rphone
+website (	Rwebsite
+email (	Remail 
+countryName (	RcountryName"‡
+ContactInfoChangeSetE
+putBrandLink (2!.com.contidio.sdk.proto.BrandLinkRputBrandLinkK
+removeBrandLink (2!.com.contidio.sdk.proto.BrandLinkRremoveBrandLink"
+facebookLink (	RfacebookLink 
+twitterLink (	RtwitterLink&
+googlePlusLink (	RgooglePlusLink
+name (	Rname
+street (	Rstreet
+
+postalCode (	R
+postalCode
+city	 (	Rcity 
+countryCode
+ (	RcountryCode
+phone (	Rphone
+website (	Rwebsite
+email (	Remail"G
+	BrandLink
+uuid (Ruuid
+name (	Rname
+link (	Rlink"Ÿ
+	BinarySet
+uuid (Ruuid
+name (	RnameF
+uploadedBinary (2.com.contidio.sdk.proto.BinaryRuploadedBinaryJ
+calculatedBinary (2.com.contidio.sdk.proto.BinaryRcalculatedBinaryT
+binarySetBinaryType (2".com.contidio.sdk.proto.BinaryTypeRbinarySetBinaryType"
+sourceLocale (	RsourceLocale
+author	 (	Rauthor"ˆ
+BinarySetChangeSet
+uuid (Ruuid
+name (	RnameL
+putUploadedBinary (2.com.contidio.sdk.proto.BinaryRputUploadedBinaryR
+removeUploadedBinary (2.com.contidio.sdk.proto.BinaryRremoveUploadedBinary
+author (	Rauthor"y
+Users0
+user (2.com.contidio.sdk.proto.UserRuser>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"Ï
+	LicensingN
+licensingModel (2&.com.contidio.sdk.proto.LicensingModelRlicensingModelW
+availableLicenseInfo (2#.com.contidio.sdk.proto.LicenseInfoRavailableLicenseInfo6
+allowAnonymousDownload (RallowAnonymousDownload"à
+LicenseInfo 
+licenseUuid (	RlicenseUuidE
+licenseType (2#.com.contidio.sdk.proto.LicenseTypeRlicenseType*
+userPersonaValid (RuserPersonaValid
+released (RreleasedH
+downloadSpec (2$.com.contidio.sdk.proto.DownloadSpecRdownloadSpec"é
+LicensingChangeSetN
+licensingModel (2&.com.contidio.sdk.proto.LicensingModelRlicensingModel4
+addAvailableLicenseId (	RaddAvailableLicenseId:
+removeAvailableLicenseId (	RremoveAvailableLicenseId6
+allowAnonymousDownload (RallowAnonymousDownload"•
+License 
+licenseUuid (	RlicenseUuidE
+licenseType (2#.com.contidio.sdk.proto.LicenseTypeRlicenseType=
+locale (2%.com.contidio.sdk.proto.LicenseLocaleRlocaleF
+	typeOfUse (2(.com.contidio.sdk.proto.LicenseTypeOfUseR	typeOfUseX
+exclusivityType (2..com.contidio.sdk.proto.LicenseExclusivityTypeRexclusivityType.
+validityPeriodDays (RvalidityPeriodDays
+
+imagePrice (R
+imagePriceB
+ofImagePriceIsTransactionFee (RofImagePriceIsTransactionFee
+
+videoPrice	 (R
+videoPriceB
+ofVideoPriceIsTransactionFee
+ (RofVideoPriceIsTransactionFee
+
+audioPrice (R
+audioPriceB
+ofAudioPriceIsTransactionFee (RofAudioPriceIsTransactionFee$
+documentPrice (RdocumentPriceH
+ofDocumentPriceIsTransactionFee (RofDocumentPriceIsTransactionFee
+name (	Rname
+summary (	Rsummary
+
+termsOfUse (	R
+termsOfUse>
+restrictedPublishingTopics (	RrestrictedPublishingTopics2
+restrictedIndustries (	RrestrictedIndustries*
+restrictedGeoUse (	RrestrictedGeoUse
+score (Rscore.
+userReadPermission (RuserReadPermission0
+userWritePermission (RuserWritePermission*
+userPersonaValid (RuserPersonaValid`
+externalPricingModel (2,.com.contidio.sdk.proto.ExternalPricingModelRexternalPricingModel0
+externalCreditPrice (RexternalCreditPrice4
+externalMonetaryPrice (RexternalMonetaryPriceH
+externalLink (2$.com.contidio.sdk.proto.ExternalLinkRexternalLink<
+external (2 .com.contidio.sdk.proto.ExternalRexternal 
+groupingKey (	RgroupingKey"Ö
+Licenses9
+license (2.com.contidio.sdk.proto.LicenseRlicense>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"Â
+LicenseChangeSet 
+licenseUuid (	RlicenseUuidE
+licenseType (2#.com.contidio.sdk.proto.LicenseTypeRlicenseTypeL
+	putLocale (2..com.contidio.sdk.proto.LicenseLocaleChangeSetR	putLocaleR
+removeLocale (2..com.contidio.sdk.proto.LicenseLocaleChangeSetRremoveLocaleL
+putTypeOfUse (2(.com.contidio.sdk.proto.LicenseTypeOfUseRputTypeOfUseR
+removeTypeOfUse (2(.com.contidio.sdk.proto.LicenseTypeOfUseRremoveTypeOfUseX
+exclusivityType (2..com.contidio.sdk.proto.LicenseExclusivityTypeRexclusivityType.
+validityPeriodDays (RvalidityPeriodDays
+
+imagePrice	 (R
+imagePriceB
+ofImagePriceIsTransactionFee
+ (RofImagePriceIsTransactionFee
+
+videoPrice (R
+videoPriceB
+ofVideoPriceIsTransactionFee (RofVideoPriceIsTransactionFee
+
+audioPrice (R
+audioPriceB
+ofAudioPriceIsTransactionFee (RofAudioPriceIsTransactionFee$
+documentPrice (RdocumentPriceH
+ofDocumentPriceIsTransactionFee (RofDocumentPriceIsTransactionFee"ï
+LicenseLocale
+locale (	Rlocale
+name (	Rname
+summary (	Rsummary
+
+termsOfUse (	R
+termsOfUse>
+restrictedPublishingTopics (	RrestrictedPublishingTopics2
+restrictedIndustries (	RrestrictedIndustries*
+restrictedGeoUse (	RrestrictedGeoUse"û
+LicenseLocaleChangeSet
+locale (	Rlocale
+name (	Rname
+summary (	Rsummary
+
+termsOfUse (	R
+termsOfUse>
+restrictedPublishingTopics (	RrestrictedPublishingTopics2
+restrictedIndustries (	RrestrictedIndustries*
+restrictedGeoUse (	RrestrictedGeoUse"¯
+DownloadSpec
+bitDepth (	RbitDepth 
+compression (	Rcompression 
+contentType (	RcontentType
+format (	Rformat
+	frameRate (	R	frameRate
+	frameSize (	R	frameSize
+height (Rheight
+width (Rwidth
+
+interlaced	 (R
+interlaced
+bytes
+ (Rbytes"
+downloadLink (	RdownloadLink
+assetKey (	RassetKey 
+isEditorial (RisEditorial 
+productType (	RproductType
+isComp (RisComp
+	isPremium (R	isPremium
+sizeName (	RsizeNameB
+
+binaryType (2".com.contidio.sdk.proto.BinaryTypeR
+binaryType6
+source (2.com.contidio.sdk.proto.SourceRsource"Ì
+LicensedLicense9
+license (2.com.contidio.sdk.proto.LicenseRlicense(
+issuerBrandUuid (	RissuerBrandUuidQ
+issuerCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRissuerCompanyInfo,
+licensorBrandUuid (	RlicensorBrandUuidU
+licensorCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRlicensorCompanyInfo&
+licensorIsUser (RlicensorIsUser<
+licenseAcceptedByUserUuid (	RlicenseAcceptedByUserUuidB
+acceptedAndLicensedTimestamp (RacceptedAndLicensedTimestamp>
+licenseValidUntilTimestamp	 (RlicenseValidUntilTimestampi
+externalLicensedLicense
+ (2/.com.contidio.sdk.proto.ExternalLicensedLicenseRexternalLicensedLicenseH
+downloadSpec (2$.com.contidio.sdk.proto.DownloadSpecRdownloadSpec"u
+LicensedAsset6
+entity (2.com.contidio.sdk.proto.EntityRentity,
+participationUuid (	RparticipationUuid"°
+
+InheritedData0
+tags (2.com.contidio.sdk.proto.TagsRtagsW
+availableLicenseInfo (2#.com.contidio.sdk.proto.LicenseInfoRavailableLicenseInfo`
+readAccessPermission (2,.com.contidio.sdk.proto.ReadAccessPermissionRreadAccessPermissionr
+publicReadAccessPermission (22.com.contidio.sdk.proto.PublicReadAccessPermissionRpublicReadAccessPermissione
+readAccessDefinedOnParent (2'.com.contidio.sdk.proto.EntityReferenceRreadAccessDefinedOnParent.
+readAccessIsActive (RreadAccessIsActivec
+writeAccessPermission (2-.com.contidio.sdk.proto.WriteAccessPermissionRwriteAccessPermission
+	published (R	published
+trashed	 (Rtrashed
+deleted
+ (Rdeleted
+	brandUuid (	R	brandUuid?
+	brandType (2!.com.contidio.sdk.proto.BrandTypeR	brandTypeB
+brandWorldAdminUserGroupUuid (	RbrandWorldAdminUserGroupUuid$
+defaultLocale (	RdefaultLocaleQ
+contentCategory (2'.com.contidio.sdk.proto.ContentCategoryRcontentCategory&
+applyWatermark (RapplyWatermarkH
+folderLayout (2$.com.contidio.sdk.proto.FolderLayoutRfolderLayoutE
+assetLayout (2#.com.contidio.sdk.proto.AssetLayoutRassetLayoutT
+publishCondition (2(.com.contidio.sdk.proto.PublishConditionRpublishCondition6
+allowAnonymousDownload (RallowAnonymousDownload"Ω
+DereferencedDataE
+endUserGroup (2!.com.contidio.sdk.proto.UserGroupRendUserGroup6
+endUser (2.com.contidio.sdk.proto.UserRendUserI
+adminUserGroup (2!.com.contidio.sdk.proto.UserGroupRadminUserGroup9
+license (2.com.contidio.sdk.proto.LicenseRlicense6
+entity (2.com.contidio.sdk.proto.EntityRentityK
+accessRequest (2%.com.contidio.sdk.proto.AccessRequestRaccessRequestN
+publishRequest (2&.com.contidio.sdk.proto.PublishRequestRpublishRequestN
+licenseRequest (2&.com.contidio.sdk.proto.LicenseRequestRlicenseRequestW
+creditTransaction	 (2).com.contidio.sdk.proto.CreditTransactionRcreditTransactionH
+shoppingCart
+ (2$.com.contidio.sdk.proto.ShoppingCartRshoppingCartf
+purchaseCreditsRequest (2..com.contidio.sdk.proto.PurchaseCreditsRequestRpurchaseCreditsRequestZ
+upgradePlanRequest (2*.com.contidio.sdk.proto.UpgradePlanRequestRupgradePlanRequestE
+joinRequest (2#.com.contidio.sdk.proto.JoinRequestRjoinRequestQ
+approvalRequest (2'.com.contidio.sdk.proto.ApprovalRequestRapprovalRequest"É
+AutocompletedEntitiesE
+endUserGroup (2!.com.contidio.sdk.proto.UserGroupRendUserGroup6
+endUser (2.com.contidio.sdk.proto.UserRendUserI
+adminUserGroup (2!.com.contidio.sdk.proto.UserGroupRadminUserGroup9
+license (2.com.contidio.sdk.proto.LicenseRlicense6
+entity (2.com.contidio.sdk.proto.EntityRentity-
+tag (2.com.contidio.sdk.proto.TagRtag"Ω	
+BinaryK
+binaryPurpose (2%.com.contidio.sdk.proto.BinaryPurposeRbinaryPurpose
+outputId (RoutputId
+width (Rwidth
+height (Rheight(
+foregroundColor (RforegroundColorL
+metatagsBasic (2&.com.contidio.sdk.proto.BinaryMetatagsRmetatagsBasicR
+metatagsExtended (2&.com.contidio.sdk.proto.BinaryMetatagsRmetatagsExtendedB
+
+binaryType (2".com.contidio.sdk.proto.BinaryTypeR
+binaryTypeH
+imagePresets	 (2$.com.contidio.sdk.proto.ImagePresetsRimagePresetsH
+videoPresets
+ (2$.com.contidio.sdk.proto.VideoPresetsRvideoPresetsH
+audioPresets (2$.com.contidio.sdk.proto.AudioPresetsRaudioPresetsQ
+documentPresets (2'.com.contidio.sdk.proto.DocumentPresetsRdocumentPresets 
+fingerprint (	Rfingerprintg
+calculatedFromBinaryPurpose (2%.com.contidio.sdk.proto.BinaryPurposeRcalculatedFromBinaryPurpose<
+calculatedFromFingerprint (	RcalculatedFromFingerprint6
+binaryProcessingFailed (RbinaryProcessingFailedr
+binaryProcessingFailedErrorCode (2(.com.contidio.sdk.proto.BackendErrorCodeRbinaryProcessingFailedErrorCodeB
+binaryProcessingFailedReason (	RbinaryProcessingFailedReason"
+downloadLink (	RdownloadLink"Q
+BinaryMetatags?
+metatag (2%.com.contidio.sdk.proto.BinaryMetatagRmetatag"ß
+BinaryMetatag
+name (	Rname
+intValue (RintValue
+	longValue (R	longValue 
+stringValue (	RstringValue
+
+bytesValue (R
+bytesValue
+	boolValue (R	boolValue
+
+floatValue (R
+floatValue 
+doubleValue (RdoubleValue&
+stringSetValue	 (	RstringSetValue"o
+ImagePresets_
+transformationInfo (2/.com.contidio.sdk.proto.ImageTransformationInfoRtransformationInfo"ü
+ImageTransformationInfo0
+crop (2.com.contidio.sdk.proto.CropRcrop(
+foregroundColor (RforegroundColor(
+backgroundColor (RbackgroundColor"P
+Crop
+x (Rx
+y (Ry
+width (Rwidth
+height (Rheight"~
+VideoPresetsn
+thumbnailGenerationInfo (24.com.contidio.sdk.proto.VideoThumbnailGenerationInfoRthumbnailGenerationInfo"P
+VideoThumbnailGenerationInfo0
+thumbnailPercentage (RthumbnailPercentage"
+AudioPresets"©
+DocumentPresets 
+previewPage (RpreviewPage6
+limitPreviewToOnePager (RlimitPreviewToOnePager<
+numberOfPreviewParagraphs (RnumberOfPreviewParagraphs"£
+Brand$
+defaultLocale (	RdefaultLocale?
+	brandType (2!.com.contidio.sdk.proto.BrandTypeR	brandType
+order (	Rorder8
+worldAdminUserGroupUuid (	RworldAdminUserGroupUuid.
+defaultProjectUuid (	RdefaultProjectUuidE
+userPersona (2#.com.contidio.sdk.proto.UserPersonaRuserPersona(
+trashEntityUuid (	RtrashEntityUuid&
+jobsEntityUuid (	RjobsEntityUuid:
+participationsEntityUuid	 (	RparticipationsEntityUuid.
+projectsEntityUuid
+ (	RprojectsEntityUuidH
+customDesign (2$.com.contidio.sdk.proto.CustomDesignRcustomDesignE
+contactInfo (2#.com.contidio.sdk.proto.ContactInfoRcontactInfoE
+companyInfo (2#.com.contidio.sdk.proto.CompanyInfoRcompanyInfoS
+billingCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRbillingCompanyInfo4
+purchaseCreditBalance (RpurchaseCreditBalance0
+payoutCreditBalance (RpayoutCreditBalance
+approved (Rapproved*
+transactionLimit (RtransactionLimitN
+"purchaseCreditBalancePositiveLimit (R"purchaseCreditBalancePositiveLimitN
+"purchaseCreditBalanceNegativeLimit (R"purchaseCreditBalanceNegativeLimit<
+instantChargeTrustedLimit (RinstantChargeTrustedLimit8
+showContactEmailAddress (RshowContactEmailAddress2
+newNotificationCount (RnewNotificationCount_
+defaultContentCategory (2'.com.contidio.sdk.proto.ContentCategoryRdefaultContentCategory?
+	brandPlan (2!.com.contidio.sdk.proto.BrandPlanR	brandPlan.
+transactionsLocked (RtransactionsLocked"
+uploadLocked (RuploadLockedT
+%connectExternalContentProvidersLocked (R%connectExternalContentProvidersLocked,
+jobServicesLocked (RjobServicesLockedf
+upgradePlanRequestInfo (2..com.contidio.sdk.proto.UpgradePlanRequestInfoRupgradePlanRequestInfoQ
+joinRequestInfo (2'.com.contidio.sdk.proto.JoinRequestInfoRjoinRequestInfo0
+billingInfoOverride  (RbillingInfoOverrideQ
+brandLandLayout! (2'.com.contidio.sdk.proto.BrandLandLayoutRbrandLandLayout]
+approvalRequestInfo" (2+.com.contidio.sdk.proto.ApprovalRequestInfoRapprovalRequestInfoQ
+customSubdomain# (2'.com.contidio.sdk.proto.CustomSubdomainRcustomSubdomain4
+customSubdomainLocked$ (RcustomSubdomainLockedu
+externalContentProviderInfo% (23.com.contidio.sdk.proto.ExternalContentProviderInfoRexternalContentProviderInfo4
+checkOutContentLocked& (RcheckOutContentLocked(
+reportingLocked' (RreportingLocked2
+publishContentLocked( (RpublishContentLocked*
+versioningLocked) (RversioningLockedH
+multiLevelAdminManagementLocked* (RmultiLevelAdminManagementLockedB
+externalUserManagementLocked+ (RexternalUserManagementLockedV
+&multiLevelExternalUserManagementLocked, (R&multiLevelExternalUserManagementLockedF
+overrideDefaultLocaleForChilds- (	RoverrideDefaultLocaleForChilds"ÿ
+
+BrandChangeSetT
+putEndUserGroup (2*.com.contidio.sdk.proto.UserGroupChangeSetRputEndUserGroupZ
+removeEndUserGroup (2*.com.contidio.sdk.proto.UserGroupChangeSetRremoveEndUserGroupX
+putAdminUserGroup (2*.com.contidio.sdk.proto.UserGroupChangeSetRputAdminUserGroup^
+removeAdminUserGroup (2*.com.contidio.sdk.proto.UserGroupChangeSetRremoveAdminUserGroupH
+
+putLicense (2(.com.contidio.sdk.proto.LicenseChangeSetR
+putLicenseN
+removeLicense (2(.com.contidio.sdk.proto.LicenseChangeSetRremoveLicense$
+defaultLocale (	RdefaultLocale?
+	brandType (2!.com.contidio.sdk.proto.BrandTypeR	brandType
+order	 (	RorderQ
+customDesign
+ (2-.com.contidio.sdk.proto.CustomDesignChangeSetRcustomDesignN
+companyInfo (2,.com.contidio.sdk.proto.CompanyInfoChangeSetRcompanyInfo\
+billingCompanyInfo (2,.com.contidio.sdk.proto.CompanyInfoChangeSetRbillingCompanyInfo8
+showContactEmailAddress (RshowContactEmailAddress_
+defaultContentCategory (2'.com.contidio.sdk.proto.ContentCategoryRdefaultContentCategory0
+billingInfoOverride (RbillingInfoOverrideQ
+brandLandLayout (2'.com.contidio.sdk.proto.BrandLandLayoutRbrandLandLayoutZ
+customSubdomain# (20.com.contidio.sdk.proto.CustomSubdomainChangeSetRcustomSubdomainF
+overrideDefaultLocaleForChilds$ (	RoverrideDefaultLocaleForChilds"è
+CompanyInfo 
+companyName (	RcompanyName6
+contactPersonGivenName (	RcontactPersonGivenName8
+contactPersonFamilyName (	RcontactPersonFamilyName4
+contactPersonJobTitle (	RcontactPersonJobTitle
+street (	Rstreet
+
+postalCode (	R
+postalCode
+city (	Rcity 
+countryCode (	RcountryCode
+email	 (	Remail
+vat
+ (	Rvat&
+emailConfirmed (RemailConfirmed 
+countryName (	RcountryName,
+contactPersonName (	RcontactPersonName(
+publicationName (	RpublicationName"†
+CompanyInfoChangeSet 
+companyName (	RcompanyName6
+contactPersonGivenName (	RcontactPersonGivenName8
+contactPersonFamilyName (	RcontactPersonFamilyName4
+contactPersonJobTitle (	RcontactPersonJobTitle
+street (	Rstreet
+
+postalCode (	R
+postalCode
+city (	Rcity 
+countryCode (	RcountryCode
+email	 (	Remail
+vat
+ (	Rvat(
+publicationName (	RpublicationName">
+CustomDesign
+color1 (Rcolor1
+color2 (Rcolor2"G
+CustomDesignChangeSet
+color1 (Rcolor1
+color2 (Rcolor2"/
+CustomSubdomain
+	subdomain (	R	subdomain"8
+CustomSubdomainChangeSet
+	subdomain (	R	subdomain"…
+FolderQ
+contentCategory (2'.com.contidio.sdk.proto.ContentCategoryRcontentCategory$
+defaultLocale (	RdefaultLocaleF
+overrideDefaultLocaleForChilds (	RoverrideDefaultLocaleForChilds"à
+FolderChangeSetQ
+contentCategory (2'.com.contidio.sdk.proto.ContentCategoryRcontentCategory4
+removeContentCategory (RremoveContentCategory$
+defaultLocale (	RdefaultLocaleF
+overrideDefaultLocaleForChilds (	RoverrideDefaultLocaleForChilds"œ
+AssetZ
+participationAsset (2*.com.contidio.sdk.proto.ParticipationAssetRparticipationAsset<
+jobAsset (2 .com.contidio.sdk.proto.JobAssetRjobAssetK
+acquiredAsset (2%.com.contidio.sdk.proto.AcquiredAssetRacquiredAsset5
+type (2!.com.contidio.sdk.proto.AssetTypeRtype2
+publicationTimestamp (RpublicationTimestampJ
+reviewState (2(.com.contidio.sdk.proto.AssetReviewStateRreviewState*
+releaseReference (	RreleaseReference2
+lastReleaseReference (	RlastReleaseReference"
+canonicalUrl	 (	RcanonicalUrl$
+defaultLocale
+ (	RdefaultLocale"˝
+AssetChangeSet5
+type (2!.com.contidio.sdk.proto.AssetTypeRtype2
+publicationTimestamp (RpublicationTimestamp>
+removePublicationTimestamp (RremovePublicationTimestampJ
+reviewState (2(.com.contidio.sdk.proto.AssetReviewStateRreviewState*
+releaseReference (	RreleaseReference"
+canonicalUrl (	RcanonicalUrl$
+defaultLocale (	RdefaultLocale"Ò
+ParticipationAsset@
+state (2*.com.contidio.sdk.proto.ParticipationStateRstate4
+creditTransactionUuid (	RcreditTransactionUuid.
+fulfilledTimestamp (RfulfilledTimestampQ
+licensedLicense (2'.com.contidio.sdk.proto.LicensedLicenseRlicensedLicense
+jobUuid (	RjobUuid.
+jobIssuerBrandUuid (	RjobIssuerBrandUuid2
+participantBrandUuid (	RparticipantBrandUuid$
+jobIssuerCopy (RjobIssuerCopy<
+originalParticipationUuid	 (	RoriginalParticipationUuid"B
+JobAsset6
+state (2 .com.contidio.sdk.proto.JobStateRstate"û
+AcquiredAsset4
+creditTransactionUuid (	RcreditTransactionUuid.
+fulfilledTimestamp (RfulfilledTimestampQ
+licensedLicense (2'.com.contidio.sdk.proto.LicensedLicenseRlicensedLicenseT
+fulfillmentError (2(.com.contidio.sdk.proto.BackendErrorCodeRfulfillmentError"
+Trash"
+TrashChangeSet"Ú
+Job3
+type (2.com.contidio.sdk.proto.JobTypeRtypeH
+pricingType (2&.com.contidio.sdk.proto.JobPricingTypeRpricingTypeZ
+participationType (2,.com.contidio.sdk.proto.JobParticipationTypeRparticipationType6
+state (2 .com.contidio.sdk.proto.JobStateRstate
+	licenseId (	R	licenseId"
+endTimestamp (RendTimestamp
+reward (Rreward"ø
+JobChangeSet3
+type (2.com.contidio.sdk.proto.JobTypeRtypeH
+pricingType (2&.com.contidio.sdk.proto.JobPricingTypeRpricingTypeZ
+participationType (2,.com.contidio.sdk.proto.JobParticipationTypeRparticipationType6
+state (2 .com.contidio.sdk.proto.JobStateRstate
+	licenseId (	R	licenseId"
+endTimestamp (RendTimestamp
+reward (RrewardB
+
+jobActions (2".com.contidio.sdk.proto.JobActionsR
+jobActions"
+
+JobActions"s
+JobApplicationSet.
+applicationMessage (	RapplicationMessage
+price (Rprice
+version (Rversion"c
+JobParticipationSet2
+participationMessage (	RparticipationMessage
+version (Rversion"Y
+JobApplicationAcceptSet$
+acceptMessage (	RacceptMessage
+version (Rversion"[
+JobParticipationSubmitSet$
+submitMessage (	RsubmitMessage
+version (Rversion"_
+JobParticipationRejectSet(
+rejectionReason (	RrejectionReason
+version (Rversion"I
+JobCloseSet 
+closeReason (	RcloseReason
+version (Rversion"›
+Participation@
+state (2*.com.contidio.sdk.proto.ParticipationStateRstate4
+creditTransactionUuid (	RcreditTransactionUuid.
+fulfilledTimestamp (RfulfilledTimestamp,
+rejectedTimestamp (RrejectedTimestamp
+jobUuid (	RjobUuid.
+jobIssuerBrandUuid (	RjobIssuerBrandUuid2
+participantBrandUuid (	RparticipantBrandUuid$
+jobIssuerCopy (RjobIssuerCopy<
+originalParticipationUuid	 (	RoriginalParticipationUuid
+price
+ (Rprice".
+ParticipationChangeSet
+price (Rprice"q
+Project:
+state (2$.com.contidio.sdk.proto.ProjectStateRstate*
+isDefaultProject (RisDefaultProject"N
+ProjectChangeSet:
+state (2$.com.contidio.sdk.proto.ProjectStateRstate"å
+ShoppingCart
+uuid (	Ruuid?
+state (2).com.contidio.sdk.proto.ShoppingCartStateRstate
+	brandUuid (	R	brandUuid
+userUuid (	RuserUuid4
+creditTransactionUuid (	RcreditTransactionUuid*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp
+deleted (RdeletedT
+dereferencedData	 (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedDataM
+userCompanyInfo
+ (2#.com.contidio.sdk.proto.CompanyInfoRuserCompanyInfo
+version (Rversion"ô
+ShoppingCartsH
+shoppingCart (2$.com.contidio.sdk.proto.ShoppingCartRshoppingCart>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"^
+ShoppingCartSubmitToBrandSet$
+submitMessage (	RsubmitMessage
+version (Rversion"f
+ ShoppingCartRejectAcquisitionSet(
+rejectionReason (	RrejectionReason
+version (Rversion"R
+ShoppingCartAcquireSet
+
+autoFollow (R
+autoFollow
+version (Rversion"¬
+ CreditTransactionCostCalculation$
+monetaryValue (RmonetaryValue]
+monetaryCurrency (21.com.contidio.sdk.proto.CreditTransactionCurrencyRmonetaryCurrency$
+costPerCredit (RcostPerCredit(
+isReverseCharge (RisReverseCharge
+vatRate (RvatRate
+	vatAmount (R	vatAmount<
+monetaryValueVatInclusive (RmonetaryValueVatInclusiveS
+billingCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRbillingCompanyInfo"≈
+CreditTransaction
+uuid (	RuuidA
+type (2-.com.contidio.sdk.proto.CreditTransactionTypeRtype 
+billingUuid (	RbillingUuid2
+relatedToProjectUuid (	RrelatedToProjectUuid*
+relatedToJobUuid (	RrelatedToJobUuidQ
+entityReference (2'.com.contidio.sdk.proto.EntityReferenceRentityReference 
+licenseUuid (	RlicenseUuid,
+workingSetVersion (RworkingSetVersion.
+creditsTransferred	 (RcreditsTransferred<
+ofCreditsTransferredIsFee
+ (RofCreditsTransferredIsFee0
+startBalanceCredits (RstartBalanceCredits,
+endBalanceCredits (RendBalanceCredits$
+monetaryValue (RmonetaryValue]
+monetaryCurrency (21.com.contidio.sdk.proto.CreditTransactionCurrencyRmonetaryCurrency$
+costPerCredit (RcostPerCredit(
+payoutPerCredit (RpayoutPerCreditl
+monetaryPaymentMethod (26.com.contidio.sdk.proto.CreditTransactionPaymentMethodRmonetaryPaymentMethod2
+monetaryTransferUuid (	RmonetaryTransferUuidF
+additionalMonetaryTransferUuid (	RadditionalMonetaryTransferUuid
+userUuid (	RuserUuidT
+dereferencedData (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedDataM
+userCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRuserCompanyInfo 
+projectName (	RprojectName
+jobName (	RjobName 
+licenseName (	RlicenseName
+
+entityName (	R
+entityName*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp.
+cancelledTimestamp (RcancelledTimestamp$
+paidTimestamp (RpaidTimestamp.
+fulfilledTimestamp (RfulfilledTimestamp.
+cancellationReason  (	RcancellationReason
+message! (	Rmessage
+
+childCount" (R
+childCountU
+customerCompanyInfo' (2#.com.contidio.sdk.proto.CompanyInfoRcustomerCompanyInfoS
+billingCompanyInfo( (2#.com.contidio.sdk.proto.CompanyInfoRbillingCompanyInfoQ
+licensedLicense) (2'.com.contidio.sdk.proto.LicensedLicenseRlicensedLicense(
+isReverseCharge* (RisReverseCharge
+vatRate+ (RvatRate
+	vatAmount, (R	vatAmount<
+monetaryValueVatInclusive- (RmonetaryValueVatInclusive
+version. (Rversion<
+external/ (2 .com.contidio.sdk.proto.ExternalRexternal`
+externalPricingModel0 (2,.com.contidio.sdk.proto.ExternalPricingModelRexternalPricingModel0
+externalCreditPrice1 (RexternalCreditPrice4
+externalMonetaryPrice2 (RexternalMonetaryPriceT
+fulfillmentError3 (2(.com.contidio.sdk.proto.BackendErrorCodeRfulfillmentError8
+fulfillmentErrorMessage4 (	RfulfillmentErrorMessage4
+fulfillmentRetryCount5 (RfulfillmentRetryCount@
+relatedToAdminUserGroupUuid6 (	RrelatedToAdminUserGroupUuid"
+costCenterId7 (	RcostCenterId.
+adminUserGroupName8 (	RadminUserGroupName4
+hasNewerEntityVersion9 (RhasNewerEntityVersion.
+onBehalfOfUserUuid; (	RonBehalfOfUserUuida
+onBehalfOfUserCompanyInfo< (2#.com.contidio.sdk.proto.CompanyInfoRonBehalfOfUserCompanyInfo2
+historicDataImportId= (RhistoricDataImportId"≠
+CreditTransactionsW
+creditTransaction (2).com.contidio.sdk.proto.CreditTransactionRcreditTransaction>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"º
+CreditBalanceChangeSetc
+creditTransactionType (2-.com.contidio.sdk.proto.CreditTransactionTypeRcreditTransactionType"
+changeAmount (RchangeAmount]
+monetaryCurrency (21.com.contidio.sdk.proto.CreditTransactionCurrencyRmonetaryCurrencyl
+monetaryPaymentMethod (26.com.contidio.sdk.proto.CreditTransactionPaymentMethodRmonetaryPaymentMethod2
+monetaryTransferUuid (	RmonetaryTransferUuidF
+additionalMonetaryTransferUuid (	RadditionalMonetaryTransferUuid
+message (	Rmessage0
+startBalanceCredits (RstartBalanceCreditsN
+"fulfillsPurchaseCreditsRequestUuid	 (	R"fulfillsPurchaseCreditsRequestUuid
+planId
+ (RplanId
+	promoCode (	R	promoCode"…
+&CreditTransactionCreateDownloadTaskSetY
+downloadType (25.com.contidio.sdk.proto.CreditTransactionDownloadTypeRdownloadTypeD
+downloadOriginalEntityVersion (RdownloadOriginalEntityVersion"^
+AssetCreateDownloadTaskSet 
+licenseUuid (	RlicenseUuid
+
+autoFollow (R
+autoFollow"∏
+User
+uuid (	Ruuid*
+allUserGroupUuid (	RallUserGroupUuid
+	brandUuid (	R	brandUuid?
+	brandUser (2!.com.contidio.sdk.proto.BrandUserR	brandUserQ
+entityReference (2'.com.contidio.sdk.proto.EntityReferenceRentityReferenceE
+companyInfo (2#.com.contidio.sdk.proto.CompanyInfoRcompanyInfo*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestampE
+userPersona	 (2#.com.contidio.sdk.proto.UserPersonaRuserPersonaT
+dereferencedData (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData
+deleted (Rdeleted2
+newNotificationCount (RnewNotificationCount
+version (Rversion
+disabled (Rdisabled
+approved (Rapproved<
+userType (2 .com.contidio.sdk.proto.UserTypeRuserType
+	ssoSecret (	R	ssoSecret"&
+UserReserveSet
+email (	Remail"Á
+UserChangeSet
+uuid (	RuuidN
+companyInfo (2,.com.contidio.sdk.proto.CompanyInfoChangeSetRcompanyInfoB
+
+userAction (2".com.contidio.sdk.proto.UserActionR
+userAction
+version (Rversion<
+userType (2 .com.contidio.sdk.proto.UserTypeRuserType0
+regenerateSsoSecret (RregenerateSsoSecret$
+defaultLocale (	RdefaultLocale"€
+	BrandUser
+	brandUuid (	R	brandUuid4
+brandEndUserGroupUuid (	RbrandEndUserGroupUuid8
+brandAdminUserGroupUuid (	RbrandAdminUserGroupUuid@
+brandDirectEndUserGroupUuid (	RbrandDirectEndUserGroupUuid"ò
+UserSetting
+userUuid (	RuserUuidM
+interval (21.com.contidio.sdk.proto.EmailNotificationIntervalRinterval$
+defaultLocale (	RdefaultLocale*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp
+version (Rversion"•
+UserSettingChangeSetM
+interval (21.com.contidio.sdk.proto.EmailNotificationIntervalRinterval$
+defaultLocale (	RdefaultLocale
+version (Rversion"“
+UserFollowSetting
+uuid (	Ruuid
+userUuid (	RuserUuid
+	brandUuid (	R	brandUuid(
+entityBrandUuid (	RentityBrandUuid?
+entity (2'.com.contidio.sdk.proto.EntityReferenceRentity>
+entitiesAddedSinceLastRead (RentitiesAddedSinceLastReadB
+entitiesUpdatedSinceLastRead (RentitiesUpdatedSinceLastRead*
+createdTimestamp (RcreatedTimestampT
+dereferencedData	 (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData"≠
+UserFollowSettingsW
+userFollowSetting (2).com.contidio.sdk.proto.UserFollowSettingRuserFollowSetting>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"]
+UserFollowSettingCreateSet?
+entity (2'.com.contidio.sdk.proto.EntityReferenceRentity"a
+UserReserveSetsN
+userReserveSet (2&.com.contidio.sdk.proto.UserReserveSetRuserReserveSet"]
+UserChangeSetsK
+userChangeSet (2%.com.contidio.sdk.proto.UserChangeSetRuserChangeSet"ß
+Tag
+uuid (	Ruuid
+text (	Rtext
+score (Rscore
+version (RversionH
+translationsd (2$.com.contidio.sdk.proto.TranslationsRtranslations"4
+NewTag
+locale (	Rlocale
+text (	Rtext"u
+Tags-
+tag (2.com.contidio.sdk.proto.TagRtag>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"ú
+
+ReadAccessQ
+readAccessModel (2'.com.contidio.sdk.proto.ReadAccessModelRreadAccessModele
+readAccessDefinedOnParent (2'.com.contidio.sdk.proto.EntityReferenceRreadAccessDefinedOnParent`
+readAccessPermission (2,.com.contidio.sdk.proto.ReadAccessPermissionRreadAccessPermissionr
+publicReadAccessPermission (22.com.contidio.sdk.proto.PublicReadAccessPermissionRpublicReadAccessPermission"ƒ
+ReadAccessChangeSetQ
+readAccessModel (2'.com.contidio.sdk.proto.ReadAccessModelRreadAccessModelo
+putReadAccessPermission (25.com.contidio.sdk.proto.ReadAccessPermissionChangeSetRputReadAccessPermissionu
+removeReadAccessPermission (25.com.contidio.sdk.proto.ReadAccessPermissionChangeSetRremoveReadAccessPermissionr
+publicReadAccessPermission (22.com.contidio.sdk.proto.PublicReadAccessPermissionRpublicReadAccessPermission"»
+WriteAccessT
+writeAccessModel (2(.com.contidio.sdk.proto.WriteAccessModelRwriteAccessModelc
+writeAccessPermission (2-.com.contidio.sdk.proto.WriteAccessPermissionRwriteAccessPermission"⁄
+WriteAccessChangeSetT
+writeAccessModel (2(.com.contidio.sdk.proto.WriteAccessModelRwriteAccessModelr
+putWriteAccessPermission (26.com.contidio.sdk.proto.WriteAccessPermissionChangeSetRputWriteAccessPermissionx
+removeWriteAccessPermission (26.com.contidio.sdk.proto.WriteAccessPermissionChangeSetRremoveWriteAccessPermission"|
+ReadAccessPermission
+
+targetUuid (	R
+targetUuidD
+type (20.com.contidio.sdk.proto.ReadAccessPermissionTypeRtype"¡
+ReadAccessPermissionChangeSet
+
+targetUuid (	R
+targetUuidD
+type (20.com.contidio.sdk.proto.ReadAccessPermissionTypeRtype:
+targetUuidIsEmailAddress (RtargetUuidIsEmailAddress"Ω
+WriteAccessPermission.
+adminUserGroupUuid (	RadminUserGroupUuid 
+accessFlags (RaccessFlags(
+cannotBeDeleted (RcannotBeDeleted(
+cannotBeChanged (RcannotBeChanged"í
+WriteAccessPermissionChangeSet.
+adminUserGroupUuid (	RadminUserGroupUuid 
+accessFlags (RaccessFlags(
+cannotBeDeleted (RcannotBeDeleted(
+cannotBeChanged (RcannotBeChangedJ
+ adminUserGroupUuidIsEmailAddress (R adminUserGroupUuidIsEmailAddress"ù
+	UserGroup$
+userGroupUuid (	RuserGroupUuid?
+locale (2'.com.contidio.sdk.proto.UserGroupLocaleRlocale(
+cannotBeDeleted (RcannotBeDeleted>
+mustContainAtLeastOneEntry (RmustContainAtLeastOneEntryL
+!requiresMembershipInUserGroupUuid (	R!requiresMembershipInUserGroupUuid2
+requiresManualCommit (RrequiresManualCommit*
+isAdminUserGroup (RisAdminUserGroup
+	brandUuid (	R	brandUuidT
+dereferencedData	 (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData
+name
+ (	Rname 
+description (	Rdescription
+score (Rscore.
+userReadPermission (RuserReadPermission0
+userWritePermission (RuserWritePermission$
+numberOfUsers (RnumberOfUsers.
+numberOfBrandUsers (RnumberOfBrandUsers.
+totalNumberOfUsers (RtotalNumberOfUsers,
+brandUuidResolved (	RbrandUuidResolvedW
+accessRequestInfo (2).com.contidio.sdk.proto.AccessRequestInfoRaccessRequestInfo>
+requiresApplicationMessage (RrequiresApplicationMessage"
+costCenterId (	RcostCenterId"˙
+UserGroupChangeSet$
+userGroupUuid (	RuserGroupUuidN
+	putLocale (20.com.contidio.sdk.proto.UserGroupLocaleChangeSetR	putLocaleT
+removeLocale (20.com.contidio.sdk.proto.UserGroupLocaleChangeSetRremoveLocale(
+cannotBeDeleted (RcannotBeDeleted>
+mustContainAtLeastOneEntry (RmustContainAtLeastOneEntryR
+$addRequiresMembershipInUserGroupUuid (	R$addRequiresMembershipInUserGroupUuidX
+'removeRequiresMembershipInUserGroupUuid (	R'removeRequiresMembershipInUserGroupUuid2
+requiresManualCommit (RrequiresManualCommit0
+addUserEmailAddress	 (	RaddUserEmailAddress&
+removeUserUuid
+ (	RremoveUserUuid"
+addBrandUuid (	RaddBrandUuid(
+removeBrandUuid (	RremoveBrandUuid>
+requiresApplicationMessage (RrequiresApplicationMessage"
+costCenterId (	RcostCenterId@
+doNotSendNotificationEmails (RdoNotSendNotificationEmails"ç
+
+UserGroups?
+	userGroup (2!.com.contidio.sdk.proto.UserGroupR	userGroup>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"_
+UserGroupLocale
+locale (	Rlocale
+name (	Rname 
+description (	Rdescription"h
+UserGroupLocaleChangeSet
+locale (	Rlocale
+name (	Rname 
+description (	Rdescription"•
+AccessRequest
+uuid (	Ruuid,
+applyingBrandUuid (	RapplyingBrandUuid*
+applyingUserUuid (	RapplyingUserUuid@
+state (2*.com.contidio.sdk.proto.AccessRequestStateRstateK
+targetEntity (2'.com.contidio.sdk.proto.EntityReferenceRtargetEntity6
+targetEndUserGroupUuid (	RtargetEndUserGroupUuid(
+targetBrandUuid (	RtargetBrandUuid*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp	 (RlastUpdatedTimestamp,
+acceptedTimestamp
+ (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestamp
+deleted (RdeletedT
+dereferencedData (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData,
+applyingBrandName (	RapplyingBrandName]
+applyingUserCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRapplyingUserCompanyInfo6
+targetEndUserGroupName (	RtargetEndUserGroupName*
+targetEntityName (	RtargetEntityName
+version (Rversion"ﬂ
+AccessRequestInfo,
+accessRequestUuid (	RaccessRequestUuid,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestamp@
+state (2*.com.contidio.sdk.proto.AccessRequestStateRstate"ù
+AccessRequestsK
+accessRequest (2%.com.contidio.sdk.proto.AccessRequestRaccessRequest>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"Õ
+AccessRequestCreateSet.
+applicationMessage (	RapplicationMessage6
+targetEndUserGroupUuid (	RtargetEndUserGroupUuidK
+targetEntity (2'.com.contidio.sdk.proto.EntityReferenceRtargetEntity"v
+AccessRequestRejectSet(
+rejectionReason (	RrejectionReason
+isFinal (RisFinal
+version (Rversion"2
+AccessRequestAcceptSet
+version (Rversion"Ü
+JoinRequest
+uuid (	Ruuid*
+applyingUserUuid (	RapplyingUserUuid>
+state (2(.com.contidio.sdk.proto.JoinRequestStateRstate(
+targetBrandUuid (	RtargetBrandUuid*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestamp
+deleted	 (RdeletedT
+dereferencedData
+ (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData]
+applyingUserCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRapplyingUserCompanyInfo(
+targetBrandName (	RtargetBrandName
+version (Rversion"◊
+JoinRequestInfo(
+joinRequestUuid (	RjoinRequestUuid,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestamp>
+state (2(.com.contidio.sdk.proto.JoinRequestStateRstate"ï
+JoinRequestsE
+joinRequest (2#.com.contidio.sdk.proto.JoinRequestRjoinRequest>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"p
+JoinRequestCreateSet.
+applicationMessage (	RapplicationMessage(
+targetBrandUuid (	RtargetBrandUuid"t
+JoinRequestRejectSet(
+rejectionReason (	RrejectionReason
+isFinal (RisFinal
+version (Rversion"`
+JoinRequestAcceptSet
+version (Rversion.
+adminUserGroupUuid (	RadminUserGroupUuid"ì
+LicenseRequest
+uuid (	Ruuid,
+applyingBrandUuid (	RapplyingBrandUuid*
+applyingUserUuid (	RapplyingUserUuidA
+state (2+.com.contidio.sdk.proto.LicenseRequestStateRstateK
+targetEntity (2'.com.contidio.sdk.proto.EntityReferenceRtargetEntity,
+targetLicenseUuid (	RtargetLicenseUuid(
+targetBrandUuid (	RtargetBrandUuid*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp	 (RlastUpdatedTimestamp,
+acceptedTimestamp
+ (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestamp
+deleted (RdeletedT
+dereferencedData (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData,
+applyingBrandName (	RapplyingBrandName]
+applyingUserCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRapplyingUserCompanyInfo,
+targetLicenseName (	RtargetLicenseName*
+targetEntityName (	RtargetEntityName
+version (Rversion"ë
+LicenseRequestInfo.
+licenseRequestUuid (	RlicenseRequestUuid,
+targetLicenseUuid (	RtargetLicenseUuid,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestampA
+state (2+.com.contidio.sdk.proto.LicenseRequestStateRstate"°
+LicenseRequestsN
+licenseRequest (2&.com.contidio.sdk.proto.LicenseRequestRlicenseRequest>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"ƒ
+LicenseRequestCreateSet.
+applicationMessage (	RapplicationMessage,
+targetLicenseUuid (	RtargetLicenseUuidK
+targetEntity (2'.com.contidio.sdk.proto.EntityReferenceRtargetEntity"w
+LicenseRequestRejectSet(
+rejectionReason (	RrejectionReason
+isFinal (RisFinal
+version (Rversion"3
+LicenseRequestAcceptSet
+version (Rversion"Ÿ
+PublishRequest
+uuid (	Ruuid
+	brandUuid (	R	brandUuid
+userUuid (	RuserUuidA
+state (2+.com.contidio.sdk.proto.PublishRequestStateRstateK
+targetEntity (2'.com.contidio.sdk.proto.EntityReferenceRtargetEntity(
+targetBrandUuid (	RtargetBrandUuid*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp,
+acceptedTimestamp	 (RacceptedTimestamp,
+rejectedTimestamp
+ (RrejectedTimestamp
+deleted (RdeletedT
+dereferencedData (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedDataM
+userCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRuserCompanyInfo*
+targetEntityName (	RtargetEntityName
+version (Rversion"„
+PublishRequestInfo.
+publishRequestUuid (	RpublishRequestUuid,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestampA
+state (2+.com.contidio.sdk.proto.PublishRequestStateRstate"°
+PublishRequestsN
+publishRequest (2&.com.contidio.sdk.proto.PublishRequestRpublishRequest>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"ñ
+PublishRequestCreateSet.
+applicationMessage (	RapplicationMessageK
+targetEntity (2'.com.contidio.sdk.proto.EntityReferenceRtargetEntity"]
+PublishRequestRejectSet(
+rejectionReason (	RrejectionReason
+version (Rversion"3
+PublishRequestAcceptSet
+version (Rversion"Ó
+PurchaseCreditsRequest
+uuid (	Ruuid
+	brandUuid (	R	brandUuid
+userUuid (	RuserUuidI
+state (23.com.contidio.sdk.proto.PurchaseCreditsRequestStateRstate&
+requiredAmount (RrequiredAmount*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp	 (RrejectedTimestamp
+deleted
+ (RdeletedT
+dereferencedData (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedDataM
+userCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRuserCompanyInfo
+version (Rversion"É
+PurchaseCreditsRequestInfo>
+purchaseCreditsRequestUuid (	RpurchaseCreditsRequestUuid,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestampI
+state (23.com.contidio.sdk.proto.PurchaseCreditsRequestStateRstate"¡
+PurchaseCreditsRequestsf
+purchaseCreditsRequest (2..com.contidio.sdk.proto.PurchaseCreditsRequestRpurchaseCreditsRequest>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"y
+PurchaseCreditsRequestCreateSet.
+applicationMessage (	RapplicationMessage&
+requiredAmount (RrequiredAmount"e
+PurchaseCreditsRequestRejectSet(
+rejectionReason (	RrejectionReason
+version (Rversion"·
+UpgradePlanRequest
+uuid (	Ruuid
+	brandUuid (	R	brandUuid
+userUuid (	RuserUuidE
+state (2/.com.contidio.sdk.proto.UpgradePlanRequestStateRstate
+planId (RplanIdM
+currency (21.com.contidio.sdk.proto.CreditTransactionCurrencyRcurrency*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp,
+acceptedTimestamp	 (RacceptedTimestamp,
+rejectedTimestamp
+ (RrejectedTimestamp
+deleted (RdeletedT
+dereferencedData (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData
+	brandName (	R	brandNameM
+userCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRuserCompanyInfo
+version (Rversion
+	promoCode (	R	promoCode"©
+UpgradePlanRequestInfo6
+upgradePlanRequestUuid (	RupgradePlanRequestUuid,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestampE
+state (2/.com.contidio.sdk.proto.UpgradePlanRequestStateRstate
+planId (RplanId
+	promoCode (	R	promoCode"±
+UpgradePlanRequestsZ
+upgradePlanRequest (2*.com.contidio.sdk.proto.UpgradePlanRequestRupgradePlanRequest>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"º
+UpgradePlanRequestCreateSet
+message (	Rmessage
+planId (RplanIdM
+currency (21.com.contidio.sdk.proto.CreditTransactionCurrencyRcurrency
+	promoCode (	R	promoCode"a
+UpgradePlanRequestRejectSet(
+rejectionReason (	RrejectionReason
+version (Rversion"Õ
+UpgradePlanRequestAcceptSet
+version (Rversion
+planId (RplanId&
+includedBrands (RincludedBrands2
+includedListedAssets (RincludedListedAssetsH
+connectExternalContentProviders (RconnectExternalContentProviders 
+jobServices (RjobServices(
+customWatermark (RcustomWatermarkM
+currency (21.com.contidio.sdk.proto.CreditTransactionCurrencyRcurrencyG
+period	 (2/.com.contidio.sdk.proto.CreditTransactionPeriodRperiod$
+costPerPeriod
+ (RcostPerPeriod
+	promoCode (	R	promoCode(
+customSubdomain (RcustomSubdomain(
+checkOutContent (RcheckOutContent
+	reporting (R	reporting&
+publishContent (RpublishContent
+
+versioning (R
+versioning<
+multiLevelAdminManagement (RmultiLevelAdminManagement6
+externalUserManagement (RexternalUserManagementJ
+ multiLevelExternalUserManagement (R multiLevelExternalUserManagement<
+includedAcquisitionVolume (RincludedAcquisitionVolume<
+includedTotalTransactions (RincludedTotalTransactions6
+includedTotalStorageGb (RincludedTotalStorageGb"÷
+ApprovalRequest
+uuid (	Ruuid
+	brandUuid (	R	brandUuid
+userUuid (	RuserUuidB
+state (2,.com.contidio.sdk.proto.ApprovalRequestStateRstate*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestamp
+deleted	 (RdeletedT
+dereferencedData
+ (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData
+	brandName (	R	brandNameM
+userCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRuserCompanyInfo
+version (Rversion"Á
+ApprovalRequestInfo0
+approvalRequestUuid (	RapprovalRequestUuid,
+acceptedTimestamp (RacceptedTimestamp,
+rejectedTimestamp (RrejectedTimestampB
+state (2,.com.contidio.sdk.proto.ApprovalRequestStateRstate"•
+ApprovalRequestsQ
+approvalRequest (2'.com.contidio.sdk.proto.ApprovalRequestRapprovalRequest>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"4
+ApprovalRequestCreateSet
+message (	Rmessage"^
+ApprovalRequestRejectSet(
+rejectionReason (	RrejectionReason
+version (Rversion"4
+ApprovalRequestAcceptSet
+version (Rversion" 
+CollectedEntity
+uuid (	Ruuid2
+relatedToProjectUuid (	RrelatedToProjectUuid*
+relatedToJobUuid (	RrelatedToJobUuidQ
+entityReference (2'.com.contidio.sdk.proto.EntityReferenceRentityReference 
+licenseUuid (	RlicenseUuid*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp
+deleted (RdeletedT
+dereferencedData	 (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData 
+projectName
+ (	RprojectName
+jobName (	RjobName 
+licenseName (	RlicenseName
+
+entityName (	R
+entityNameb
+entityWorkingSetBinaryType (2".com.contidio.sdk.proto.BinaryTypeRentityWorkingSetBinaryType
+version (Rversion<
+external (2 .com.contidio.sdk.proto.ExternalRexternal@
+relatedToAdminUserGroupUuid (	RrelatedToAdminUserGroupUuid"
+costCenterId (	RcostCenterId.
+adminUserGroupName (	RadminUserGroupName.
+licenseGroupingKey (	RlicenseGroupingKey"∑
+CollectedEntityInfo0
+collectedEntityUuid (	RcollectedEntityUuid 
+projectUuid (	RprojectUuid*
+shoppingCartUuid (	RshoppingCartUuid 
+licenseUuid (	RlicenseUuid"¶
+CollectedEntitiesQ
+collectedEntity (2'.com.contidio.sdk.proto.CollectedEntityRcollectedEntity>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"π
+CollectedEntityCreateSetK
+targetEntity (2'.com.contidio.sdk.proto.EntityReferenceRtargetEntity 
+licenseUuid (	RlicenseUuid.
+adminUserGroupUuid (	RadminUserGroupUuid"â
+CollectedEntityCreateSetsl
+collectedEntityCreateSet (20.com.contidio.sdk.proto.CollectedEntityCreateSetRcollectedEntityCreateSet"Ï
+CollectedEntityChangeSet0
+collectedEntityUuid (	RcollectedEntityUuid 
+licenseUuid (	RlicenseUuid
+version (Rversion.
+adminUserGroupUuid (	RadminUserGroupUuid2
+removeAdminUserGroup (RremoveAdminUserGroup"â
+CollectedEntityChangeSetsl
+collectedEntityChangeSet (20.com.contidio.sdk.proto.CollectedEntityChangeSetRcollectedEntityChangeSet"d
+CollectedEntityCopySet0
+collectedEntityUuid (	RcollectedEntityUuid
+version (Rversion"Å
+CollectedEntityCopySetsf
+collectedEntityCopySet (2..com.contidio.sdk.proto.CollectedEntityCopySetRcollectedEntityCopySet"d
+CollectedEntityMoveSet0
+collectedEntityUuid (	RcollectedEntityUuid
+version (Rversion"Å
+CollectedEntityMoveSetsf
+collectedEntityMoveSet (2..com.contidio.sdk.proto.CollectedEntityMoveSetRcollectedEntityMoveSet"f
+CollectedEntityDeleteSet0
+collectedEntityUuid (	RcollectedEntityUuid
+version (Rversion"â
+CollectedEntityDeleteSetsl
+collectedEntityDeleteSet (20.com.contidio.sdk.proto.CollectedEntityDeleteSetRcollectedEntityDeleteSet"å
+ContactFormSendSet
+email (	Remail
+subject (	Rsubject
+message (	Rmessage,
+recaptchaResponse (	RrecaptchaResponse"≠
+HistorySelectSetI
+
+recordType (2).com.contidio.sdk.proto.HistoryRecordTypeR
+recordType
+
+recordUuid (	R
+recordUuid.
+requestInteractive (RrequestInteractive"ë
+HistoryEvent
+id (Rid
+userUuid (	RuserUuid
+	brandUuid (	R	brandUuid
+	timestamp (R	timestampI
+
+recordType (2).com.contidio.sdk.proto.HistoryRecordTypeR
+recordType
+
+recordUuid (	R
+recordUuid$
+recordVersion (RrecordVersionC
+activity (2'.com.contidio.sdk.proto.HistoryActivityRactivityC
+userData	 (2'.com.contidio.sdk.proto.HistoryUserDataRuserData"ã
+HistoryEvents:
+event (2$.com.contidio.sdk.proto.HistoryEventRevent>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"»1
+HistoryActivityH
+type (24.com.contidio.sdk.proto.HistoryActivity.ActivityTypeRtypeR
+userGroupData (2,.com.contidio.sdk.proto.HistoryUserGroupDataRuserGroupDataL
+licenseData (2*.com.contidio.sdk.proto.HistoryLicenseDataRlicenseDataC
+userData (2'.com.contidio.sdk.proto.HistoryUserDataRuserDataI
+
+entityData (2).com.contidio.sdk.proto.HistoryEntityDataR
+entityData
+
+localeData (	R
+localeData\
+licenseTypeOfUseData (2(.com.contidio.sdk.proto.LicenseTypeOfUseRlicenseTypeOfUseData@
+tagData (2&.com.contidio.sdk.proto.HistoryTagDataRtagData(
+translationData	 (	RtranslationData&
+workingSetData
+ (RworkingSetDataR
+binarySetData (2,.com.contidio.sdk.proto.HistoryBinarySetDataRbinarySetDataE
+
+binaryData (2%.com.contidio.sdk.proto.BinaryPurposeR
+binaryData^
+participationData (20.com.contidio.sdk.proto.HistoryParticipationDataRparticipationData*
+shoppingCartData (	RshoppingCartData0
+collectedEntityData (	RcollectedEntityData,
+creditBalanceData (	RcreditBalanceData4
+creditTransactionData (	RcreditTransactionDataR
+brandLinkData (2,.com.contidio.sdk.proto.HistoryBrandLinkDataRbrandLinkData`
+relatedUserGroupData (2,.com.contidio.sdk.proto.HistoryUserGroupDataRrelatedUserGroupDataL
+valueChange (2*.com.contidio.sdk.proto.HistoryValueChangeRvalueChange
+message (	Rmessage
+price (Rprice2
+startPurchaseCredits (RstartPurchaseCredits.
+endPurchaseCredits (RendPurchaseCredits.
+startPayoutCredits (RstartPayoutCredits*
+endPayoutCredits (RendPayoutCredits$
+isInteractive (RisInteractive|
+externalContentProviderData (2:.com.contidio.sdk.proto.HistoryExternalContentProviderDataRexternalContentProviderDataN
+"externalContentProviderProductData (	R"externalContentProviderProductData"Å#
+ActivityType
+ENTITY_CREATED 
+PROPERTY_CHANGED
+
+TAGS_ADDED
+TAGS_CHANGED
+TAGS_REMOVED/
++READ_ACCESS_PERMISSION_END_USER_GROUP_ADDED1
+-READ_ACCESS_PERMISSION_END_USER_GROUP_REMOVED2
+.WRITE_ACCESS_PERMISSION_ADMIN_USER_GROUP_ADDED4
+0WRITE_ACCESS_PERMISSION_ADMIN_USER_GROUP_CHANGED	4
+0WRITE_ACCESS_PERMISSION_ADMIN_USER_GROUP_REMOVED
+
+AVAILABLE_LICENSE_ADDED
+AVAILABLE_LICENSE_REMOVED
+BINARIES_ADDED
+BINARIES_CHANGED
+BINARIES_REMOVED
+PARENTS_ADDED
+PARENTS_REMOVED
+END_USER_GROUP_ADDED
+END_USER_GROUP_CHANGED
+END_USER_GROUP_REMOVED
+ADMIN_USER_GROUP_ADDED
+ADMIN_USER_GROUP_CHANGED
+ADMIN_USER_GROUP_REMOVED
+BINARY_VERSION_ADDED
+ENTITY_MOVED_TO_TRASH
+ENTITY_DELETED
+ENTITY_RESTORED
+ENTITY_LOCALE_ADDED
+ENTITY_LOCALE_REMOVED
+ENTITY_LOCALE_CHANGED
+USER_GROUP_LOCALE_ADDED
+USER_GROUP_LOCALE_REMOVED 
+USER_GROUP_LOCALE_CHANGED!
+NEW_WORKING_SET_ADDED%
+TAG_CREATED&
+TAG_TRANSLATION_ADDED'
+TAG_TRANSLATION_CHANGED(
+TAG_TRANSLATION_REMOVED)
+TAG_CONFIRMED*
+TAG_UNCONFIRMED+
+TAG_DELETED,
+BINARY_SET_ADDED-
+BINARY_SET_CHANGED.
+BINARY_SET_REMOVED/
+ENTITY_COPIED0
+ENTITY_COPIED_FROM_ENTITY1
+STARTED_PARTICIPATION2
+PARTICIPATION_SUBMITTED3
+ENTITY_TRASHED4
+PARTICIPATION_REJECTED5"
+PARTICIPATION_FINALLY_REJECTED6
+PARTICIPATION_ACQUIRED7
+PARTICIPATION_ACCEPTED8
+
+JOB_CLOSED9
+WORKINGSET_COMMITTED:
+ASSET_ACQUIRED<
+LICENSE_ADDED=
+LICENSE_REMOVED>
+LICENSE_CHANGED?
+LICENSE_LOCALE_ADDED@
+LICENSE_LOCALE_REMOVEDA
+LICENSE_LOCALE_CHANGEDB
+LICENSE_TYPE_OF_USE_ADDEDC
+LICENSE_TYPE_OF_USE_REMOVEDD(
+$USER_GROUP_REQUIRED_MEMBERSHIP_ADDEDE*
+&USER_GROUP_REQUIRED_MEMBERSHIP_REMOVEDF
+SUBMITTED_APPLICATIONG
+APPLICATION_REJECTEDH
+APPLICATION_ACCEPTEDI%
+!READ_ACCESS_PERMISSION_USER_ADDEDJ'
+#READ_ACCESS_PERMISSION_USER_REMOVEDK&
+"READ_ACCESS_PERMISSION_BRAND_ADDEDL(
+$READ_ACCESS_PERMISSION_BRAND_REMOVEDM#
+MANUAL_ACCESS_REQUEST_INITIATEDN"
+MANUAL_ACCESS_REQUEST_ACCEPTEDO"
+MANUAL_ACCESS_REQUEST_REJECTEDP*
+&MANUAL_ACCESS_REQUEST_FINALLY_REJECTEDQ3
+/AUTOMATIC_ACCESS_REQUEST_INITIATED_AND_ACCEPTEDR
+END_USER_GROUP_BRAND_ADDEDS 
+END_USER_GROUP_BRAND_REMOVEDT
+ENTITY_COPIED_TO_ENTITYU
+COLLECTED_ENTITY_CREATEDV
+COLLECTED_ENTITY_DELETEDW
+COLLECTED_ENTITIES_CREATEDX
+COLLECTED_ENTITIES_DELETEDY$
+ SHOPPING_CART_SUBMITTED_TO_BRANDZ,
+(COLLECTED_ENTITY_COPIED_TO_SHOPPING_CART[.
+*COLLECTED_ENTITIES_COPIED_TO_SHOPPING_CART\%
+!COLLECTED_ENTITY_MOVED_TO_PROJECT]1
+-COLLECTED_ENTITY_MOVED_TO_PROJECT_BY_DELETION^'
+#COLLECTED_ENTITIES_MOVED_TO_PROJECT_
+SHOPPING_CART_REJECTED`
+SHOPPING_CART_ACQUIREDa
+SHOPPING_CART_FULFILLEDb
+BRAND_LINK_ADDEDd
+BRAND_LINK_CHANGEDe
+BRAND_LINK_REMOVEDf
+ENTITY_PUBLISHEDg
+ENTITY_UNPUBLISHEDh
+CREDITS_INCREASEDi
+CREDITS_REDUCEDj)
+%CREDIT_BALANCE_PREPAID_CHARGE_STARTEDk4
+0CREDIT_BALANCE_PREPAID_CHARGE_PAID_AND_FULFILLEDl7
+3CREDIT_BALANCE_INSTANT_CHARGE_STARTED_AND_FULFILLEDm<
+8CREDIT_BALANCE_INSTANT_CHARGE_STARTED_PAID_AND_FULFILLEDn&
+"CREDIT_BALANCE_INSTANT_CHARGE_PAIDo
+CREDIT_BALANCE_PAID_OUTp'
+#CREDIT_BALANCE_FEE_STARTED_AND_PAIDq
+PUBLISH_REQUEST_INITIATEDr
+PUBLISH_REQUEST_ACCEPTEDs
+PUBLISH_REQUEST_REJECTEDt
+LICENSE_REQUEST_INITIATEDu
+LICENSE_REQUEST_ACCEPTEDv
+LICENSE_REQUEST_REJECTEDw$
+ LICENSE_REQUEST_FINALLY_REJECTEDx&
+"PURCHASE_CREDITS_REQUEST_INITIATEDy%
+!PURCHASE_CREDITS_REQUEST_REJECTEDz&
+"PURCHASE_CREDITS_REQUEST_FULFILLED{%
+!PURCHASE_CREDITS_REQUEST_ACCEPTED|"
+UPGRADE_PLAN_REQUEST_INITIATED}!
+UPGRADE_PLAN_REQUEST_ACCEPTED~!
+UPGRADE_PLAN_REQUEST_REJECTED
+JOIN_REQUEST_INITIATEDÄ
+JOIN_REQUEST_ACCEPTEDÅ
+JOIN_REQUEST_REJECTEDÇ"
+JOIN_REQUEST_FINALLY_REJECTEDÉ
+CREDIT_BALANCE_FEE_STARTEDÑ
+CREDIT_BALANCE_FEE_PAIDÖ
+APPROVAL_REQUEST_INITIATEDÜ
+APPROVAL_REQUEST_ACCEPTEDá
+APPROVAL_REQUEST_REJECTEDà,
+'EXTERNAL_CONTENT_PROVIDER_SETUP_STARTEDâ)
+$EXTERNAL_CONTENT_PROVIDER_CONFIGUREDä2
+-EXTERNAL_CONTENT_PROVIDER_CONFIGURATION_ERRORã(
+#EXTERNAL_CONTENT_PROVIDER_REFRESHEDå1
+,EXTERNAL_CONTENT_PROVIDER_REFRESHED_MANUALLYç&
+!EXTERNAL_CONTENT_PROVIDER_EXPIREDé&
+!EXTERNAL_CONTENT_PROVIDER_CHANGEDè.
+)EXTERNAL_CONTENT_PROVIDER_PRODUCT_CHANGEDê
+COLLECTED_ENTITY_CHANGEDë">
+HistoryBinarySetData
+uuid (Ruuid
+name (	Rname">
+HistoryBrandLinkData
+uuid (Ruuid
+name (	Rname"x
+HistoryUserGroupData$
+userGroupUuid (	RuserGroupUuid:
+names (2$.com.contidio.sdk.proto.TranslationsRnames"r
+HistoryLicenseData 
+licenseUuid (	RlicenseUuid:
+names (2$.com.contidio.sdk.proto.TranslationsRnames"t
+HistoryUserData
+userUuid (	RuserUuidE
+companyInfo (2#.com.contidio.sdk.proto.CompanyInfoRcompanyInfo"¨
+HistoryParticipationData,
+participationUuid (	RparticipationUuid
+	brandUuid (	R	brandUuidD
+
+brandNames (2$.com.contidio.sdk.proto.TranslationsR
+brandNames"≥
+HistoryEntityData
+
+entityUuid (	R
+entityUuidB
+
+entityType (2".com.contidio.sdk.proto.EntityTypeR
+entityType:
+names (2$.com.contidio.sdk.proto.TranslationsRnames"f
+HistoryTagData
+tagUuid (	RtagUuid:
+names (2$.com.contidio.sdk.proto.TranslationsRnames"«
+"HistoryExternalContentProviderDataK
+provider (2/.com.contidio.sdk.proto.ExternalContentProviderRproviderT
+backendErrorCode (2(.com.contidio.sdk.proto.BackendErrorCodeRbackendErrorCode"®
+HistoryValueChange"
+propertyName (	RpropertyName8
+from (2$.com.contidio.sdk.proto.HistoryValueRfrom4
+to (2$.com.contidio.sdk.proto.HistoryValueRto"Œ
+HistoryValue
+	longValue (R	longValue 
+stringValue (	RstringValue
+
+bytesValue (R
+bytesValue
+	boolValue (R	boolValue
+
+floatValue (R
+floatValue 
+doubleValue (RdoubleValue"—
+Translation
+locale (	RlocaleN
+
+synonymKey (2..com.contidio.sdk.proto.Translation.SynonymKeyR
+synonymKey
+text (	Rtext"F
+
+SynonymKey
+DEFAULT
+	SYNONYM_1
+	SYNONYM_2
+	SYNONYM_3"U
+TranslationsE
+translation (2#.com.contidio.sdk.proto.TranslationRtranslation"Ò
+	QueryData
+
+startIndex (R
+startIndex
+count (Rcount>
+orderBy (2$.com.contidio.sdk.proto.QueryOrderByRorderByS
+orderDirection (2+.com.contidio.sdk.proto.QueryOrderDirectionRorderDirection
+terms (	Rterms
+termsAnd (RtermsAnd
+	recursive (R	recursive
+locale (	Rlocale6
+type	 (2".com.contidio.sdk.proto.EntityTypeRtype
+locales
+ (	Rlocales?
+	dimension (2!.com.contidio.sdk.proto.DimensionR	dimensionB
+
+binaryType (2".com.contidio.sdk.proto.BinaryTypeR
+binaryType<
+uploaded (2 .com.contidio.sdk.proto.UploadedRuploadedE
+orientation (2#.com.contidio.sdk.proto.OrientationRorientationE
+videoFormat (2#.com.contidio.sdk.proto.VideoFormatRvideoFormatT
+videoAspectRatio (2(.com.contidio.sdk.proto.VideoAspectRatioRvideoAspectRatio<
+duration (2 .com.contidio.sdk.proto.DurationRduration?
+	pageCount (2!.com.contidio.sdk.proto.PageCountR	pageCount6
+source (2.com.contidio.sdk.proto.SourceRsource
+	licenseId (	R	licenseId$
+multiParentId (	RmultiParentId(
+includeContidio (RincludeContidioH
+projectState (2$.com.contidio.sdk.proto.ProjectStateRprojectStatec
+creditTransactionType (2-.com.contidio.sdk.proto.CreditTransactionTypeRcreditTransactionType2
+fromCreatedTimestamp (RfromCreatedTimestamp.
+toCreatedTimestamp (RtoCreatedTimestamp:
+fromLastUpdatedTimestamp (RfromLastUpdatedTimestamp6
+toLastUpdatedTimestamp (RtoLastUpdatedTimestamp>
+fromLastCommittedTimestamp (RfromLastCommittedTimestamp:
+toLastCommittedTimestamp (RtoLastCommittedTimestampi
+autocompletedEntityType (2/.com.contidio.sdk.proto.AutocompletedEntityTypeRautocompletedEntityType9
+jobType  (2.com.contidio.sdk.proto.JobTypeRjobType<
+jobState! (2 .com.contidio.sdk.proto.JobStateRjobStateZ
+participationState" (2*.com.contidio.sdk.proto.ParticipationStateRparticipationStateT
+notificationType# (2(.com.contidio.sdk.proto.NotificationTypeRnotificationTypeW
+notificationState$ (2).com.contidio.sdk.proto.NotificationStateRnotificationStateQ
+contentCategory% (2'.com.contidio.sdk.proto.ContentCategoryRcontentCategoryV
+publishingState& (2,.com.contidio.sdk.proto.QueryPublishingStateRpublishingState?
+	assetType' (2!.com.contidio.sdk.proto.AssetTypeR	assetType?
+	brandType( (2!.com.contidio.sdk.proto.BrandTypeR	brandTypeJ
+reviewState) (2(.com.contidio.sdk.proto.QueryReviewStateRreviewState(
+includeInactive* (RincludeInactive"^
+QueryAggregation
+key (	Rkey
+count (Rcount
+from (	Rfrom
+to (	Rto"q
+QueryAggregations
+key (	RkeyJ
+aggregation (2(.com.contidio.sdk.proto.QueryAggregationRaggregation"º
+QuerySummary
+
+totalCount (R
+totalCountK
+aggregation (2).com.contidio.sdk.proto.QueryAggregationsRaggregation?
+	queryData (2!.com.contidio.sdk.proto.QueryDataR	queryData"≥
+Notification&
+notificationId (RnotificationIdD
+isDerivedFromNotificationUuid (RisDerivedFromNotificationUuid<
+type (2(.com.contidio.sdk.proto.NotificationTypeRtype?
+state (2).com.contidio.sdk.proto.NotificationStateRstateQ
+entityReference (2'.com.contidio.sdk.proto.EntityReferenceRentityReference2
+underlyingObjectUuid (	RunderlyingObjectUuid*
+createdTimestamp (RcreatedTimestamp2
+lastUpdatedTimestamp (RlastUpdatedTimestamp(
+targetBrandUuid	 (	RtargetBrandUuid&
+targetUserUuid
+ (	RtargetUserUuid
+message (	Rmessage
+deleted (Rdeleted
+	brandUuid (	R	brandUuid
+userUuid (	RuserUuidT
+dereferencedData (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData
+	brandName (	R	brandNameM
+userCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRuserCompanyInfo
+
+entityName (	R
+entityName$
+userGroupName (	RuserGroupName
+version (Rversionl
+externalNotificationData (20.com.contidio.sdk.proto.ExternalNotificationDataRexternalNotificationData"ô
+NotificationsH
+notification (2$.com.contidio.sdk.proto.NotificationRnotification>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"≈	
+	BrandPlan 
+brandPlanId (RbrandPlanId&
+includedBrands (RincludedBrands2
+includedListedAssets (RincludedListedAssetsH
+connectExternalContentProviders (RconnectExternalContentProviders 
+jobServices (RjobServices(
+customWatermark (RcustomWatermark4
+currentlyListedAssets (RcurrentlyListedAssets.
+lastCountTimestamp (RlastCountTimestampM
+currency	 (21.com.contidio.sdk.proto.CreditTransactionCurrencyRcurrencyG
+period
+ (2/.com.contidio.sdk.proto.CreditTransactionPeriodRperiod$
+costPerPeriod (RcostPerPeriod
+	promoCode (	R	promoCode2
+promoCodeActiveUntil (RpromoCodeActiveUntil(
+customSubdomain (RcustomSubdomain(
+checkOutContent (RcheckOutContent
+	reporting (R	reporting&
+publishContent (RpublishContent
+
+versioning (R
+versioning<
+multiLevelAdminManagement (RmultiLevelAdminManagement6
+externalUserManagement (RexternalUserManagementJ
+ multiLevelExternalUserManagement (R multiLevelExternalUserManagement<
+includedAcquisitionVolume (RincludedAcquisitionVolume<
+includedTotalTransactions (RincludedTotalTransactions6
+includedTotalStorageGb (RincludedTotalStorageGb";
+ExternalContentProviderSetupSet
+version (Rversion"D
+ExternalContentProviderSetup$
+redirectToUrl (	RredirectToUrl"õ
+#ExternalContentProviderConfigureSet
+state (	Rstate 
+accessToken (	RaccessToken"
+refreshToken (	RrefreshToken
+	expiresIn (R	expiresIn
+error (	Rerror
+userName (	RuserName
+password (	Rpassword
+code (	Rcode
+version	 (Rversion"É
+!ExternalContentProviderRefreshSetD
+alsoRefreshPricingInformation (RalsoRefreshPricingInformation
+version (Rversion"û
+$ExternalContentProviderConfigurationK
+provider (2/.com.contidio.sdk.proto.ExternalContentProviderRproviderJ
+state (24.com.contidio.sdk.proto.ExternalContentProviderStateRstate4
+setupStartedTimestamp (RsetupStartedTimestamp8
+setupCompletedTimestamp (RsetupCompletedTimestamp2
+lastRefreshTimestamp (RlastRefreshTimestamp2
+lastRefreshWasManual (RlastRefreshWasManual
+userUuid (	RuserUuid(
+expiryTimestamp (RexpiryTimestampT
+backendErrorCode	 (2(.com.contidio.sdk.proto.BackendErrorCodeRbackendErrorCodeT
+dereferencedData
+ (2(.com.contidio.sdk.proto.DereferencedDataRdereferencedData*
+externalUserName (	RexternalUserNameM
+userCompanyInfo (2#.com.contidio.sdk.proto.CompanyInfoRuserCompanyInfo
+versiond (Rversion"∫
+-ExternalContentProviderConfigurationChangeSeto
+putProviderProduct (2?.com.contidio.sdk.proto.ExternalContentProviderProductChangeSetRputProviderProduct
+version (Rversion"˙
+%ExternalContentProviderConfigurationsê
+$externalContentProviderConfiguration (2<.com.contidio.sdk.proto.ExternalContentProviderConfigurationR$externalContentProviderConfiguration>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"à
+ExternalContentProviderProduct
+	productId (	R	productId*
+creditsRemaining (RcreditsRemaining$
+downloadLimit (RdownloadLimit<
+downloadLimitEndTimestamp (RdownloadLimitEndTimestamp@
+downloadLimitResetTimestamp (RdownloadLimitResetTimestamp.
+downloadsRemaining (RdownloadsRemaining0
+expirationTimestamp (RexpirationTimestamp
+name (	Rname
+state	 (	Rstate
+type
+ (	Rtype$
+agreementName (	RagreementName
+
+resolution (	R
+resolution"
+noteRequired (RnoteRequired0
+projectCodeRequired (RprojectCodeRequired"
+overageLimit (RoverageLimit*
+overageRemaining (RoverageRemaining"
+overageCount (RoverageCount&
+overageReached (RoverageReachedP
+pricingModel (2,.com.contidio.sdk.proto.ExternalPricingModelRpricingModelB
+imageExternalCreditPriceFull (RimageExternalCreditPriceFull6
+imageMonetaryPriceFull (RimageMonetaryPriceFull>
+videoExternalCreditPrice4K (RvideoExternalCreditPrice4K2
+videoMonetaryPrice4K (RvideoMonetaryPrice4K:
+audioExternalCreditPrice (RaudioExternalCreditPrice.
+audioMonetaryPrice (RaudioMonetaryPrice@
+documentExternalCreditPrice (RdocumentExternalCreditPrice4
+documentMonetaryPrice (RdocumentMonetaryPrice4
+warningLimitDownloads (RwarningLimitDownloadsT
+format (2<.com.contidio.sdk.proto.ExternalContentProviderProductFormatRformatL
+!warningLimitDownloadsCurrentUsage (R!warningLimitDownloadsCurrentUsage"
+isCreditPack (RisCreditPack>
+videoExternalCreditPriceHD  (RvideoExternalCreditPriceHD2
+videoMonetaryPriceHD! (RvideoMonetaryPriceHD>
+videoExternalCreditPriceSD" (RvideoExternalCreditPriceSD2
+videoMonetaryPriceSD# (RvideoMonetaryPriceSD>
+videoExternalCreditPriceLR$ (RvideoExternalCreditPriceLR2
+videoMonetaryPriceLR% (RvideoMonetaryPriceLR
+
+isInactive& (R
+isInactiveF
+imageExternalCreditPriceMedium' (RimageExternalCreditPriceMedium:
+imageMonetaryPriceMedium( (RimageMonetaryPriceMediumD
+imageExternalCreditPriceSmall) (RimageExternalCreditPriceSmall8
+imageMonetaryPriceSmall* (RimageMonetaryPriceSmall0
+warningLimitCredits+ (RwarningLimitCreditsH
+warningLimitCreditsCurrentUsage, (RwarningLimitCreditsCurrentUsage"µ
+'ExternalContentProviderProductChangeSet
+	productId (	R	productIdP
+pricingModel (2,.com.contidio.sdk.proto.ExternalPricingModelRpricingModelB
+imageExternalCreditPriceFull (RimageExternalCreditPriceFull6
+imageMonetaryPriceFull (RimageMonetaryPriceFull>
+videoExternalCreditPrice4K (RvideoExternalCreditPrice4K2
+videoMonetaryPrice4K (RvideoMonetaryPrice4K:
+audioExternalCreditPrice (RaudioExternalCreditPrice.
+audioMonetaryPrice (RaudioMonetaryPrice@
+documentExternalCreditPrice	 (RdocumentExternalCreditPrice4
+documentMonetaryPrice
+ (RdocumentMonetaryPrice4
+warningLimitDownloads (RwarningLimitDownloads@
+removeWarningLimitDownloads (RremoveWarningLimitDownloads>
+videoExternalCreditPriceHD (RvideoExternalCreditPriceHD2
+videoMonetaryPriceHD (RvideoMonetaryPriceHD>
+videoExternalCreditPriceSD (RvideoExternalCreditPriceSD2
+videoMonetaryPriceSD (RvideoMonetaryPriceSD>
+videoExternalCreditPriceLR (RvideoExternalCreditPriceLR2
+videoMonetaryPriceLR (RvideoMonetaryPriceLRF
+imageExternalCreditPriceMedium (RimageExternalCreditPriceMedium:
+imageMonetaryPriceMedium (RimageMonetaryPriceMediumD
+imageExternalCreditPriceSmall (RimageExternalCreditPriceSmall8
+imageMonetaryPriceSmall (RimageMonetaryPriceSmall0
+warningLimitCredits (RwarningLimitCredits<
+removeWarningLimitCredits (RremoveWarningLimitCredits"≥
+ExternalContentProviderProductsP
+product (26.com.contidio.sdk.proto.ExternalContentProviderProductRproduct>
+summary (2$.com.contidio.sdk.proto.QuerySummaryRsummary"∏
+$ExternalContentProviderProductFormat
+size (	Rsize
+format (	Rformat
+	mediaType (	R	mediaType$
+minResolution (RminResolution 
+description (	Rdescription"∂
+ExternalContentProviderInfoK
+provider (2/.com.contidio.sdk.proto.ExternalContentProviderRproviderJ
+state (24.com.contidio.sdk.proto.ExternalContentProviderStateRstate"V
+External6
+source; (2.com.contidio.sdk.proto.SourceRsource
+link< (	Rlink"°
+ExternalLicensedLicense
+	productId (	R	productId 
+productType (	RproductType$
+agreementName (	RagreementName 
+accountName (	RaccountName"6
+ExternalLink
+name (	Rname
+link (	Rlink"ß
+ExternalNotificationDataK
+provider (2/.com.contidio.sdk.proto.ExternalContentProviderRprovider
+	productId (	R	productId 
+productName (	RproductNameL
+!warningLimitDownloadsCurrentUsage (R!warningLimitDownloadsCurrentUsage4
+warningLimitDownloads (RwarningLimitDownloadsH
+warningLimitCreditsCurrentUsage (RwarningLimitCreditsCurrentUsage0
+warningLimitCredits (RwarningLimitCredits"œ
+Error&
+httpStatusCode (RhttpStatusCodeT
+backendErrorCode (2(.com.contidio.sdk.proto.BackendErrorCodeRbackendErrorCode$
+exceptionType (	RexceptionType"
+errorMessage (	RerrorMessage"¿
+
+ServerTask
+taskUuid (	RtaskUuid(
+issuedTimestamp (RissuedTimestamp:
+type (2&.com.contidio.sdk.proto.ServerTaskTypeRtype0
+completedPercentage (RcompletedPercentage"ê
+ServerTaskProgress(
+transactionUuid (	RtransactionUuidZ
+serverTaskProgressTask (2".com.contidio.sdk.proto.ServerTaskRserverTaskProgressTaskP
+serverTaskCreated (2".com.contidio.sdk.proto.ServerTaskRserverTaskCreatedT
+backendErrorCode (2(.com.contidio.sdk.proto.BackendErrorCodeRbackendErrorCode0
+backendErrorMessage (	RbackendErrorMessage
+hasError (RhasError"m
+EventBusMessageZ
+serverTaskProgress (2*.com.contidio.sdk.proto.ServerTaskProgressRserverTaskProgress" 
+ServerTaskResponse
+uuid (	RuuidB
+
+entityType (2".com.contidio.sdk.proto.EntityTypeR
+entityType
+version (Rversion(
+transactionUuid (	RtransactionUuidP
+serverTaskCreated (2".com.contidio.sdk.proto.ServerTaskRserverTaskCreated
+
+resultLink (	R
+resultLink<
+createdAdminUserGroupUuid (	RcreatedAdminUserGroupUuid8
+createdEndUserGroupUuid (	RcreatedEndUserGroupUuid.
+createdLicenseUuid	 (	RcreatedLicenseUuid"q
+ServerTaskResponsesZ
+serverTaskResponse (2*.com.contidio.sdk.proto.ServerTaskResponseRserverTaskResponse*1
+PublishAction
+
+PA_PUBLISH
+PA_UNPUBLISH*é
+
+EntityType	
+BRAND 
+
+FOLDER	
+ASSET	
+TRASH
+JOBS
+JOB
+PARTICIPATIONS
+PARTICIPATION
+PROJECTS
+PROJECT	*)
+	AssetType
+AT_FILE
+AT_RICHTEXT*#
+BrandLandLayout
+BLL_STANDARD *)
+FolderListViewLayout
+FLVL_STANDARD *<
+RichtextListViewLayout
+RLVL_SPLITVIEW 
+
+RLVL_IMAGE*%
+FolderInnerLayout
+FIL_STANDARD *$
+AssetInnerLayout
+AIL_STANDARD *B
+LayoutModel
+INHERIT_LAYOUT_FROM_PARENT 
+OVERRIDE_LAYOUT*_
+PublishConditionState
+PCS_NOT_YET_PUBLISHED
+
+PCS_ACTIVE
+PCS_NO_LONGER_PUBLISHED*b
+PublishConditionModel)
+%INHERIT_PUBLISH_CONDITION_FROM_PARENT 
+OVERRIDE_PUBLISH_CONTIDION*K
+LicensingModel!
+INHERIT_LICENSING_FROM_PARENT 
+OVERRIDE_LICENSING*_
+LicenseType
+PRIVATE_USE
+EDITORIAL_USE
+COMMERCIAL_USE
+
+CUSTOM
+EXTERNAL*s
+LicenseExclusivityType
+SHARED_NON_EXCLUSIVE+
+'SHARED_NON_EXCLUSIVE_EXCLUSIVE_POSSIBLE
+EXCLUSIVE_ONLY*4
+LicenseTypeOfUse
+ONLINE_ELECTRONIC	
+PRINT*ä
+AutocompletedEntityType
+AET_END_USER_GROUP
+AET_END_USER
+AET_ADMIN_USER_GROUP
+AET_LICENSE
+	AET_BRAND
+AET_TAG*
+PreviewSize
+NORMALË*
+BinaryPurpose
+
+BRAND_LOGOd
+BRAND_ASSETñ
+BRAND_BACKGROUND»
+BRAND_BACKGROUND_TALL˙
+BRAND_WATERMARK¨
+FOLDER_ASSETË
+FOLDER_BACKGROUNDÃ
+FOLDER_BACKGROUND_TALL˛
+FOLDER_LIST_PREVIEW∞	
+
+JOBS_ASSET‹
+JOBS_BACKGROUND¿
+JOBS_BACKGROUND_TALLÚ
+JOBS_LIST_PREVIEW§
+	JOB_ASSET–
+JOB_BACKGROUND¥
+JOB_BACKGROUND_TALLÊ
+JOB_LIST_PREVIEWò
+PROJECT_ASSET∏
+PROJECT_BACKGROUNDú
+PROJECT_BACKGROUND_TALLŒ
+PROJECT_LIST_PREVIEWÄ
+ASSET_ASSETêN
+
+ASSET_BASEëN
+ASSET_LIST_PREVIEW∏î
+ASSET_PREVIEWπî'
+!ASSET_ADVANCED_LIST_PREVIEW_IMAGE∫î!
+ASSET_ADVANCED_LIST_PREVIEWªî"
+ASSET_ADVANCED_PREVIEW_IMAGEºî
+ASSET_ADVANCED_PREVIEWΩî
+ASSET_COVERæî
+ASSET_BACKGROUND_ASSETøî
+ASSET_BACKGROUND¿î
+ASSET_BACKGROUND_TALL¡î
+ASSET_HEADER¬î"
+ASSET_SPLITVIEW_LIST_PREVIEW√î*;
+
+BinaryType	
+IMAGE	
+AUDIO	
+VIDEO
+DOCUMENT*Æ
+	BrandType
+BRAND_TYPE_SYSTEM
+BRAND_TYPE_USER
+BRAND_TYPE_CUSTOM
+BRAND_TYPE_CP_CORPORATE
+BRAND_TYPE_CP_BLOGGER
+BRAND_TYPE_CP_PHOTOGRAPHER
+BRAND_TYPE_CP_WRITER
+BRAND_TYPE_CP_VIDEOGRAPHER
+BRAND_TYPE_CP_STOCK	
+BRAND_TYPE_CP_OTHER(
+BRAND_TYPE_PROCUREMENT2*∏
+ContentCategory
+CC_MARKETING_CONTENT
+CC_PRESS_CONTENT
+CC_PRODUCT_INFORMATION$
+ CC_PROFESSIONAL_CREATIVE_CONTENT
+CC_BRAND_CREATIVE_CONTENT
+CC_STOCK_CONTENT*l
+AssetReviewState
+ARS_NO_RELEASE_NECESSARY
+ARS_MAYBE_RELEASE_NECESSARY
+ARS_RELEASE_NECESSARY*<
+JobState
+CREATED
+CLOSED_DEAL
+CLOSED_NO_DEAL*O
+JobPricingType
+JOB_ISSUER_DEFINES_REWARD
+PARTICIPANT_SUGGESTS_PRICE*C
+JobParticipationType
+JOB_IS_OPEN
+JOB_NEEDS_CONFIRMATION*+
+JobType
+PHOTOGRAPHY
+TRANSLATION*ø
+ParticipationState
+CONFIRMATION_PENDING
+CONFIRMATION_REJECTED
+PARTICIPATING_EDITING
+HANDIN_HANDED_IN
+HANDIN_REJECTED
+HANDIN_FINAL_REJECTED
+HANDIN_ACQUIRED*$
+ProjectState
+OPEN
+
+CLOSED*o
+ShoppingCartState
+SC_OPEN
+SC_SUBMITTED_TO_BRAND
+SC_REJECTED
+SC_ACQUIRED
+SC_FULFILLED*5
+CreditTransactionCurrency
+CTC_EUR
+CTC_USD*1
+CreditTransactionPaymentMethod
+CTPM_MANUAL*(
+CreditTransactionPeriod
+	CTP_MONTH*Œ
+CreditTransactionType
+CTT_UNKNOWN 
+CTT_PREPAID_CHARGE
+CTT_INSTANT_CHARGE
+	CTT_SPEND
+
+CTT_PAYOUT
+CTT_LOCK
+
+CTT_UNLOCK
+CTT_FEE
+	CTT_ASSET
+CTT_PARTICIPATION_ASSET	*v
+CreditTransactionDownloadType
+CTDT_INVOICE
+CTDT_VOUCHER
+CTDT_LICENSE
+CTDT_REPORT
+
+CTDT_ASSET*V
+UserPersona
+UP_BRAND
+UP_JOURNALIST
+UP_PROFESSIONAL
+UP_ENTHUSIAST*x
+UserType
+UT_BRAND_MEMBER
+UT_AGENCY_MEMBER
+UT_INFLUENCER
+UT_JOURNALIST
+UT_CONTENT_PROFESSIONAL*+
+
+UserAction
+
+UA_DISABLE
+	UA_ENABLE*C
+EmailNotificationInterval	
+NEVER
+
+HOURLY
+IMMEDIATELY*`
+ReadAccessModel
+INHERIT_MODEL_FROM_PARENT 
+
+PUBLIC"
+ONLY_PERMITTED_GROUPS_OR_USERS*ê
+PublicReadAccessPermission
+PRE_LICENSED_INHERIT 
+PREVIEW_INHERIT
+PREVIEW_NO_INHERIT
+ONLY_ALLOWS_REGISTRATION
+	NO_ACCESS*O
+ReadAccessPermissionType
+RPT_END_USER_GROUP
+RPT_USER
+	RPT_BRAND*C
+WriteAccessModel
+INHERIT_WRITE_FROM_PARENT 
+AS_SPECIFIED*É
+AccessRequestState
+ARS_REQUEST_INITIATED
+ARS_REQUEST_REJECTED
+ARS_REQUEST_FINAL_REJECTED
+ARS_REQUEST_ACCEPTED*Å
+JoinRequestState
+JRS_REQUEST_INITIATED
+JRS_REQUEST_REJECTED
+JRS_REQUEST_FINAL_REJECTED
+JRS_REQUEST_ACCEPTED*Ñ
+LicenseRequestState
+LRS_REQUEST_INITIATED
+LRS_REQUEST_REJECTED
+LRS_REQUEST_FINAL_REJECTED
+LRS_REQUEST_ACCEPTED*d
+PublishRequestState
+PRS_REQUEST_INITIATED
+PRS_REQUEST_REJECTED
+PRS_REQUEST_ACCEPTED*o
+PurchaseCreditsRequestState
+PCRS_REQUEST_INITIATED
+PCRS_REQUEST_REJECTED
+PCRS_REQUEST_ACCEPTED*k
+UpgradePlanRequestState
+UPRS_REQUEST_INITIATED
+UPRS_REQUEST_REJECTED
+UPRS_REQUEST_ACCEPTED*h
+ApprovalRequestState
+APRS_REQUEST_INITIATED
+APRS_REQUEST_REJECTED
+APRS_REQUEST_ACCEPTED*ÿ
+HistoryRecordType
+	HRT_BRAND 
+
+HRT_FOLDER
+	HRT_ASSET
+	HRT_TRASH
+HRT_JOBS
+HRT_JOB
+HRT_PARTICIPATIONS
+HRT_PARTICIPATION
+HRT_PROJECTS
+HRT_PROJECT	
+HRT_TAG
+
+HRT_SHOPPING_CART
+HRT_COLLECTED_ENTITY
+HRT_ACCESS_REQUEST
+HRT_PUBLISH_REQUEST
+HRT_LICENSE_REQUEST 
+HRT_PURCHASE_CREDITS_REQUEST
+HRT_UPGRADE_PLAN_REQUEST
+HRT_JOIN_REQUEST
+HRT_APPROVAL_REQUEST!
+HRT_EXTERNAL_CONTENT_PROVIDER*Æ
+QueryOrderBy
+NATURAL_ORDER
+MATCH_SCORE
+LOCAL_FEATURING
+GLOBAL_FEATURING
+CREATED_TIMESTAMP
+LAST_UPDATED_TIMESTAMP
+LAST_COMMITTED_TIMESTAMP*(
+QueryOrderDirection
+ASC
+DESC*K
+QueryPublishingState
+NO_UNPUBLISHED_CHANGED
+UNPUBLISHED_CHANGES*≥
+QueryReviewState
+QRS_NOT_REVIEWED%
+!QRS_REVIEWED_NO_RELEASE_NECESSARY<
+8QRS_REVIEWED_MAYBE_RELEASE_NECESSARY_RELEASE_NOT_PRESENT8
+4QRS_REVIEWED_MAYBE_RELEASE_NECESSARY_RELEASE_PRESENT6
+2QRS_REVIEWED_RELEASE_NECESSARY_RELEASE_NOT_PRESENT2
+.QRS_REVIEWED_RELEASE_NECESSARY_RELEASE_PRESENT*F
+	Dimension	
+SMALL
+
+MEDIUM	
+LARGE
+
+XLARGE
+XXLARGE*h
+Uploaded
+ALL_TIME	
+TODAY
+	THIS_WEEK
+
+THIS_MONTH
+LAST_3_MONTHS
+LAST_6_MONTHS*6
+Orientation
+PORTRAIT
+	LANDSCAPE
+
+SQUARE*Ö
+Source	
+OTHER 
+CONTIDIO	
+GETTY
+SHUTTERSTOCK
+
+ISTOCK
+
+THINKSTOCK
+
+ADOBESTOCK
+SHUTTERSTOCK_CONTIDIO*M
+VideoFormat
+HD
+FULL_HD
+
+FOUR_K
+EIGHT_K
+OTHER_FORMAT*K
+VideoAspectRatio
+FOUR_TO_THREE
+SIXTEEN_TO_NINE
+OTHER_RATIO*2
+Duration	
+SHORT
+MEDIUM_LENGTH
+LONG*Ä
+	PageCount
+ZERO_OR_ONE_PAGE
+TWO_TO_FIVE_PAGES
+SIX_TO_TEN_PAGES
+ELEVEN_TO_FIFTY_PAGES
+ABOVE_FIFTY_PAGES*é
+NotificationState
+NS_DECISION_REQUIRED
+NS_ACTION_REQUIRED
+NS_FEEDBACK
+NS_INFORMATIONAL
+NS_DISMISSED
+
+NS_WARNING*º
+NotificationType
+ACCESS_REQUEST_INITIATED
+ACCESS_REQUEST_ACCEPTED
+ACCESS_REQUEST_REJECTED#
+ACCESS_REQUEST_FINALLY_REJECTED$
+ SHOPPING_CART_SUBMITTED_TO_BRAND&
+"SHOPPING_CART_ACQUISITION_REJECTED'
+#SHOPPING_CART_ACQUISITION_FULFILLED)
+%CREDIT_BALANCE_PREPAID_CHARGE_STARTED4
+0CREDIT_BALANCE_PREPAID_CHARGE_PAID_AND_FULFILLED	7
+3CREDIT_BALANCE_INSTANT_CHARGE_STARTED_AND_FULFILLED
+<
+8CREDIT_BALANCE_INSTANT_CHARGE_STARTED_PAID_AND_FULFILLED&
+"CREDIT_BALANCE_INSTANT_CHARGE_PAID
+CREDIT_BALANCE_PAID_OUT'
+#CREDIT_BALANCE_FEE_STARTED_AND_PAID
+PUBLISH_REQUEST_INITIATED
+PUBLISH_REQUEST_ACCEPTED
+PUBLISH_REQUEST_REJECTED
+LICENSE_REQUEST_INITIATED
+LICENSE_REQUEST_ACCEPTED
+LICENSE_REQUEST_REJECTED$
+ LICENSE_REQUEST_FINALLY_REJECTED&
+"PURCHASE_CREDITS_REQUEST_INITIATED&
+"PURCHASE_CREDITS_REQUEST_FULFILLED%
+!PURCHASE_CREDITS_REQUEST_REJECTED%
+!PURCHASE_CREDITS_REQUEST_ACCEPTED
+ENTITY_CREATED
+ENTITY_CHANGED$
+ ENTITY_READ_BRAND_ACCESS_GRANTED'
+#END_USER_GROUP_BRAND_ACCESS_GRANTED)
+%ENTITY_READ_INDIVIDUAL_ACCESS_GRANTED,
+(END_USER_GROUP_INDIVIDUAL_ACCESS_GRANTED.
+*ADMIN_USER_GROUP_INDIVIDUAL_ACCESS_GRANTED ,
+(ENTITY_READ_INDIVIDUAL_ACCESS_INVITATION!/
++END_USER_GROUP_INDIVIDUAL_ACCESS_INVITATION"1
+-ADMIN_USER_GROUP_INDIVIDUAL_ACCESS_INVITATION#"
+UPGRADE_PLAN_REQUEST_INITIATED$!
+UPGRADE_PLAN_REQUEST_ACCEPTED%!
+UPGRADE_PLAN_REQUEST_REJECTED&
+JOIN_REQUEST_INITIATED'
+JOIN_REQUEST_ACCEPTED(
+JOIN_REQUEST_REJECTED)!
+JOIN_REQUEST_FINALLY_REJECTED*
+CREDIT_BALANCE_FEE_STARTED+
+CREDIT_BALANCE_FEE_PAID,
+APPROVAL_REQUEST_INITIATED-
+APPROVAL_REQUEST_ACCEPTED.
+APPROVAL_REQUEST_REJECTED/5
+1EXTERNAL_CONTENT_PROVIDER_PRODUCT_NO_MORE_WARNING01
+-EXTERNAL_CONTENT_PROVIDER_PRODUCT_NEW_WARNING1*W
+BrandPlanBrandType
+BPBT_CUSTOM
+BPBT_CONTENT_PUBLISHER
+BPBT_PROCUREMENT*v
+ExternalContentProvider
+	ECP_GETTY
+ECP_SHUTTERSTOCK
+
+ECP_ISTOCK
+ECP_THINKSTOCK
+ECP_ADOBESTOCK*s
+ExternalContentProviderState
+ECPS_CREATED
+
+ECPS_SETUP
+ECPS_ACTIVE
+ECPS_EXPIRED
+
+ECPS_ERROR*\
+ExternalPricingModel
+EPM_NO_PRICE
+EPM_EXTERNAL_CREDITS
+EPM_EUR
+EPM_USD*å£
+BackendErrorCode
+UNKNOWN 
+INSUFFICIENT_PRIVILEGES
+INVALID_CREDENTIALS
+WOULD_CAUSE_SELF_LOCKOUT#
+WOULD_CAUSE_CIRCULAR_DEPENDENCY(
+$SYSTEM_GENERATED_CHANGE_NOT_POSSIBLE
+DELETE_CONFIRMATION_MISSING*
+&TRASH_DELETE_RESTORE_ONLY_ON_TOP_LEVEL
+OPTIMISTIC_LOCKING_FAILED
+TEMPORARY_UNAVAILABLE	
+	WRONG_API
+
+UUID_INVALID!
+SYSTEM_VALUE_USE_NOT_POSSIBLE
+BRAND_UUID_MISSING
+BRAND_UUID_NOT_ALLOWED
+ACCOUNT_IS_NOT_APPROVED
+RECAPTCHA_INVALID
+RECAPTCHA_VALIDATION_ISSUE
+BRAND_UUID_INVALID
+ENTITY_EXTERNALLY_MANAGED
+ENTITY_TYPE_INVALIDË
+ENTITY_NOT_PUBLISHEDÈ
+ENTITY_TRASHEDÍ
+ENTITY_STILL_IN_USEÎ
+ENTITY_NOT_FOUNDÏ
+ENTITY_ALREADY_EXISTSÌ
+ENTITY_ALREADY_DELETEDÓ
+ASSET_TYPE_INVALIDÃ$
+ANONYMOUS_DOWNLOAD_NOT_POSSIBLE˛'
+"ANONYMOUS_DOWNLOAD_LICENSE_MISSINGˇ-
+(ANONYMOUS_DOWNLOAD_LICENSE_NOT_AVAILABLEÄ	'
+"ANONYMOUS_DOWNLOAD_LICENSE_INVALIDÅ	
+TAG_ALREADY_EXISTS–
+TAG_NOT_CONFIRMED—
+TAG_NOT_FOUND“
+USER_ALREADY_EXISTSƒ
+USER_NOT_FOUND≈
+USER_ALREADY_DISABLED∆
+USER_ALREADY_ENABLED«
+ACCESS_REQUEST_NOT_FOUND®"
+ACCESS_REQUEST_ALREADY_EXISTS©.
+)ACCESS_REQUEST_PREREQUISITE_NOT_SATISFIED™$
+ACCESS_REQUEST_ALREADY_ACCEPTED´$
+ACCESS_REQUEST_ALREADY_REJECTED¨,
+'ACCESS_REQUEST_ENTITY_REFERENCE_MISSING≠3
+.ACCESS_REQUEST_READ_PERMISSION_ALREADY_PRESENTÆ+
+&ACCESS_REQUEST_ALREADY_MEMBER_OF_GROUPØ8
+3ACCESS_REQUEST_WILL_NOT_GIVE_ADDITIONAL_PERMISSIONS∞/
+*ACCESS_REQUEST_APPLICATION_MESSAGE_MISSING±
+NOTIFICATION_NOT_FOUNDå 
+NOTIFICATION_ALREADY_EXISTSç
+COLLECTED_ENTITY_NOT_FOUND$
+COLLECTED_ENTITY_ALREADY_EXISTSÒ#
+COLLECTED_ENTITY_IS_OWN_ENTITYÚ/
+*COLLECTED_ENTITY_ONLY_JOB_OR_ASSET_ALLOWEDÛ(
+#COLLECTED_ENTITY_ASSET_TYPE_INVALIDÙ+
+&COLLECTED_ENTITY_LICENSE_NOT_AVAILABLEı)
+$COLLECTED_ENTITY_LICENSE_NOT_ALLOWEDˆ*
+%COLLECTED_ENTITY_TARGET_BRAND_INVALID˜9
+4COLLECTED_ENTITY_ONLY_PARTICIPATION_OR_ASSET_ALLOWED¯%
+ COLLECTED_ENTITY_LICENSE_MISSING˘;
+6COLLECTED_ENTITY_NO_LICENSE_FOR_PARTICIPATIONS_ALLOWED˙9
+4COLLECTED_ENTITY_PARTICIPATION_IS_NO_JOB_ISSUER_COPY˚1
+,COLLECTED_ENTITY_PARTICIPATION_STATE_INVALID¸1
+,COLLECTED_ENTITY_NO_LICENSE_FOR_JOBS_ALLOWED˝(
+#COLLECTED_ENTITY_JOB_ALREADY_CLOSED˛3
+.COLLECTED_ENTITY_WAS_ACQUIRED_IN_THE_MEANWHILEˇ0
++COLLECTED_ENTITY_PREVIEW_BINARIES_NOT_READYÄ*
+%COLLECTED_ENTITY_LICENSE_NOT_RELEASEDÅ
+SHOPPING_CART_NOT_FOUND‘!
+SHOPPING_CART_ALREADY_EXISTS’
+SHOPPING_CART_NOT_OPEN÷ 
+SHOPPING_CART_NOT_SUBMITTED◊'
+"SHOPPING_CART_NOT_READY_FOR_SUBMITÿ
+SHOPPING_CART_IS_EMPTYŸ
+CREDIT_BALANCE_NOT_FOUND∏"
+CREDIT_BALANCE_ALREADY_EXISTSπ)
+$CREDIT_BALANCE_CHANGE_AMOUNT_INVALID∫8
+3CREDIT_BALANCE_CHANGE_TRANSACTION_TYPE_NOT_POSSIBLEª&
+!CREDIT_BALANCE_NOT_ENOUGH_CREDITSº-
+(CREDIT_BALANCE_MONETARY_CURRENCY_MISSINGΩ3
+.CREDIT_BALANCE_MONETARY_PAYMENT_METHOD_MISSINGæ7
+2CREDIT_BALANCE_MONETARY_PAYMENT_METHOD_NOT_ALLOWEDø2
+-CREDIT_BALANCE_MONETARY_TRANSFER_UUID_MISSING¿6
+1CREDIT_BALANCE_MONETARY_TRANSFER_UUID_NOT_ALLOWED¡2
+-CREDIT_BALANCE_MONETARY_TRANSFER_UUID_INVALID¬A
+<CREDIT_BALANCE_ADDITIONAL_MONETARY_TRANSFER_UUID_NOT_ALLOWED√%
+ CREDIT_BALANCE_BRAND_NOT_TRUSTEDƒ+
+&CREDIT_BALANCE_POSITIVE_LIMIT_EXCEEDED≈.
+)CREDIT_BALANCE_TRANSACTION_LIMIT_EXCEEDED∆9
+4CREDIT_BALANCE_INSTANT_CHARGE_TRUSTED_LIMIT_EXCEEDED«!
+CREDIT_TRANSACTION_NOT_FOUNDú&
+!CREDIT_TRANSACTION_ALREADY_EXISTSù$
+CREDIT_TRANSACTION_TYPE_INVALIDû'
+"CREDIT_TRANSACTION_IS_ALREADY_PAIDü"
+USER_FOLLOW_SETTING_NOT_FOUNDÄ'
+"USER_FOLLOW_SETTING_ALREADY_EXISTSÅ
+PUBLISH_REQUEST_NOT_FOUND‰#
+PUBLISH_REQUEST_ALREADY_EXISTSÂ/
+*PUBLISH_REQUEST_PREREQUISITE_NOT_SATISFIEDÊ%
+ PUBLISH_REQUEST_ALREADY_ACCEPTEDÁ%
+ PUBLISH_REQUEST_ALREADY_REJECTEDË-
+(PUBLISH_REQUEST_ENTITY_REFERENCE_MISSINGÈ*
+%PUBLISH_REQUEST_NO_CHANGES_TO_PUBLISHÍ*
+%PUBLISH_REQUEST_SELF_PUBLISH_POSSIBLEÎ
+LICENSE_REQUEST_NOT_FOUND»#
+LICENSE_REQUEST_ALREADY_EXISTS…'
+"LICENSE_REQUEST_CANNOT_BE_LICENSED %
+ LICENSE_REQUEST_ALREADY_ACCEPTEDÀ%
+ LICENSE_REQUEST_ALREADY_REJECTEDÃ-
+(LICENSE_REQUEST_ENTITY_REFERENCE_MISSINGÕ,
+'LICENSE_REQUEST_LICENSE_ALREADY_PRESENTŒ0
++LICENSE_REQUEST_APPLICATION_MESSAGE_INVALIDœ
+PARENT_REQUIRED¨&
+!CROSS_BRAND_RELATION_NOT_POSSIBLE≠
+TOO_MANY_PARENTSÆ
+NO_PARENTS_POSSIBLEØ)
+$CANNOT_REMOVE_PARENTS_WHILE_CREATING∞"
+PARENT_CHILD_RELATION_INVALID±)
+$PARENT_CHILD_RELATION_ALREADY_EXISTS≤$
+PARENT_CHILD_RELATION_NOT_FOUND≥
+TOO_MANY_CHILDS¥'
+"PURCHASE_CREDITS_REQUEST_NOT_FOUNDê.
+)PURCHASE_CREDITS_REQUEST_ALREADY_ACCEPTEDë.
+)PURCHASE_CREDITS_REQUEST_ALREADY_REJECTEDí4
+/PURCHASE_CREDITS_REQUEST_SELF_PURCHASE_POSSIBLEì,
+'PURCHASE_CREDITS_REQUEST_ALREADY_EXISTSî5
+0PURCHASE_CREDITS_REQUEST_REQUIRED_AMOUNT_INVALIDï6
+1PURCHASE_CREDITS_REQUEST_AMOUNT_ALREADY_AVAILABLEñ8
+3PURCHASE_CREDITS_REQUEST_TRANSACTION_LIMIT_EXCEEDEDó+
+&PURCHASE_CREDITS_REQUEST_NOT_FULFILLEDò
+PLAN_NOT_FOUNDÙ
+BRAND_PLAN_NOT_FOUNDÿ
+BRAND_PLAN_ALREADY_EXISTSŸ(
+#BRAND_PLAN_INCLUDED_BRANDS_EXCEEDED⁄/
+*BRAND_PLAN_INCLUDED_LISTED_ASSETS_EXCEEDED€>
+9BRAND_PLAN_CONNECT_EXTERNAL_CONTENT_PROVIDERS_NOT_ALLOWED‹(
+#BRAND_PLAN_JOB_SERVICES_NOT_ALLOWED›,
+'BRAND_PLAN_CUSTOM_SUBDOMAIN_NOT_ALLOWEDﬁ
+BRAND_TRANSACTIONS_LOCKEDº
+BRAND_UPLOAD_LOCKEDΩ4
+/BRAND_CONNECT_EXTERNAL_CONTENT_PROVIDERS_LOCKEDæ
+BRAND_JOB_SERVICES_LOCKEDø&
+!BRAND_LISTED_ASSET_QUOTA_EXCEEDED¿#
+BRAND_JOB_SERVICES_NOT_IN_PLAN¡9
+4BRAND_CONNECT_EXTERNAL_CONTENT_PROVIDERS_NOT_IN_PLAN¬'
+"BRAND_CUSTOM_WATERMARK_NOT_IN_PLAN√"
+BRAND_CUSTOM_SUBDOMAIN_LOCKEDƒ'
+"BRAND_CUSTOM_SUBDOMAIN_NOT_IN_PLAN≈#
+BRAND_CHECK_OUT_CONTENT_LOCKED∆(
+#BRAND_CHECK_OUT_CONTENT_NOT_IN_PLAN«
+BRAND_REPORTING_LOCKED» 
+BRAND_REPORTING_NOT_IN_PLAN…!
+BRAND_PUBLISH_CONTENT_LOCKED &
+!BRAND_PUBLISH_CONTENT_NOT_IN_PLANÀ
+BRAND_VERSIONING_LOCKEDÃ!
+BRAND_VERSIONING_NOT_IN_PLANÕ.
+)BRAND_MULTI_LEVEL_ADMIN_MANAGEMENT_LOCKEDŒ3
+.BRAND_MULTI_LEVEL_ADMIN_MANAGEMENT_NOT_IN_PLANœ*
+%BRAND_EXTERNAL_USER_MANAGEMENT_LOCKED–/
+*BRAND_EXTERNAL_USER_MANAGEMENT_NOT_IN_PLAN—6
+1BRAND_MULTI_LEVEL_EXTERNAL_USER_MANAGEMENT_LOCKED“;
+6BRAND_MULTI_LEVEL_EXTERNAL_USER_MANAGEMENT_NOT_IN_PLAN”
+RESTORE_ENTITY_NOT_FOUND†
+RESTORE_PARENTS_NOT_FOUND°#
+UPGRADE_PLAN_REQUEST_NOT_FOUNDÑ (
+#UPGRADE_PLAN_REQUEST_ALREADY_EXISTSÖ *
+%UPGRADE_PLAN_REQUEST_ALREADY_ACCEPTEDÜ *
+%UPGRADE_PLAN_REQUEST_ALREADY_REJECTEDá &
+!UPGRADE_PLAN_REQUEST_PLAN_INVALIDà 8
+3UPGRADE_PLAN_REQUEST_ALREADY_ON_SAME_OR_BETTER_PLANâ ,
+'UPGRADE_PLAN_REQUEST_PROMO_CODE_INVALIDä 
+JOIN_REQUEST_NOT_FOUNDË  
+JOIN_REQUEST_ALREADY_EXISTSÈ ,
+'JOIN_REQUEST_PREREQUISITE_NOT_SATISFIEDÍ "
+JOIN_REQUEST_ALREADY_ACCEPTEDÎ "
+JOIN_REQUEST_ALREADY_REJECTEDÏ )
+$JOIN_REQUEST_ALREADY_MEMBER_OF_BRANDÌ )
+$JOIN_REQUEST_ALREADY_MEMBER_OF_GROUPÓ 3
+.JOIN_REQUEST_USER_GROUP_IS_NO_ADMIN_USER_GROUPÔ 
+APPROVAL_REQUEST_NOT_FOUNDÃ!$
+APPROVAL_REQUEST_ALREADY_EXISTSÕ!&
+!APPROVAL_REQUEST_ALREADY_ACCEPTEDŒ!&
+!APPROVAL_REQUEST_ALREADY_REJECTEDœ!&
+!APPROVAL_REQUEST_ALREADY_APPROVED–! 
+FOLDER_LAYOUT_MODEL_MISSING∞"
+ASSET_LAYOUT_MODEL_MISSINGî# 
+ASSET_CANONICAL_URL_INVALIDï#$
+PUBLISH_CONDITION_MODEL_MISSING¯#A
+<PUBLISH_CONDITION_FROM_TIMESTAMP_MUST_BE_BEFORE_TO_TIMESTAMP˘#@
+;PUBLISH_CONDITION_TO_TIMESTAMP_MUST_BE_AFTER_FROM_TIMESTAMP˙#2
+-PUBLISH_CONDITION_NOT_POSSIBLE_ON_BRAND_LEVEL˚#
+BRAND_NOT_FOUNDà'
+FOLDER_NOT_FOUNDâ'
+ASSET_NOT_FOUNDä'
+TRASH_NOT_FOUNDã'
+JOBS_NOT_FOUNDå'
+JOB_NOT_FOUNDç'
+PARTICIPATIONS_NOT_FOUNDé'
+PARTICIPATION_NOT_FOUNDè'
+PROJECTS_NOT_FOUNDê'
+PROJECT_NOT_FOUNDë''
+"USER_GROUP_CANNOT_DELETE_LAST_USER.
+USER_GROUP_UUID_INVALIDÒ.
+USER_GROUP_LOCALE_MISSINGÚ.
+USER_GROUP_UUID_IN_USEÛ.#
+USER_GROUP_USER_ALREADY_EXISTSÙ.
+USER_GROUP_USER_NOT_FOUNDı.
+USER_GROUP_NAME_INVALIDˆ.
+USER_GROUP_NOT_FOUND˜.
+USER_GROUP_ALREADY_EXISTS¯.%
+ USER_GROUP_STILL_IN_USE_BY_USERS˘.(
+#USER_GROUP_STILL_IN_USE_BY_ENTITIES˚.+
+&USER_GROUP_STILL_IN_USE_BY_USER_GROUPS¸.-
+(USER_GROUP_DOES_NOT_SUPPORT_DEPENDENCIES˝.
+USER_GROUP_ALREADY_DELETED˛.
+USER_GROUP_NAME_TOO_LONGˇ.7
+2USER_GROUP_DOES_NOT_SUPPORT_REQUIRES_MANUAL_COMMITÄ/=
+8USER_GROUP_DOES_NOT_SUPPORT_REQUIRES_APPLICATION_MESSAGEÅ/E
+@USER_GROUP_APPLICATION_MESSAGES_ONLY_POSSIBLE_FOR_MANUAL_COMMITSÇ/,
+'USER_GROUP_DOES_NOT_SUPPORT_COST_CENTERÉ/'
+"USER_GROUP_COST_CENTER_ID_TOO_LONGÑ/
+USER_UUID_INVALID‰2
+USER_EMAIL_MISSINGÂ2
+USER_EMAIL_INVALIDÊ2
+TARGET_UUID_INVALID»3
+CONTACT_FORM_EMAIL_MISSING¨4
+CONTACT_FORM_EMAIL_INVALID≠4%
+ CONTACT_FORM_EMAIL_NOT_NECESSARYÆ4#
+CONTACT_FORM_SUBJECT_TOO_SHORTØ4"
+CONTACT_FORM_SUBJECT_TOO_LONG∞4!
+CONTACT_FORM_SUBJECT_INVALID±4#
+CONTACT_FORM_MESSAGE_TOO_SHORT≤4"
+CONTACT_FORM_MESSAGE_TOO_LONG≥4!
+CONTACT_FORM_MESSAGE_INVALID¥4(
+#CONTACT_FORM_NO_RECIPIENT_AVAILABLEµ4*
+%ADMIN_USER_GROUP_ACCESS_FLAGS_INVALIDÿ6"
+BINARY_CONTAINER_NAME_INVALID®F
+BINARY_FILE_NAME_INVALID©F"
+BINARY_FILE_EXTENSION_INVALID™F
+COMPANY_INFO_MISSINGêN&
+!COMPANY_INFO_COMPANY_NAME_MISSINGëN3
+.COMPANY_INFO_CONTACT_PERSON_GIVEN_NAME_MISSINGíN4
+/COMPANY_INFO_CONTACT_PERSON_FAMILY_NAME_MISSINGìN2
+-COMPANY_INFO_CONTACT_PERSON_JOB_TITLE_MISSINGîN 
+COMPANY_INFO_STREET_MISSINGïN%
+ COMPANY_INFO_POSTAL_CODE_MISSINGñN
+COMPANY_INFO_CITY_MISSINGóN&
+!COMPANY_INFO_COUNTRY_CODE_MISSINGòN&
+!COMPANY_INFO_COUNTRY_CODE_INVALIDôN
+COMPANY_INFO_EMAIL_MISSINGöN
+COMPANY_INFO_EMAIL_INVALIDõN!
+COMPANY_INFO_WEBSITE_INVALIDúN*
+%COMPANY_INFO_PUBLICATION_NAME_MISSINGùN
+BILLING_INFO_MISSINGäP&
+!BILLING_INFO_COMPANY_NAME_MISSINGãP3
+.BILLING_INFO_CONTACT_PERSON_GIVEN_NAME_MISSINGåP4
+/BILLING_INFO_CONTACT_PERSON_FAMILY_NAME_MISSINGçP2
+-BILLING_INFO_CONTACT_PERSON_JOB_TITLE_MISSINGéP 
+BILLING_INFO_STREET_MISSINGèP%
+ BILLING_INFO_POSTAL_CODE_MISSINGêP
+BILLING_INFO_CITY_MISSINGëP&
+!BILLING_INFO_COUNTRY_CODE_MISSINGíP&
+!BILLING_INFO_COUNTRY_CODE_INVALIDìP
+BILLING_INFO_EMAIL_MISSINGîP
+BILLING_INFO_EMAIL_INVALIDïP!
+BILLING_INFO_WEBSITE_INVALIDñP
+USER_TYPE_MISSINGÑR
+COUNTRY_NOT_FOUND¯U
+TRANSLATION_TEXT_INVALID‡]
+WORKING_SET_LOCALE_MISSING»e
+WORKING_SET_NAME_MISSING…e$
+WORKING_SET_DESCRIPTION_MISSING e
+WORKING_SET_BINARY_MISSINGÀe
+WORKING_SET_MISSINGÃe&
+!WORKING_SET_ENTITY_LOCALE_MISSINGÕe*
+%WORKING_SET_CONTACT_INFO_NAME_MISSINGŒe,
+'WORKING_SET_CONTACT_INFO_STREET_MISSINGœe1
+,WORKING_SET_CONTACT_INFO_POSTAL_CODE_MISSING–e*
+%WORKING_SET_CONTACT_INFO_CITY_MISSING—e2
+-WORKING_SET_CONTACT_INFO_COUNTRY_CODE_MISSING“e2
+-WORKING_SET_CONTACT_INFO_COUNTRY_CODE_INVALID”e+
+&WORKING_SET_CONTACT_INFO_EMAIL_MISSING‘e+
+&WORKING_SET_CONTACT_INFO_EMAIL_INVALID’e-
+(WORKING_SET_CONTACT_INFO_WEBSITE_INVALID÷e
+WORKING_SET_NAME_TOO_LONG◊e%
+ WORKING_SET_DESCRIPTION_TOO_LONGÿe(
+#WORKING_SET_CONTEXT_TEXT_1_TOO_LONGŸe)
+$WORKING_SET_BINARY_SET_NAME_TOO_LONG⁄e#
+WORKING_SET_BINARY_SET_MISSING€e%
+ WORKING_SET_ASSET_BINARY_MISSING‹e
+WORKING_SET_LOGO_MISSING›e)
+$WORKING_SET_BRAND_BACKGROUND_MISSINGﬁe.
+)WORKING_SET_BRAND_BACKGROUND_TALL_MISSINGﬂe*
+%WORKING_SET_FOLDER_BACKGROUND_MISSING‡e/
+*WORKING_SET_FOLDER_BACKGROUND_TALL_MISSING·e,
+'WORKING_SET_FOLDER_LIST_PREVIEW_MISSING‚e
+FEATURE_PRIORITY_INVALID∞m
+BRAND_TYPE_INVALIDòu#
+BRAND_CUSTOM_SUBDOMAIN_INVALIDíw*
+%BRAND_CUSTOM_SUBDOMAIN_ALREADY_IN_USEìw
+CONTENT_CATEGORY_INVALIDåy
+ORDER_INVALIDÄ}
+COLOR_INVALIDÅ}
+BRAND_LINK_NAME_INVALIDÙÄ
+BRAND_LINK_LINK_INVALIDıÄ
+BRAND_LINK_NAME_TOO_LONGˆÄ+
+%READ_ACCESS_MODEL_CHANGE_NOT_POSSIBLEËÑ$
+READ_ACCESS_MODEL_NOT_POSSIBLEÈÑ
+READ_ACCESS_MODEL_MISSINGÍÑ,
+&WRITE_ACCESS_MODEL_CHANGE_NOT_POSSIBLE–å 
+WRITE_ACCESS_MODEL_MISSING—å&
+ PUBLISH_FLAG_CHANGE_NOT_POSSIBLE∏î
+LOCALE_NOT_SUPPORTED†ú
+BRAND_SET_MISSINGà§
+JOB_SET_MISSINGâ§
+PROJECT_SET_MISSINGä§
+DELETE_SET_INVALID´
+RESTORE_SET_INVALIDÒ´
+CHANGE_SET_INVALIDÚ´
+PARTICIPATION_SET_INVALIDÛ´
+CLOSE_SET_INVALIDÙ´
+SUBMIT_SET_INVALIDı´
+REJECT_SET_INVALIDˆ´
+ACCEPT_SET_INVALID˜´!
+HISTORY_ENTRY_GROUP_INVALID¯´
+APPLICATION_SET_INVALID˘´
+CREATE_SET_INVALID˙´
+COPY_SET_INVALID˚´
+MOVE_SET_INVALID¸´
+ACQUIRE_SET_INVALID˝´
+SELECT_SET_INVALID˛´
+PAID_SET_INVALIDˇ´
+COMPLETED_SET_INVALIDÄ¨
+PROGRESS_SET_INVALIDÅ¨
+SEND_SET_INVALIDÇ¨
+MERGE_SET_INVALIDÉ¨
+SETUP_SET_INVALIDÑ¨
+CONFIGURE_SET_INVALIDÖ¨
+REFRESH_SET_INVALIDÜ¨
+IMPORT_SET_INVALIDá¨
+BINARY_MIME_TYPE_INVALIDÿ≥
+BINARY_TYPE_INVALIDŸ≥
+BINARY_METATAGS_MISSING⁄≥
+BINARY_FILE_MISSING€≥"
+BINARY_TOO_MANY_BINARY_FILES‹≥
+BINARY_RESOLUTION_TOO_LOW›≥
+BINARY_LENGTH_TOO_LOWﬁ≥(
+"BINARY_INVALID_PRESET_CROP_INVALIDﬂ≥8
+2BINARY_INVALID_PRESET_THUMBNAIL_PERCENTAGE_INVALID‡≥2
+,BINARY_INVALID_PRESET_THUMBNAIL_NOT_POSSIBLE·≥(
+"BINARY_INVALID_PRESET_PREVIEW_PAGE‚≥
+BINARY_PURPOSE_INVALID„≥)
+#BINARY_CANNOT_REMOVE_WHILE_CREATING‰≥
+BINARY_ANALYZATION_ISSUEÂ≥
+BINARY_NAME_INVALIDÊ≥
+BINARY_EMPTYÁ≥3
+-BINARY_METADATA_TO_FILES_COUNT_DOES_NOT_MATCHË≥$
+BINARY_UPDATE_BINARY_NOT_FOUNDÈ≥
+BINARY_WIDTH_NOT_EVENÍ≥
+BINARY_HEIGHT_NOT_EVENÎ≥6
+0BINARY_INVALID_PRESET_LIMIT_PREVIEW_NOT_POSSIBLEÏ≥
+BINARY_TOO_MANY_PAGESÌ≥%
+BINARY_IMAGE_FILE_SIZE_EXCEEDEDÓ≥%
+BINARY_VIDEO_FILE_SIZE_EXCEEDEDÔ≥%
+BINARY_AUDIO_FILE_SIZE_EXCEEDED≥(
+"BINARY_DOCUMENT_FILE_SIZE_EXCEEDEDÒ≥E
+?BINARY_INVALID_PRESET_NUMBER_OF_PREVIEW_PARAGRAPHS_NOT_POSSIBLEÚ≥1
++BINARY_INVALID_NUMBER_OF_PREVIEW_PARAGRAPHSÛ≥
+JOB_HAS_PARTICIPATIONS¿ª
+JOB_ALREADY_ENDED¡ª
+JOB_ALREADY_CLOSED¬ª
+JOB_RUNNING√ª
+JOB_TYPE_INVALIDƒª
+JOB_LICENSE_INVALID≈ª
+JOB_END_TIMESTAMP_INVALID∆ª
+JOB_REWARD_MISSING«ª
+JOB_REWARD_NOT_ALLOWED»ª
+JOB_REWARD_INVALID…ª
+JOB_PRICE_INVALID ª
+JOB_PRICING_TYPE_INVALIDÀª$
+JOB_PARTICIPATION_TYPE_INVALIDÃª
+JOB_CLOSE_REASON_INVALIDÕª"
+JOB_REJECTION_REASON_INVALIDŒª
+JOB_NO_HANDIN_ASSETSœª$
+JOB_PARENT_CHANGE_NOT_POSSIBLE–ª
+JOB_CANNOT_BE_CLOSED—ª@
+:JOB_CANNOT_BE_PUBLISHED_BECAUSE_JOB_ASSET_IS_NOT_COMMITTED“ª
+JOBS_CHANGE_NOT_POSSIBLEêÀ(
+"PARTICIPATIONS_CHANGE_NOT_POSSIBLE¯“
+PARTICIPATION_READ_ONLY‡⁄ 
+PARTICIPATION_NOT_ACQUIRED·⁄!
+PARTICIPATION_STATE_INVALID‚⁄/
+)PARTICIPATION_PRICE_DEFINED_BY_JOB_ISSUER„⁄(
+"PARTICIPATION_PRICE_ALREADY_AGREED‰⁄!
+PARTICIPATION_PRICE_INVALIDÂ⁄ 
+PARTICIPATION_NOT_POSSIBLEÊ⁄!
+PARTICIPATION_NOT_CONFIRMEDÁ⁄.
+(PARTICIPATION_PREVIEW_BINARIES_NOT_READYË⁄
+APPLICATION_STATE_INVALID‘ﬁ
+APPLICATION_PRICE_INVALID’ﬁ
+APPLICATION_NOT_POSSIBLE÷ﬁ
+TAG_TEXT_AMBIGUOUS»‚
+TAG_TRANSLATION_MISSING…‚$
+ACQUISITION_NOT_ENOUGH_CREDITSòÚ"
+PROJECTS_CHANGE_NOT_POSSIBLEÄ˙
+PROJECT_CANNOT_BE_DELETEDËÅ
+PROJECT_NOT_OPENÈÅ
+PROJECT_NAME_MISSINGÍÅ!
+PROJECT_CANNOT_BE_COMMITTEDÎÅ)
+#LICENSING_MODEL_CHANGE_NOT_POSSIBLE–â
+LICENSING_MODEL_MISSING—â
+LICENSE_UUID_INVALID∏ë
+LICENSE_LOCALE_MISSINGπë
+LICENSE_UUID_IN_USE∫ë
+LICENSE_NAME_INVALIDªë
+LICENSE_TYPE_MISSINGºë!
+LICENSE_TYPE_OF_USE_MISSINGΩë
+LICENSE_NOT_ALLOWEDæë"
+LICENSE_TERMS_OF_USE_INVALIDøë2
+,LICENSE_RESTRICTED_PUBLISHING_TOPICS_INVALID¿ë+
+%LICENSE_RESTRICTED_INDUSTRIES_INVALID¡ë(
+"LICENSE_RESTRICTED_GEO_USE_INVALID¬ë
+LICENSE_NOT_FOUND√ë
+LICENSE_ALREADY_EXISTSƒë!
+LICENSE_IMAGE_PRICE_INVALID≈ë!
+LICENSE_VIDEO_PRICE_INVALID∆ë!
+LICENSE_AUDIO_PRICE_INVALID«ë$
+LICENSE_DOCUMENT_PRICE_INVALID»ë+
+%LICENSE_IMAGE_TRANSACTION_FEE_INVALID…ë+
+%LICENSE_VIDEO_TRANSACTION_FEE_INVALID ë+
+%LICENSE_AUDIO_TRANSACTION_FEE_INVALIDÀë.
+(LICENSE_DOCUMENT_TRANSACTION_FEE_INVALIDÃë&
+ LICENSE_STILL_IN_USE_BY_ENTITIESÕë
+LICENSE_ALREADY_DELETEDŒë*
+$LICENSE_EXCLUSIVITY_TYPE_NOT_ALLOWEDœë
+LICENSE_NAME_TOO_LONG–ë
+LICENSE_SUMMARY_TOO_LONG—ë
+ECP_ALREADY_SETUP†ô
+ECP_ACCESS_TOKEN_MISSING°ô
+ECP_ACCESS_TOKEN_INVALID¢ô
+ECP_REFRESH_TOKEN_MISSING£ô
+ECP_REFRESH_TOKEN_INVALID§ô
+ECP_STATE_INVALID•ô
+ECP_ACCESS_TOKEN_EXPIRED¶ô
+ECP_REFRESH_TOKEN_EXPIREDßô
+ECP_NOT_FOUND®ô
+ECP_ALREADY_EXISTS©ô
+ECP_USER_NAME_MISSING™ô
+ECP_USER_NAME_INVALID´ô
+ECP_PASSWORD_MISSING¨ô
+ECP_PASSWORD_INVALID≠ô
+ECP_CREDENTIALS_INVALIDÆô
+ECP_VALIDATION_ISSUEØô
+ECP_CODE_MISSING∞ô
+ECP_CODE_INVALID±ô
+ECP_AUTHORIZATION_DENIED≤ô
+ECP_ACCOUNT_NOT_ELIGIBLE≥ô
+ECP_NOT_CONFIGURED¥ô"
+ECP_NOT_CORRECTLY_CONFIGUREDµô
+ECP_REFRESH_ISSUE∂ô
+ECP_SEARCH_ISSUE∑ô
+ECP_GET_ISSUE∏ô
+ECP_PROVIDER_INVALIDπô
+ECP_PRODUCT_NOT_FOUND∫ô1
++ECP_PRODUCT_WARNING_VALUE_DOWNLOADS_INVALIDªô:
+4ECP_PRODUCT_IMAGE_EXTERNAL_CREDIT_PRICE_FULL_INVALIDºô8
+2ECP_PRODUCT_VIDEO_EXTERNAL_CREDIT_PRICE_4K_INVALIDøô3
+-ECP_PRODUCT_IMAGE_MONETARY_PRICE_FULL_INVALIDΩô1
++ECP_PRODUCT_VIDEO_MONETARY_PRICE_4K_INVALID¿ô5
+/ECP_PRODUCT_AUDIO_EXTERNAL_CREDIT_PRICE_INVALID¬ô.
+(ECP_PRODUCT_AUDIO_MONETARY_PRICE_INVALID√ô8
+2ECP_PRODUCT_DOCUMENT_EXTERNAL_CREDIT_PRICE_INVALID≈ô1
++ECP_PRODUCT_DOCUMENT_MONETARY_PRICE_INVALID∆ô 
+ECP_PRODUCT_ALREADY_EXISTS»ô
+ECP_PRODUCT_INVALID…ô
+ECP_ID_INVALID ô
+ECP_GET_PRODUCT_ISSUEÀô
+ECP_NO_PRODUCTS_AVAILABLEÃô"
+ECP_PRODUCT_FORMAT_NOT_FOUNDÕô'
+!ECP_PRODUCT_FORMAT_ALREADY_EXISTSŒô
+ECP_GET_USER_ISSUEœô'
+!ECP_LICENSE_NOT_AVAILABLE_ANYMORE–ô$
+ECP_FULFILLMENT_DOWNLOAD_ISSUE—ô-
+'ECP_FULFILLMENT_DOWNLOAD_QUOTA_EXCEEDED“ô)
+#ECP_FULFILLMENT_AUTHORIZATION_ISSUE”ô#
+ECP_FULFILLMENT_GENERIC_ISSUE‘ô-
+'ECP_ACQUISITION_DOWNLOAD_QUOTA_EXCEEDED’ô,
+&ECP_ACQUISITION_CREDIT_BALANCE_TOO_LOW÷ô,
+&ECP_FULFILLMENT_CREDIT_BALANCE_TOO_LOW◊ô8
+2ECP_PRODUCT_VIDEO_EXTERNAL_CREDIT_PRICE_HD_INVALIDÿô8
+2ECP_PRODUCT_VIDEO_EXTERNAL_CREDIT_PRICE_SD_INVALIDŸô8
+2ECP_PRODUCT_VIDEO_EXTERNAL_CREDIT_PRICE_LR_INVALID⁄ô1
++ECP_PRODUCT_VIDEO_MONETARY_PRICE_HD_INVALID€ô1
++ECP_PRODUCT_VIDEO_MONETARY_PRICE_SD_INVALID‹ô1
++ECP_PRODUCT_VIDEO_MONETARY_PRICE_LR_INVALID›ô<
+6ECP_PRODUCT_IMAGE_EXTERNAL_CREDIT_PRICE_MEDIUM_INVALIDﬁô;
+5ECP_PRODUCT_IMAGE_EXTERNAL_CREDIT_PRICE_SMALL_INVALIDﬂô5
+/ECP_PRODUCT_IMAGE_MONETARY_PRICE_MEDIUM_INVALID‡ô4
+.ECP_PRODUCT_IMAGE_MONETARY_PRICE_SMALL_INVALID·ô;
+5ECP_ACQUISITION_NO_PURCHASE_POSSIBLE_THROUGH_CONTIDIO‚ô/
+)ECP_PRODUCT_WARNING_VALUE_CREDITS_INVALID„ô
+ECP_IMPORT_ISSUE‰ô
+ECP_GET_DOWNLOADS_ISSUEÂô(
+"ECP_COMPANY_DOWNLOADS_NOT_POSSIBLEÊô(
+"ECP_IMPORT_START_TIMESTAMP_INVALIDÁô&
+ ECP_IMPORT_END_TIMESTAMP_INVALIDËô=
+7ECP_IMPORT_START_TIMESTAMP_MUST_BE_BEFORE_END_TIMESTAMPÈô"
+ECP_IMPORT_IMPORT_ID_INVALIDÍô&
+ ECP_FULFILLMENT_REDOWNLOAD_ISSUEÎô$
+FULFILLMENT_NOTHING_TO_FULFILLà°
+TASK_INVALID–Ü
+TASK_NOT_SUPPORTED—Ü
+POSTPONE_EXECUTION“Ü
+STOP_EXECUTION”Ü
+QUERY_START_INDEX_INVALID‡‘
+QUERY_COUNT_INVALID·‘
+QUERY_ORDER_BY_INVALID‚‘#
+QUERY_ORDER_DIRECTION_INVALID„‘
+QUERY_TYPE_INVALID‰‘
+QUERY_LOCALE_INVALIDÂ‘
+QUERY_DIMENSION_INVALIDÊ‘
+QUERY_BINARY_TYPE_INVALIDÁ‘
+QUERY_UPLOADED_INVALIDË‘
+QUERY_ORIENTATION_INVALIDÈ‘ 
+QUERY_VIDEO_FORMAT_INVALIDÍ‘&
+ QUERY_VIDEO_ASPECT_RATIO_INVALIDÎ‘
+QUERY_DURATION_INVALIDÏ‘
+QUERY_PAGE_COUNT_INVALIDÌ‘
+QUERY_SOURCE_INVALIDÓ‘
+QUERY_LICENSE_ID_INVALIDÔ‘#
+QUERY_MULTI_PARENT_ID_INVALID‘
+QUERY_TERMS_INVALIDÒ‘!
+QUERY_PROJECT_STATE_INVALIDÚ‘+
+%QUERY_CREDIT_TRANSACTION_TYPE_INVALIDÛ‘*
+$QUERY_FROM_CREATED_TIMESTAMP_INVALIDÙ‘(
+"QUERY_TO_CREATED_TIMESTAMP_INVALIDı‘/
+)QUERY_FROM_LAST_UPDATED_TIMESTAMP_INVALIDˆ‘-
+'QUERY_TO_LAST_UPDATED_TIMESTAMP_INVALID˜‘&
+ QUERY_CREATED_TIMESTAMPS_INVALID¯‘+
+%QUERY_LAST_UPDATED_TIMESTAMPS_INVALID˘‘9
+3QUERY_CANNOT_FILTER_BY_DIFFERENT_TIMESTAMP_CRITERIA˙‘.
+(QUERY_AUTOCOMPLETED_ENTITY_TYPES_INVALID˚‘
+QUERY_JOB_TYPE_INVALID¸‘
+QUERY_JOB_STATE_INVALID˝‘'
+!QUERY_PARTICIPATION_STATE_INVALID˛‘%
+QUERY_NOTIFICATION_TYPE_INVALIDˇ‘&
+ QUERY_NOTIFICATION_STATE_INVALIDÄ’1
++QUERY_FROM_LAST_COMMITTED_TIMESTAMP_INVALIDÅ’/
+)QUERY_TO_LAST_COMMITTED_TIMESTAMP_INVALIDÇ’-
+'QUERY_LAST_COMMITTED_TIMESTAMPS_INVALIDÉ’$
+QUERY_CONTENT_CATEGORY_INVALIDÑ’$
+QUERY_PUBLISHING_STATE_INVALIDÖ’
+QUERY_ASSET_TYPE_INVALIDÜ’
+QUERY_BRAND_TYPE_INVALIDá’ 
+QUERY_REVIEW_STATE_INVALIDà’
+QUERY_INVALID«‹
+DOWNLOAD_NOT_AVAILABLE»‹
+SDK_IDENTIFIER_MISSING˛ˇ
+NOT_SUPPORTEDˇˇ
+GENERIC_ERRORÄÄ*˙
+ServerTaskType
+STT_UNKNOWN 
+STT_ENTITY_CHANGE%
+!STT_ENTITY_CHANGE_AFFECTS_SUBTREE
+STT_BINARY_CHANGE
+STT_TAG_CHANGE"
+STT_TAG_CHANGE_AFFECTS_SUBTREE
+STT_USER_CHANGE
+STT_FULFILL_ACQUISITION
+STT_PREPARE_DOWNLOADB*
+com.contidio.sdk.protoBMetadataProtocol

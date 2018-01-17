@@ -1,0 +1,4386 @@
+syntax = "proto2";
+
+package com.contidio.sdk.proto;
+
+option java_package = "com.contidio.sdk.proto";
+option java_outer_classname = "MetadataProtocol";
+
+// entity
+
+message Entity {		
+	required EntityType type = 1;
+	
+	required string uuid = 2;
+	
+	optional bool publishFlag = 3;
+	
+	optional WorkingSet committedSet = 4;		
+	optional WorkingSet workingSet = 5;
+
+	// 6 unused
+		
+	optional bool previewElementsAreReady = 7;
+	
+	optional PreviewSize previewSize = 8;			
+		
+	optional Tags tags = 9;
+	
+	optional Licensing licensing = 10;
+		
+	optional ReadAccess readAccess = 11;		
+	optional WriteAccess writeAccess = 12;			
+		
+	optional InheritedData resolvedInheritedData = 13;
+	optional InheritedData unresolvedInheritedData = 14;		
+	
+	repeated Entities entityPath = 15;
+	
+	optional bool deleted = 16;
+	
+	optional int64 version = 17;
+	
+	optional Brand brand = 18;
+	optional Folder folder = 19;
+	optional Asset asset = 20;
+	optional Trash trash = 21;
+	optional Job job = 22;	
+	optional Participation participation = 23;
+	optional Project project = 24;
+	
+	optional string orderInParent = 25;	
+	
+	optional int32 featurePriority = 26;
+	
+	optional DereferencedData dereferencedData = 27;
+	
+	optional int64 createdTimestamp = 28;
+	optional int64 lastUpdatedTimestamp = 29;
+	optional int64 lastCommittedTimestamp = 30;
+	
+	optional bool redirectUserForRegistration = 31;
+	
+	optional string name = 32;
+	optional string description = 33;
+	optional string editorialText = 34;	
+	
+	repeated BinarySet previewBinarySet = 35;
+	optional int32 binarySetCount = 36;
+	optional BinaryType workingSetBinaryType = 37;
+	
+	repeated string availableLocale = 38;
+	optional bool hasUnpublishedChanges = 39;
+	
+	optional float score = 40;
+	
+	optional int64 userReadPermission = 41;	
+	optional int64 userWritePermission = 42;
+	
+	optional string userFollowSettingUuid = 43;	
+	
+	optional PublishRequestInfo publishRequestInfo = 44;	
+	repeated CollectedEntityInfo collectedEntityInfo = 45;	
+	repeated LicenseRequestInfo licenseRequestInfo = 46;
+	
+	optional string contextText1 = 47;
+	
+	optional bool applyWatermark = 48;
+	
+	repeated string userAccessUuid = 51;
+
+	
+	// v1.0
+
+	optional FolderLayout folderLayout = 52;
+	optional AssetLayout assetLayout = 53;
+	
+	optional RichtextListViewLayout richtextListViewLayout = 54;
+	
+	optional PublishCondition publishCondition = 55;
+		
+	optional PublishConditionState publishConditionState = 56;
+	
+	optional int64 publicationTimestamp = 57;
+	
+	optional bool isUnlocked = 58;
+	
+	// v1.1 generic external data / external content providers
+	
+	optional External external = 59;
+	
+	// v1.6 asset reviews
+	
+	optional bool released = 60;
+	
+	// v1.7 canonical URLs
+	
+	optional string canonicalUrl = 61;
+}
+	
+message EntityChangeSet {
+	optional EntityType entityType = 1;
+	optional string uuid = 2;		
+	
+	repeated EntityLocaleChangeSet putLocale = 3;
+	repeated EntityLocaleChangeSet removeLocale = 4;
+	
+	optional PreviewSize previewSize = 5;	
+
+	repeated NewTag putNewTag = 6;	
+	repeated string putTagUuid = 7;
+	repeated string removeTagUuid = 8;
+	
+	optional LicensingChangeSet licensing = 9;
+
+	optional ReadAccessChangeSet readAccess = 10;		
+	optional WriteAccessChangeSet writeAccess = 11;		
+	
+	repeated EntityReference addParent = 12;
+	repeated EntityReference changeParentOrder = 13;
+	repeated EntityReference removeParent = 14;		
+	
+	// optional optimistic locking
+	optional int64 version = 15;
+	
+	optional EntityActions entityActions = 16;
+	
+	optional BrandChangeSet brand = 17;
+	optional FolderChangeSet folder = 18;
+	optional AssetChangeSet asset = 19;
+	optional TrashChangeSet trash = 20;
+	optional JobChangeSet job = 21;
+	optional ParticipationChangeSet participation = 22;
+	optional ProjectChangeSet project = 23;
+	
+	optional int32 featurePriority = 24;
+	
+	optional bool applyWatermark = 25;
+	optional bool removeApplyWatermark = 26;
+	
+	
+	// v1.0
+
+	optional FolderLayoutChangeSet folderLayout = 27;
+	optional AssetLayoutChangeSet assetLayout = 28;
+	
+	optional PublishConditionChangeSet publishCondition = 29;
+}
+
+message EntityReference {
+	required EntityType type = 1;
+	
+	required string uuid = 2;
+	
+	optional string order = 3;
+}
+
+enum PublishAction {
+	PA_PUBLISH = 1;
+	PA_UNPUBLISH = 2;	
+}
+
+message EntityActions { 
+	optional PublishAction publishAction = 1;
+
+	optional bool extractKeywords = 2;
+	optional bool extractDescription = 3;
+	
+}
+
+message EntityDeleteSet {
+	optional string uuid = 1;
+	
+	optional bool allowFinalDelete = 2;
+	
+	// optional optimistic locking
+	optional int64 version = 3;
+}
+
+message EntityRestoreSet {
+	optional string uuid = 1;
+	
+	required string restoreEntityUuid = 2;
+	
+	// optional optimistic locking
+	optional int64 version = 3;
+}
+
+message Entities {
+	repeated Entity entity = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message EntityChangeSets {
+	repeated EntityChangeSet entityChangeSet = 1;
+}
+
+message EntityRestoreSets {
+	repeated EntityRestoreSet entityRestoreSet = 1;
+}
+
+message EntityDeleteSets {
+	repeated EntityDeleteSet entityDeleteSet = 1;
+}
+
+enum EntityType {	
+	BRAND = 0;
+	FOLDER = 1;
+	ASSET = 2;
+	TRASH = 3;	
+	
+	JOBS = 4;
+	JOB = 5;
+	
+	PARTICIPATIONS = 6;	
+	PARTICIPATION = 7;
+	
+	PROJECTS = 8;
+	PROJECT = 9;	
+}
+
+enum AssetType {
+	AT_FILE = 1;
+	AT_RICHTEXT = 2;
+}
+
+// layout
+
+enum BrandLandLayout {
+	BLL_STANDARD = 0;
+}
+
+enum FolderListViewLayout {
+	FLVL_STANDARD = 0;
+}
+
+enum RichtextListViewLayout {
+	RLVL_SPLITVIEW = 0;
+	RLVL_IMAGE = 1;
+}
+
+enum FolderInnerLayout {
+	FIL_STANDARD = 0;
+}
+
+enum AssetInnerLayout {
+	AIL_STANDARD = 0;
+}
+
+message FolderLayout {
+	required LayoutModel layoutModel = 1;
+	
+	optional FolderListViewLayout listViewLayout = 2;
+	optional FolderInnerLayout innerLayout = 3; 
+}
+
+message FolderLayoutChangeSet {
+	optional LayoutModel layoutModel = 1;
+	
+	optional FolderListViewLayout listViewLayout = 2;
+	optional FolderInnerLayout innerLayout = 3;	
+}
+
+message AssetLayout {
+	required LayoutModel layoutModel = 1;
+	
+	optional RichtextListViewLayout richtextListViewLayout = 2;
+	optional AssetInnerLayout innerLayout = 3; 
+}
+
+message AssetLayoutChangeSet {
+	optional LayoutModel layoutModel = 1;
+	
+	optional RichtextListViewLayout richtextListViewLayout = 2;
+	optional AssetInnerLayout innerLayout = 3; 
+}
+
+enum LayoutModel {
+	INHERIT_LAYOUT_FROM_PARENT = 0;
+	OVERRIDE_LAYOUT = 2;
+}
+
+// publish condition
+
+enum PublishConditionState {
+	PCS_NOT_YET_PUBLISHED = 1;
+	PCS_ACTIVE = 2;
+	PCS_NO_LONGER_PUBLISHED = 3;
+}
+
+message PublishCondition {
+	required PublishConditionModel publishConditionModel = 1;
+	
+	optional int64 publishFromTimestamp = 2;
+	optional int64 publishToTimestamp = 3;
+}
+
+message PublishConditionChangeSet {
+	optional PublishConditionModel publishConditionModel = 1;
+	
+	optional int64 publishFromTimestamp = 2;
+	optional bool removePublishFromTimestamp = 3;
+	
+	optional int64 publishToTimestamp = 4;
+	optional bool removePublishToTimestamp = 5; 
+}
+
+enum PublishConditionModel {
+	INHERIT_PUBLISH_CONDITION_FROM_PARENT = 0;
+	OVERRIDE_PUBLISH_CONTIDION = 2;
+}
+
+// working set
+
+message WorkingSet {
+	required int64 version = 1;	
+
+	repeated EntityLocale locale = 2;
+	
+	optional BinaryType workingSetBinaryType = 3;
+	optional int32 minBinarySetUuid = 4;
+}
+
+message EntityLocale {
+	required string locale = 1;
+	
+	optional string name = 2;
+	optional string description = 3;
+	optional string editorialText = 4;		
+	
+	optional ContactInfo contactInfo = 5;
+	
+	repeated BinarySet binarySet = 6;
+	
+	optional string contextText1 = 7;
+}
+
+message EntityLocaleChangeSet {
+	required string locale = 1;
+	
+	optional string name = 2;
+	optional string description = 3;
+	optional string editorialText = 4;
+
+	optional ContactInfoChangeSet contactInfo = 5;
+	
+	repeated BinarySetChangeSet putBinarySet = 6;
+	repeated BinarySetChangeSet removeBinarySet = 7;
+	
+	optional string contextText1 = 8;
+}
+
+message ContactInfo {
+	repeated BrandLink brandLink = 1;
+		
+	optional string facebookLink = 2;
+	optional string twitterLink = 3;
+	optional string googlePlusLink = 4;
+	
+	optional string name = 5;
+	optional string street = 6;
+	optional string postalCode = 7;
+	optional string city = 8;
+	optional string countryCode = 9;
+	optional string phone = 10;
+	optional string website = 11;
+	optional string email = 12;
+	
+	optional string countryName = 13;
+}
+
+message ContactInfoChangeSet {
+	repeated BrandLink putBrandLink = 1;
+	repeated BrandLink removeBrandLink = 2;
+	
+	optional string facebookLink = 3;
+	optional string twitterLink = 4;
+	optional string googlePlusLink = 5;
+	
+	optional string name = 6;
+	optional string street = 7;
+	optional string postalCode = 8;
+	optional string city = 9;
+	optional string countryCode = 10;
+	optional string phone = 11;
+	optional string website = 12;
+	optional string email = 13;
+}
+
+message BrandLink {
+	required int32 uuid = 1;
+	
+	optional string name = 2;
+	optional string link = 3;
+}
+
+message BinarySet {
+	required int32 uuid = 1;
+
+	optional string name = 2;
+	
+	repeated Binary uploadedBinary = 5;
+	repeated Binary calculatedBinary = 6;
+	
+	optional BinaryType binarySetBinaryType = 7;
+	
+	optional string sourceLocale = 8;
+	
+	optional string author = 9; 
+}
+
+message BinarySetChangeSet {
+	required int32 uuid = 1;
+	
+	optional string name = 2;
+	
+	repeated Binary putUploadedBinary = 5;		
+	repeated Binary removeUploadedBinary = 6;
+	
+	optional string author = 7;
+	
+}
+
+// users
+
+message Users {
+	repeated User user = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+// licensing
+
+message Licensing {
+	required LicensingModel licensingModel = 1;
+	
+	repeated LicenseInfo availableLicenseInfo = 2;
+	
+	optional bool allowAnonymousDownload = 3;	
+}
+
+message LicenseInfo {
+	required string licenseUuid = 1;
+	
+	required LicenseType licenseType = 2;
+	
+	optional bool userPersonaValid = 3;
+	
+	// v1.6 asset reviews
+	
+	optional bool released = 4;
+	
+	// v1.9 download specs
+	
+	optional DownloadSpec downloadSpec = 5;
+}
+
+message LicensingChangeSet {
+	optional LicensingModel licensingModel = 1;
+	
+	repeated string addAvailableLicenseId = 2;	
+	repeated string removeAvailableLicenseId = 3;
+	
+	optional bool allowAnonymousDownload = 4;
+}
+
+enum LicensingModel {
+	INHERIT_LICENSING_FROM_PARENT = 0;
+	OVERRIDE_LICENSING = 2;
+}
+
+// license
+
+message License {
+	required string licenseUuid = 1;
+	
+	required LicenseType licenseType = 2;
+	
+	repeated LicenseLocale locale = 3;
+	
+	repeated LicenseTypeOfUse typeOfUse = 4;
+	
+	optional LicenseExclusivityType exclusivityType = 5; 
+	
+	optional int32 validityPeriodDays = 6;
+	
+	optional int32 imagePrice = 7;
+	optional int32 ofImagePriceIsTransactionFee = 8;
+	
+	optional int32 videoPrice = 9;
+	optional int32 ofVideoPriceIsTransactionFee = 10;
+	
+	optional int32 audioPrice = 11;
+	optional int32 ofAudioPriceIsTransactionFee = 12;
+	
+	optional int32 documentPrice = 13;
+	optional int32 ofDocumentPriceIsTransactionFee = 14;
+	
+	optional string name = 15;
+	optional string summary = 16;
+	optional string termsOfUse = 17;
+	optional string restrictedPublishingTopics = 18;
+	optional string restrictedIndustries = 19;
+	optional string restrictedGeoUse = 20;
+	
+	optional float score = 21;
+	
+	optional int64 userReadPermission = 22;	
+	optional int64 userWritePermission = 23;
+	
+	optional bool userPersonaValid = 24;
+
+	// v1.1 generic external data / external content providers
+
+	optional ExternalPricingModel externalPricingModel = 25;
+	
+	optional int32 externalCreditPrice = 26;
+	optional float externalMonetaryPrice = 27;		
+	
+	repeated ExternalLink externalLink = 28;
+	
+	optional External external = 29;
+	
+	optional string groupingKey = 30;
+	
+}
+
+message Licenses {
+	repeated License license = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message LicenseChangeSet {
+	optional string licenseUuid = 1;
+	
+	optional LicenseType licenseType = 2;
+	
+	repeated LicenseLocaleChangeSet putLocale = 3;
+	repeated LicenseLocaleChangeSet removeLocale = 4;
+	
+	repeated LicenseTypeOfUse putTypeOfUse = 5;
+	repeated LicenseTypeOfUse removeTypeOfUse = 6;
+		
+	optional LicenseExclusivityType exclusivityType = 7; 
+	
+	optional int32 validityPeriodDays = 8;
+	
+	optional int32 imagePrice = 9;
+	optional int32 ofImagePriceIsTransactionFee = 10;
+	
+	optional int32 videoPrice = 11;
+	optional int32 ofVideoPriceIsTransactionFee = 12;
+	
+	optional int32 audioPrice = 13;
+	optional int32 ofAudioPriceIsTransactionFee = 14;
+	
+	optional int32 documentPrice = 15;
+	optional int32 ofDocumentPriceIsTransactionFee = 16;
+}
+
+message LicenseLocale {
+	required string locale = 1;
+	
+	optional string name = 2;
+	
+	optional string summary = 3;
+	
+	optional string termsOfUse = 4;
+	optional string restrictedPublishingTopics = 5;
+	optional string restrictedIndustries = 6;
+	optional string restrictedGeoUse = 7;
+}
+
+message LicenseLocaleChangeSet {
+	required string locale = 1;
+	
+	optional string name = 2;
+	
+	optional string summary = 3;
+	
+	optional string termsOfUse = 4;
+	optional string restrictedPublishingTopics = 5;
+	optional string restrictedIndustries = 6;
+	optional string restrictedGeoUse = 7;
+}
+
+enum LicenseType {
+	PRIVATE_USE = 1;
+	EDITORIAL_USE = 2;
+	COMMERCIAL_USE = 3;
+	CUSTOM = 4;
+	EXTERNAL = 5;
+}
+
+enum LicenseExclusivityType {
+	SHARED_NON_EXCLUSIVE = 1;
+	SHARED_NON_EXCLUSIVE_EXCLUSIVE_POSSIBLE = 2;
+	EXCLUSIVE_ONLY = 3;
+}
+
+enum LicenseTypeOfUse {
+	ONLINE_ELECTRONIC = 1;
+	PRINT = 2;
+}
+
+// v1.9 download specs
+
+message DownloadSpec {
+	optional string bitDepth = 1;
+	optional string compression = 2;
+	optional string contentType = 3;
+	optional string format = 4;
+	optional string frameRate = 5;
+	optional string frameSize = 6;
+	optional int32 height = 7;
+	optional int32 width = 8;
+	optional bool interlaced = 9;
+	optional int64 bytes = 10;
+	optional string downloadLink = 11;
+	optional string assetKey = 12;
+	optional bool isEditorial = 13;
+	optional string productType = 14;
+	optional bool isComp = 15;
+	optional bool isPremium = 16;
+	optional string sizeName = 17;
+	optional BinaryType binaryType = 18;
+	optional Source source = 19;
+}
+
+// acquisition
+
+message LicensedLicense {
+	required License license = 1;
+	
+	required string issuerBrandUuid = 2;
+	required CompanyInfo issuerCompanyInfo = 3;
+	
+	optional string licensorBrandUuid = 4;
+	optional CompanyInfo licensorCompanyInfo = 5;
+	 
+	optional bool licensorIsUser = 6;
+	
+	required string licenseAcceptedByUserUuid = 7;
+	required int64 acceptedAndLicensedTimestamp = 8;
+	optional int64 licenseValidUntilTimestamp = 9;
+	
+	optional ExternalLicensedLicense externalLicensedLicense = 10;
+	
+	// v1.9 download specs
+	
+	optional DownloadSpec downloadSpec = 11;
+}
+
+
+message LicensedAsset {
+	optional Entity entity = 1;
+	optional string participationUuid = 2;
+}
+
+// inheritance
+
+message InheritedData {	
+	optional Tags tags = 1;	
+	repeated LicenseInfo availableLicenseInfo = 2;
+	
+	repeated ReadAccessPermission readAccessPermission = 3;
+	optional PublicReadAccessPermission publicReadAccessPermission = 4;	
+	optional EntityReference readAccessDefinedOnParent = 5;
+	
+	optional bool readAccessIsActive = 6;
+	
+	repeated WriteAccessPermission writeAccessPermission = 7; 
+	
+	optional bool published = 8;	
+	optional bool trashed = 9;
+	optional bool deleted = 10;
+	
+	optional string brandUuid = 11;
+	optional BrandType brandType = 12;
+	optional string brandWorldAdminUserGroupUuid = 13;
+	
+	optional string defaultLocale = 14;
+	
+	repeated ContentCategory contentCategory = 15;
+	
+	optional bool applyWatermark = 16;
+	
+	// v1.0
+
+	optional FolderLayout folderLayout = 17;
+	optional AssetLayout assetLayout = 18;
+	
+	optional PublishCondition publishCondition = 19;
+	
+	// v1.2 anonymous downloads
+	
+	optional bool allowAnonymousDownload = 20;
+	
+}
+
+// dereferenced
+
+message DereferencedData {
+	repeated UserGroup endUserGroup = 1;
+	repeated User endUser = 2;
+	repeated UserGroup adminUserGroup = 3;	
+	repeated License license = 4;
+	repeated Entity entity = 5;
+	repeated AccessRequest accessRequest = 6;
+	repeated PublishRequest publishRequest = 7;
+	repeated LicenseRequest licenseRequest = 8;
+	repeated CreditTransaction creditTransaction = 9;
+	repeated ShoppingCart shoppingCart = 10;
+	repeated PurchaseCreditsRequest purchaseCreditsRequest = 11;
+	repeated UpgradePlanRequest upgradePlanRequest = 12;
+	repeated JoinRequest joinRequest = 13;
+	repeated ApprovalRequest approvalRequest = 14;
+}
+
+// autocompleted entities (excl. tags)
+
+enum AutocompletedEntityType {
+	AET_END_USER_GROUP = 1;
+	AET_END_USER = 2;
+	AET_ADMIN_USER_GROUP = 3;
+	AET_LICENSE = 4;
+	AET_BRAND = 5;
+	AET_TAG = 6;
+}
+
+message AutocompletedEntities {
+	repeated UserGroup endUserGroup = 1;
+	repeated User endUser = 2;
+	repeated UserGroup adminUserGroup = 3;	
+	repeated License license = 4;
+	repeated Entity entity = 5;
+	repeated Tag tag = 6;
+}
+
+// binaries
+
+message Binary {
+	required BinaryPurpose binaryPurpose = 1;
+	optional int32 outputId = 2;
+			
+	optional int32 width = 3;
+	optional int32 height = 4;		
+	optional int32 foregroundColor = 5;
+				
+	optional BinaryMetatags metatagsBasic = 6;
+	optional BinaryMetatags metatagsExtended = 7;
+	
+	optional BinaryType binaryType = 8;
+
+	optional ImagePresets imagePresets = 9;
+	optional VideoPresets videoPresets = 10;
+	optional AudioPresets audioPresets = 11;
+	optional DocumentPresets documentPresets = 12;	
+	
+	optional string fingerprint = 13;
+	optional BinaryPurpose calculatedFromBinaryPurpose = 14;
+	optional string calculatedFromFingerprint = 15;
+	
+	optional bool binaryProcessingFailed = 16;
+	optional BackendErrorCode binaryProcessingFailedErrorCode = 17;
+	optional string binaryProcessingFailedReason = 18;
+	
+	// calculated upon search/access
+	optional string downloadLink = 19;
+	
+}
+
+enum PreviewSize {
+	NORMAL = 1000;
+}
+
+enum BinaryPurpose {
+	BRAND_LOGO = 100;
+	BRAND_ASSET = 150;
+	BRAND_BACKGROUND = 200;
+	BRAND_BACKGROUND_TALL = 250;
+	BRAND_WATERMARK = 300;
+	FOLDER_ASSET = 1000;
+	FOLDER_BACKGROUND = 1100;
+	FOLDER_BACKGROUND_TALL = 1150;
+	FOLDER_LIST_PREVIEW = 1200;
+	JOBS_ASSET = 1500;
+	JOBS_BACKGROUND = 1600;
+	JOBS_BACKGROUND_TALL = 1650;
+	JOBS_LIST_PREVIEW = 1700;
+	JOB_ASSET = 2000;
+	JOB_BACKGROUND = 2100;
+	JOB_BACKGROUND_TALL = 2150;
+	JOB_LIST_PREVIEW = 2200;
+	PROJECT_ASSET = 3000;
+	PROJECT_BACKGROUND = 3100;
+	PROJECT_BACKGROUND_TALL = 3150;
+	PROJECT_LIST_PREVIEW = 3200;
+	ASSET_ASSET = 10000;
+	ASSET_BASE = 10001;
+	ASSET_LIST_PREVIEW = 19000;
+	ASSET_PREVIEW = 19001;
+	ASSET_ADVANCED_LIST_PREVIEW_IMAGE = 19002;
+	ASSET_ADVANCED_LIST_PREVIEW = 19003;
+	ASSET_ADVANCED_PREVIEW_IMAGE = 19004;
+	ASSET_ADVANCED_PREVIEW = 19005;	
+	ASSET_COVER = 19006;	
+	ASSET_BACKGROUND_ASSET = 19007;
+	ASSET_BACKGROUND = 19008;
+	ASSET_BACKGROUND_TALL = 19009;
+	ASSET_HEADER = 19010;
+	ASSET_SPLITVIEW_LIST_PREVIEW = 19011;
+	
+}
+
+enum BinaryType {
+	IMAGE = 1;
+	AUDIO = 2;
+	VIDEO = 3;
+	DOCUMENT = 4;
+}
+
+message BinaryMetatags {
+	repeated BinaryMetatag metatag = 1;
+}
+
+message BinaryMetatag {	
+	required string name = 1;
+	optional int32 intValue = 2;
+	optional int64 longValue = 3;
+	optional string stringValue = 4;
+	optional bytes bytesValue = 5;
+	optional bool boolValue = 6;
+	optional float floatValue = 7;
+	optional double doubleValue = 8;
+	repeated string stringSetValue = 9;
+}
+
+message ImagePresets {
+	optional ImageTransformationInfo transformationInfo = 1;
+}
+
+message ImageTransformationInfo {
+	optional Crop crop = 1;
+	optional int32 foregroundColor = 2;	
+	optional int32 backgroundColor = 3;
+}
+	
+message Crop {
+	required int32 x = 1;
+	required int32 y = 2;
+	required int32 width = 3;
+	required int32 height = 4;
+}
+
+message VideoPresets {
+	// we need to generate some still image from the video
+	// we need to know which frame of the video applies
+	
+	optional VideoThumbnailGenerationInfo thumbnailGenerationInfo = 1;	
+}
+
+message VideoThumbnailGenerationInfo {
+	required int32 thumbnailPercentage = 1;	
+}
+
+message AudioPresets {
+
+}
+
+message DocumentPresets {				
+	// we need to know the page in the document to generate the list (and if applicable, one pager) preview image from
+		
+	optional int32 previewPage = 1;
+	
+	// we treat PDFs as vector graphics, so there is no need for any image
+	// transformation information because we can make whatever we want
+	
+	optional bool limitPreviewToOnePager = 2;
+	
+	// for richtext
+	
+	optional int32 numberOfPreviewParagraphs = 3;
+}
+
+// brand
+
+message Brand {	
+	optional string defaultLocale = 1;
+	
+	required BrandType brandType = 2;
+	
+	optional string order = 3;
+	
+	optional string worldAdminUserGroupUuid = 4;
+	optional string defaultProjectUuid = 5;
+	
+	repeated UserPersona userPersona = 6;
+	
+	optional string trashEntityUuid = 7;
+	optional string jobsEntityUuid = 8;
+	optional string participationsEntityUuid = 9;
+	optional string projectsEntityUuid = 10;
+	
+	optional CustomDesign customDesign = 11;
+	
+	optional ContactInfo contactInfo = 12;
+	optional CompanyInfo companyInfo = 13;
+	
+	optional CompanyInfo billingCompanyInfo = 14;
+	
+	optional int32 purchaseCreditBalance = 15;
+	optional int32 payoutCreditBalance = 16;
+	
+	optional bool approved = 17;
+
+	optional int32 transactionLimit = 18;
+	optional int32 purchaseCreditBalancePositiveLimit = 19;
+	optional int32 purchaseCreditBalanceNegativeLimit = 20;
+	optional int32 instantChargeTrustedLimit = 21;
+	
+	optional bool showContactEmailAddress = 22;
+	
+	optional int32 newNotificationCount = 23;
+	
+	optional ContentCategory defaultContentCategory = 24;
+	
+	optional BrandPlan brandPlan = 25;
+	
+	optional bool transactionsLocked = 26;
+	optional bool uploadLocked = 27;
+	optional bool connectExternalContentProvidersLocked = 28;
+	optional bool jobServicesLocked = 29;
+	
+	optional UpgradePlanRequestInfo upgradePlanRequestInfo = 30;
+	optional JoinRequestInfo joinRequestInfo = 31;
+	
+	optional bool billingInfoOverride = 32;
+	
+	optional BrandLandLayout brandLandLayout = 33;
+	
+	optional ApprovalRequestInfo approvalRequestInfo = 34;
+	
+	// v1.4 custom subdomain
+	
+	optional CustomSubdomain customSubdomain = 35;
+	
+	optional bool customSubdomainLocked = 36;	
+	
+	// v1.1 generic external data / external content providers
+	
+	repeated ExternalContentProviderInfo externalContentProviderInfo = 37;
+	
+	// v1.8 extended brand plans
+	
+	optional bool checkOutContentLocked = 38;
+	optional bool reportingLocked = 39;
+	
+	optional bool publishContentLocked = 40;
+	optional bool versioningLocked = 41;
+	optional bool multiLevelAdminManagementLocked = 42;
+	optional bool externalUserManagementLocked = 43;
+	optional bool multiLevelExternalUserManagementLocked = 44;	
+	
+	// v1.9 default locales extended
+	
+	optional string overrideDefaultLocaleForChilds = 45;
+	
+}
+
+
+message BrandChangeSet {
+	repeated UserGroupChangeSet putEndUserGroup = 1;
+	repeated UserGroupChangeSet removeEndUserGroup = 2;
+	
+	repeated UserGroupChangeSet putAdminUserGroup = 3;
+	repeated UserGroupChangeSet removeAdminUserGroup = 4;
+	
+	repeated LicenseChangeSet putLicense = 5;
+	repeated LicenseChangeSet removeLicense = 6;
+	
+	optional string defaultLocale = 7;
+	
+	optional BrandType brandType = 8;
+	
+	optional string order = 9;
+	
+	optional CustomDesignChangeSet customDesign = 10;
+	
+	optional CompanyInfoChangeSet companyInfo = 11;
+	
+	optional CompanyInfoChangeSet billingCompanyInfo = 12;
+	
+	optional bool showContactEmailAddress = 13;
+	
+	optional ContentCategory defaultContentCategory = 14;
+	
+	optional bool billingInfoOverride = 15;
+	
+	optional BrandLandLayout brandLandLayout = 16;
+	
+	// v1.4 custom subdomain
+	
+	optional CustomSubdomainChangeSet customSubdomain = 35;
+	
+	// v1.9 default locales extended
+	
+	optional string overrideDefaultLocaleForChilds = 36;
+	
+}
+
+message CompanyInfo {
+	optional string companyName = 1;
+	optional string contactPersonGivenName = 2;
+	optional string contactPersonFamilyName = 3;
+	optional string contactPersonJobTitle = 4;
+	optional string street = 5;
+	optional string postalCode = 6;
+	optional string city = 7;
+	optional string countryCode = 8;
+	optional string email = 9;
+	optional string vat = 10;
+	
+	optional bool emailConfirmed = 11;
+	
+	optional string countryName = 12;
+	optional string contactPersonName = 13;
+	
+	// v1.0
+
+	optional string publicationName = 14;
+}
+
+message CompanyInfoChangeSet {
+	optional string companyName = 1;
+	optional string contactPersonGivenName = 2;
+	optional string contactPersonFamilyName = 3;
+	optional string contactPersonJobTitle = 4;
+	optional string street = 5;
+	optional string postalCode = 6;
+	optional string city = 7;
+	optional string countryCode = 8;
+	optional string email = 9;
+	optional string vat = 10;
+	
+	
+	// v1.0
+	
+	optional string publicationName = 13;
+}
+
+enum BrandType {
+	BRAND_TYPE_SYSTEM = 1; // system internal brand
+	BRAND_TYPE_USER = 2; // brand which represents an single user
+	
+	// deprecated
+	// BRAND_TYPE_BRAND = 3; // default brand
+	// BRAND_TYPE_PROFESSIONAL = 4; // professional brand
+	// BRAND_TYPE_JOURNALIST = 5; // journalist brand
+	// BRAND_TYPE_STOCK_PROVIDER = 6; // stock provider brand
+	
+	// custom brands
+	
+	BRAND_TYPE_CUSTOM = 3; // custom brand
+	
+	// content publisher brands
+	
+	BRAND_TYPE_CP_CORPORATE = 4;
+	BRAND_TYPE_CP_BLOGGER = 5;
+	BRAND_TYPE_CP_PHOTOGRAPHER = 6;
+	BRAND_TYPE_CP_WRITER = 7;
+	BRAND_TYPE_CP_VIDEOGRAPHER = 8;
+	BRAND_TYPE_CP_STOCK = 9;
+	
+	BRAND_TYPE_CP_OTHER = 40;
+	
+	// procurement brands
+	
+	BRAND_TYPE_PROCUREMENT = 50;	
+}
+
+message CustomDesign {
+	optional int32 color1 = 1;
+	optional int32 color2 = 2;
+}
+
+message CustomDesignChangeSet {
+	optional int32 color1 = 1;
+	optional int32 color2 = 2;
+}
+
+message CustomSubdomain {
+	optional string subdomain = 1;
+	
+	// deprecated	
+	// optional bool isPrivate = 2;
+	
+	// deprecated
+	// optional string customizationToken = 3;
+}
+
+message CustomSubdomainChangeSet {
+	optional string subdomain = 1;
+	
+	// deprecated
+	// optional bool isPrivate = 2;
+}
+
+// folder
+
+enum ContentCategory {
+	CC_MARKETING_CONTENT = 1;
+	CC_PRESS_CONTENT = 2;
+	CC_PRODUCT_INFORMATION = 3;
+	
+	// deprecated
+	// CC_STOCK_CONTENT = 4;
+	
+	CC_PROFESSIONAL_CREATIVE_CONTENT = 4;
+	CC_BRAND_CREATIVE_CONTENT = 5;
+	CC_STOCK_CONTENT = 6;
+}
+
+message Folder {
+	optional ContentCategory contentCategory = 1;
+	
+	optional string defaultLocale = 2;
+	
+	// v1.9 default locales extended
+	
+	optional string overrideDefaultLocaleForChilds = 3;
+}
+
+message FolderChangeSet {
+	optional ContentCategory contentCategory = 1;
+	optional bool removeContentCategory = 2;
+	
+	optional string defaultLocale = 3;
+	
+	// v1.9 default locales extended
+	
+	optional string overrideDefaultLocaleForChilds = 4;
+}
+
+// asset
+
+enum AssetReviewState {
+	ARS_NO_RELEASE_NECESSARY = 1;
+	ARS_MAYBE_RELEASE_NECESSARY = 2;
+	ARS_RELEASE_NECESSARY = 3;
+}
+
+message Asset {
+	optional ParticipationAsset participationAsset = 1;
+	optional JobAsset jobAsset = 2;
+	repeated AcquiredAsset acquiredAsset = 3;
+	
+	optional AssetType type = 4;
+	
+	// v1.0
+
+	optional int64 publicationTimestamp = 5;
+	
+	// v1.6 asset reviews
+	
+	optional AssetReviewState reviewState = 6;
+	
+	optional string releaseReference = 7;
+	optional string lastReleaseReference = 8;
+
+	// v1.7 canonical URLs
+	
+	optional string canonicalUrl = 9;
+	
+	optional string defaultLocale = 10;
+}
+
+message AssetChangeSet {
+	optional AssetType type = 1;
+
+	// v1.0
+	
+	optional int64 publicationTimestamp = 2;
+	optional bool removePublicationTimestamp = 3;
+	
+	// v1.6 asset reviews
+	
+	optional AssetReviewState reviewState = 4;
+	
+	optional string releaseReference = 5;
+	
+	// v1.7 canonical URLs
+	
+	optional string canonicalUrl = 6;
+	
+	optional string defaultLocale = 7;
+}
+
+message ParticipationAsset {
+	required ParticipationState state = 1;
+	
+	optional string creditTransactionUuid = 2;
+	optional int64 fulfilledTimestamp = 3;
+	optional LicensedLicense licensedLicense = 4;
+	
+	required string jobUuid = 5;
+	required string jobIssuerBrandUuid = 6;
+	required string participantBrandUuid = 7;
+	
+	required bool jobIssuerCopy = 8;
+	optional string originalParticipationUuid = 9;
+}
+
+message JobAsset {
+	required JobState state = 1;
+}
+
+message AcquiredAsset {
+	required string creditTransactionUuid = 1;
+	optional int64 fulfilledTimestamp = 2;
+	
+	required LicensedLicense licensedLicense = 3;
+	
+	optional BackendErrorCode fulfillmentError = 4;	
+}
+
+// trash
+
+message Trash {
+
+}
+
+message TrashChangeSet {
+
+}
+
+// job
+
+enum JobState {
+	CREATED = 1;
+	CLOSED_DEAL = 2;
+	CLOSED_NO_DEAL = 3;
+}
+
+enum JobPricingType {
+	JOB_ISSUER_DEFINES_REWARD = 1;
+	PARTICIPANT_SUGGESTS_PRICE = 2;
+}
+
+enum JobParticipationType {
+	JOB_IS_OPEN = 1;
+	JOB_NEEDS_CONFIRMATION = 2;
+}
+
+message Job {	
+	required JobType type = 1;
+	
+	required JobPricingType pricingType = 2;
+	required JobParticipationType participationType = 3;
+	
+	required JobState state = 4;
+	
+	optional string licenseId = 5;
+	
+	optional int64 endTimestamp = 6;
+	optional int32 reward = 7;
+}
+
+message JobChangeSet {
+	optional JobType type = 1;
+	
+	optional JobPricingType pricingType = 2;
+	optional JobParticipationType participationType = 3;
+	
+	optional JobState state = 4;
+	
+	optional string licenseId = 5;
+	
+	optional int64 endTimestamp = 6;
+	optional int32 reward = 7;
+	
+	optional JobActions jobActions = 8;
+}
+
+message JobActions { 
+
+}
+
+enum JobType {
+	PHOTOGRAPHY = 1;
+	TRANSLATION = 2;
+	
+	// TBD
+}
+
+// participation
+
+message JobApplicationSet {
+	optional string applicationMessage = 1;
+	optional int32 price = 2;
+	
+	// optional optimistic locking
+	optional int64 version = 3;
+}
+
+message JobParticipationSet {
+	optional string participationMessage = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message JobApplicationAcceptSet {
+	optional string acceptMessage = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message JobParticipationSubmitSet {
+	optional string submitMessage = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message JobParticipationRejectSet {
+	required string rejectionReason = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message JobCloseSet {
+	optional string closeReason = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+ 
+enum ParticipationState {
+	CONFIRMATION_PENDING = 1;
+	CONFIRMATION_REJECTED = 2;
+	PARTICIPATING_EDITING = 3;
+	HANDIN_HANDED_IN = 4;
+	HANDIN_REJECTED = 5;
+	HANDIN_FINAL_REJECTED = 6;
+	HANDIN_ACQUIRED = 7;
+}
+
+message Participation {
+	required ParticipationState state = 1;
+	
+	optional string creditTransactionUuid = 2;
+	optional int64 fulfilledTimestamp = 3;
+	
+	optional int64 rejectedTimestamp = 4;	
+	
+	required string jobUuid = 5;
+	required string jobIssuerBrandUuid = 6;
+	required string participantBrandUuid = 7;
+	
+	required bool jobIssuerCopy = 8;
+	optional string originalParticipationUuid = 9;
+	
+	optional int32 price = 10;	
+}
+
+message ParticipationChangeSet {
+	optional int32 price = 1;
+}
+
+// project
+
+enum ProjectState {
+	OPEN = 1;
+	CLOSED = 2;
+}
+
+message Project {
+	required ProjectState state = 1;
+	
+	optional bool isDefaultProject = 2;		
+}
+
+message ProjectChangeSet {
+	optional ProjectState state = 1;
+}
+
+// shopping cart
+
+enum ShoppingCartState {
+	SC_OPEN = 1;
+	SC_SUBMITTED_TO_BRAND = 2;
+	SC_REJECTED = 3;
+	SC_ACQUIRED = 4;
+	SC_FULFILLED = 5;
+}
+
+message ShoppingCart {
+	required string uuid = 1;
+	
+	required ShoppingCartState state = 2;
+	
+	optional string brandUuid = 3;
+	optional string userUuid = 4;
+	
+	optional string creditTransactionUuid = 5;
+	
+	optional int64 createdTimestamp = 6;
+	optional int64 lastUpdatedTimestamp = 7;
+	
+	optional bool deleted = 8;
+	
+	optional DereferencedData dereferencedData = 9;
+	
+	optional CompanyInfo userCompanyInfo = 10;
+	
+	optional int64 version = 11;
+}
+
+message ShoppingCarts {
+	repeated ShoppingCart shoppingCart = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message ShoppingCartSubmitToBrandSet {
+	optional string submitMessage = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message ShoppingCartRejectAcquisitionSet {
+	optional string rejectionReason = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message ShoppingCartAcquireSet {
+	optional bool autoFollow = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+// credit transactions
+
+enum CreditTransactionCurrency {
+	CTC_EUR = 1;
+	CTC_USD = 2;
+}
+
+enum CreditTransactionPaymentMethod {
+	CTPM_MANUAL = 1;
+}
+
+enum CreditTransactionPeriod {
+	CTP_MONTH = 1;
+}
+
+enum CreditTransactionType {
+	CTT_UNKNOWN = 0;
+	
+	// charge for untrusted customers, will not be "really" booked, just
+	// generates the necessary booking documents (invoice)
+	// once invoice is paid, proceed with fulfilling the charge
+	
+	CTT_PREPAID_CHARGE = 1;
+	
+	// charge for trusted customers, will be performed immediately without
+	// making sure that payment is already there
+	
+	CTT_INSTANT_CHARGE = 2;
+	
+	CTT_SPEND = 3;	
+	CTT_PAYOUT = 4;
+	CTT_LOCK = 5;
+	CTT_UNLOCK = 6;
+	CTT_FEE = 7;
+	
+	// special constant to mark credit transactions that
+	// contain an archive of the acquired asset, not related
+	// to any participation
+	
+	CTT_ASSET = 8;
+	
+	// special constant to mark credit transactions that belong to 
+	// participation fulfillment on asset level
+	// such transactions contain no charge, but contain an archive
+	// of the acquired asset
+	
+	CTT_PARTICIPATION_ASSET = 9;
+}
+
+message CreditTransactionCostCalculation {
+	optional float monetaryValue = 1;
+	optional CreditTransactionCurrency monetaryCurrency = 2;
+	optional float costPerCredit = 3;
+	
+	optional bool isReverseCharge = 4;
+	optional int32 vatRate = 5;
+	
+	optional float vatAmount = 6;
+	optional float monetaryValueVatInclusive = 7;
+	
+	optional CompanyInfo billingCompanyInfo = 8;
+}
+
+message CreditTransaction {
+	required string uuid = 1;
+	
+	required CreditTransactionType type = 2;	
+	
+	optional string billingUuid = 3;
+	
+	optional string relatedToProjectUuid = 4;
+	optional string relatedToJobUuid = 5;
+	
+	optional EntityReference entityReference = 6;
+	optional string licenseUuid = 7;
+	
+	optional int64 workingSetVersion = 8;
+	
+	optional int32 creditsTransferred = 9;
+	optional int32 ofCreditsTransferredIsFee = 10;
+	
+	optional int32 startBalanceCredits = 11;
+	optional int32 endBalanceCredits = 12;	
+	
+	optional float monetaryValue = 13;
+	optional CreditTransactionCurrency monetaryCurrency = 14;
+	optional float costPerCredit = 15;
+	optional float payoutPerCredit = 16;
+	optional CreditTransactionPaymentMethod monetaryPaymentMethod = 17;
+	optional string monetaryTransferUuid = 18;
+	optional string additionalMonetaryTransferUuid = 19;
+	
+	optional string userUuid = 20;
+	
+	optional DereferencedData dereferencedData = 21;
+	
+	optional CompanyInfo userCompanyInfo = 22;
+		
+	optional string projectName = 23;
+	optional string jobName = 24;
+	optional string licenseName = 25;
+	optional string entityName = 26;
+	
+	optional int64 createdTimestamp = 27;
+	optional int64 lastUpdatedTimestamp = 28;
+	optional int64 cancelledTimestamp = 29;
+	optional int64 paidTimestamp = 30;
+	optional int64 fulfilledTimestamp = 31;
+	
+	optional string cancellationReason = 32;
+	
+	optional string message = 33;
+	
+	optional int32 childCount = 34;
+
+	// 35 - 38 unused
+		
+	optional CompanyInfo customerCompanyInfo = 39;
+	optional CompanyInfo billingCompanyInfo = 40;
+	
+	optional LicensedLicense licensedLicense = 41;
+	
+	optional bool isReverseCharge = 42;
+	optional int32 vatRate = 43;
+	
+	optional float vatAmount = 44;
+	optional float monetaryValueVatInclusive = 45;
+	
+	optional int64 version = 46;
+	
+	// v1.1 generic external data / external content providers
+
+	optional External external = 47;
+	
+	optional ExternalPricingModel externalPricingModel = 48;
+	
+	optional int32 externalCreditPrice = 49;
+	optional float externalMonetaryPrice = 50;
+	
+	optional BackendErrorCode fulfillmentError = 51;
+	optional string fulfillmentErrorMessage = 52;
+	
+	optional int32 fulfillmentRetryCount = 53;
+	
+	// v1.5 cost centers 
+	
+	optional string relatedToAdminUserGroupUuid = 54;
+	
+	optional string costCenterId = 55;
+	
+	optional string adminUserGroupName = 56;
+	
+	// v1.7 multi version downloads
+	
+	optional bool hasNewerEntityVersion = 57;
+	
+	// 58 - deprecated
+	
+	optional string onBehalfOfUserUuid = 59;
+	optional CompanyInfo onBehalfOfUserCompanyInfo = 60;
+	
+	optional int32 historicDataImportId = 61;
+	
+}
+
+message CreditTransactions {
+	repeated CreditTransaction creditTransaction = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message CreditBalanceChangeSet {
+	required CreditTransactionType creditTransactionType = 1;
+	
+	optional int32 changeAmount = 2;
+		
+	optional CreditTransactionCurrency monetaryCurrency = 3;
+	
+	optional CreditTransactionPaymentMethod monetaryPaymentMethod = 4;
+	optional string monetaryTransferUuid = 5;
+	optional string additionalMonetaryTransferUuid = 6;
+	
+	optional string message = 7;
+	
+	// required optimistic locking
+	required int32 startBalanceCredits = 8;
+	
+	optional string fulfillsPurchaseCreditsRequestUuid = 9;
+	
+	optional int32 planId = 10;
+	
+	// v1.1 promo code
+	
+	optional string promoCode = 11;
+}
+
+
+enum CreditTransactionDownloadType {
+	CTDT_INVOICE = 1;
+	CTDT_VOUCHER = 2;
+	CTDT_LICENSE = 3;
+	CTDT_REPORT = 4;
+	CTDT_ASSET = 5;
+}
+
+message CreditTransactionCreateDownloadTaskSet {
+	required CreditTransactionDownloadType downloadType = 1;
+	
+	// v1.7 multi version downloads
+	
+	optional bool downloadOriginalEntityVersion = 2;
+}
+
+message AssetCreateDownloadTaskSet {
+	optional string licenseUuid = 1;
+	
+	optional bool autoFollow = 2;
+}
+
+// users
+
+enum UserPersona {
+	UP_BRAND = 1;
+	UP_JOURNALIST = 2;
+	UP_PROFESSIONAL = 3;
+	UP_ENTHUSIAST = 4;
+}
+
+enum UserType {
+	UT_BRAND_MEMBER = 1;
+	UT_AGENCY_MEMBER = 2;
+	UT_INFLUENCER = 3;
+	UT_JOURNALIST = 4;
+	UT_CONTENT_PROFESSIONAL = 5;	
+}
+
+message User {
+	required string uuid = 1;
+	
+	repeated string allUserGroupUuid = 2;
+	
+	repeated string brandUuid = 3; 
+	
+	repeated BrandUser brandUser = 4;
+	
+	repeated EntityReference entityReference = 5;
+	
+	optional CompanyInfo companyInfo = 6;		
+	
+	optional int64 createdTimestamp = 7;
+	optional int64 lastUpdatedTimestamp = 8;
+	
+	repeated UserPersona userPersona = 9;
+	
+	// deprecated
+	// optional bool desiredUserPersonaSelected = 10;
+	
+	// deprecated
+	// optional UserPersona desiredUserPersona = 11;
+	
+	optional DereferencedData dereferencedData = 12;
+	
+	optional bool deleted = 13;
+	
+	optional int32 newNotificationCount = 14;
+	
+	optional int64 version = 15; 
+	
+	optional bool disabled = 16;
+	
+	optional bool approved = 17;
+	
+	optional UserType userType = 18;		
+	
+	optional string ssoSecret = 19;
+}
+
+message UserReserveSet {
+	required string email = 1;
+	
+}
+
+enum UserAction {
+	UA_DISABLE = 1;
+	UA_ENABLE = 2;
+}
+
+message UserChangeSet {
+	optional string uuid = 1;
+	
+	optional CompanyInfoChangeSet companyInfo = 2;
+	
+	optional UserAction userAction = 3;
+	
+	// optional optimistic locking
+	optional int64 version = 4;	
+	
+	optional UserType userType = 5;
+	
+	optional bool regenerateSsoSecret = 6;
+	
+	optional string defaultLocale = 7;
+	
+}
+
+message BrandUser {
+	required string brandUuid = 1;
+	
+	repeated string brandEndUserGroupUuid = 2;
+	repeated string brandAdminUserGroupUuid = 3;
+	
+	repeated string brandDirectEndUserGroupUuid = 4;
+}
+
+enum EmailNotificationInterval {
+	NEVER = 1;	
+	HOURLY = 2;
+	IMMEDIATELY = 3;	
+}
+
+message UserSetting {
+	required string userUuid = 1;
+	
+	optional EmailNotificationInterval interval = 2;
+	
+	optional string defaultLocale = 3;
+	
+	optional int64 createdTimestamp = 4;
+	optional int64 lastUpdatedTimestamp = 5;
+	
+	optional int64 version = 6;
+}
+
+message UserSettingChangeSet {	
+	optional EmailNotificationInterval interval = 1;
+	
+	optional string defaultLocale = 2;
+	
+	// optional optimistic locking
+	optional int64 version = 3;	
+}
+
+message UserFollowSetting {
+	required string uuid = 1;
+	
+	optional string userUuid = 2;
+	optional string brandUuid = 3;
+	
+	optional string entityBrandUuid = 4;
+	
+	optional EntityReference entity = 5;
+	
+	optional int32 entitiesAddedSinceLastRead = 6;
+	optional int32 entitiesUpdatedSinceLastRead = 7;
+	
+	optional int64 createdTimestamp = 8;
+	
+	optional DereferencedData dereferencedData = 9;
+}
+
+message UserFollowSettings {
+	repeated UserFollowSetting userFollowSetting = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message UserFollowSettingCreateSet {
+	required EntityReference entity = 1;
+}
+
+message UserReserveSets {
+	repeated UserReserveSet userReserveSet = 1;
+}
+
+message UserChangeSets {
+	repeated UserChangeSet userChangeSet = 1;
+}
+ 
+
+// tags
+
+message Tag {		
+	required string uuid = 1;
+	
+	optional string text = 2;
+	
+	optional float score = 3;
+	
+	optional int64 version = 4;
+	
+	// v1.3 moved translations to public because of CELUM tag sync issues
+	
+	optional Translations translations = 100;
+	
+}
+
+message NewTag {
+	required string locale = 1;
+	
+	required string text = 2;	
+}
+
+
+message Tags {
+	repeated Tag tag = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+// permissions
+
+message ReadAccess {
+	required ReadAccessModel readAccessModel = 1;	
+	optional EntityReference readAccessDefinedOnParent = 2;
+	
+	repeated ReadAccessPermission readAccessPermission = 3;
+	optional PublicReadAccessPermission publicReadAccessPermission = 4;
+	
+}
+
+
+message ReadAccessChangeSet {
+	optional ReadAccessModel readAccessModel = 1;
+	
+	repeated ReadAccessPermissionChangeSet putReadAccessPermission = 2;
+	repeated ReadAccessPermissionChangeSet removeReadAccessPermission = 3;
+	
+	optional PublicReadAccessPermission publicReadAccessPermission = 4;
+}
+
+enum ReadAccessModel {
+	INHERIT_MODEL_FROM_PARENT = 0;
+	PUBLIC = 1;
+	ONLY_PERMITTED_GROUPS_OR_USERS = 2;
+}
+
+enum PublicReadAccessPermission {
+	PRE_LICENSED_INHERIT = 0;
+	PREVIEW_INHERIT = 1;
+	PREVIEW_NO_INHERIT = 2;
+	ONLY_ALLOWS_REGISTRATION = 3;
+	NO_ACCESS = 4;
+}
+
+message WriteAccess {
+	required WriteAccessModel writeAccessModel = 1;	
+	
+	repeated WriteAccessPermission writeAccessPermission = 2;
+}
+
+message WriteAccessChangeSet {
+	optional WriteAccessModel writeAccessModel = 1;
+	
+	repeated WriteAccessPermissionChangeSet putWriteAccessPermission = 2;
+	repeated WriteAccessPermissionChangeSet removeWriteAccessPermission = 3;
+}
+
+enum ReadAccessPermissionType {
+	RPT_END_USER_GROUP = 1;
+	RPT_USER = 3;
+	RPT_BRAND = 4;
+}
+
+message ReadAccessPermission {
+	required string targetUuid = 1;
+	required ReadAccessPermissionType type = 2;
+}
+
+message ReadAccessPermissionChangeSet {
+	required string targetUuid = 1;
+	required ReadAccessPermissionType type = 2;
+	
+	optional bool targetUuidIsEmailAddress = 3;
+}
+
+message WriteAccessPermission {		
+	required string adminUserGroupUuid = 1;
+	
+	required int64 accessFlags = 2;
+	optional bool cannotBeDeleted = 3;
+	optional bool cannotBeChanged = 4;
+}
+
+message WriteAccessPermissionChangeSet {	
+	required string adminUserGroupUuid = 1;
+	
+	optional int64 accessFlags = 2;
+	optional bool cannotBeDeleted = 3;
+	optional bool cannotBeChanged = 4;
+	
+	optional bool adminUserGroupUuidIsEmailAddress = 5;
+}
+
+enum WriteAccessModel {
+	INHERIT_WRITE_FROM_PARENT = 0;
+	AS_SPECIFIED = 1;	
+}
+
+message UserGroup {
+	required string userGroupUuid = 1;
+	
+	repeated UserGroupLocale locale = 2;
+	
+	optional bool cannotBeDeleted = 3;
+	optional bool mustContainAtLeastOneEntry = 4;
+	
+	repeated string requiresMembershipInUserGroupUuid = 5;
+	
+	optional bool requiresManualCommit = 6;
+	optional bool isAdminUserGroup = 7;
+	
+	repeated string brandUuid = 8;
+	
+	optional DereferencedData dereferencedData = 9;
+	
+	optional string name = 10;
+	optional string description = 11;
+	
+	optional float score = 12;
+	
+	optional int64 userReadPermission = 13;	
+	optional int64 userWritePermission = 14;
+	
+	optional int32 numberOfUsers = 15;
+	optional int32 numberOfBrandUsers = 16;
+	optional int32 totalNumberOfUsers = 17;
+	
+	optional string brandUuidResolved = 18; 
+	
+	optional AccessRequestInfo accessRequestInfo = 19;	
+	
+	optional bool requiresApplicationMessage = 20;
+	
+	// v1.5 cost centers 
+	
+	optional string costCenterId = 21;		
+	
+}
+
+message UserGroupChangeSet {
+	optional string userGroupUuid = 1;
+	
+	repeated UserGroupLocaleChangeSet putLocale = 2;		
+	repeated UserGroupLocaleChangeSet removeLocale = 3;		
+		
+	optional bool cannotBeDeleted = 4;
+	optional bool mustContainAtLeastOneEntry = 5;
+	
+	repeated string addRequiresMembershipInUserGroupUuid = 6;
+	repeated string removeRequiresMembershipInUserGroupUuid = 7;
+	
+	optional bool requiresManualCommit = 8;
+	
+	repeated string addUserEmailAddress = 9;
+	
+	repeated string removeUserUuid = 10;
+	
+	repeated string addBrandUuid = 11;
+	repeated string removeBrandUuid = 12;
+	
+	optional bool requiresApplicationMessage = 13;	
+	
+	// v1.5 cost centers 
+	
+	optional string costCenterId = 14;
+	
+	optional bool doNotSendNotificationEmails = 15;
+	
+}
+
+message UserGroups {	
+	repeated UserGroup userGroup = 1;
+	
+	optional QuerySummary summary = 2;	
+}
+
+message UserGroupLocale {
+	required string locale = 1;
+	
+	optional string name = 2;
+	optional string description = 3;
+}
+
+message UserGroupLocaleChangeSet {
+	required string locale = 1;
+	
+	optional string name = 2;
+	optional string description = 3;
+}
+
+// access request
+
+enum AccessRequestState
+{
+	ARS_REQUEST_INITIATED = 1;        
+    ARS_REQUEST_REJECTED = 2;
+    ARS_REQUEST_FINAL_REJECTED = 3;
+    ARS_REQUEST_ACCEPTED = 4;
+}
+
+message AccessRequest {
+	required string uuid = 1;	
+	
+	optional string applyingBrandUuid = 2;
+	optional string applyingUserUuid = 3;	
+		
+	optional AccessRequestState state = 4;
+	
+	optional EntityReference targetEntity = 5;	
+	optional string targetEndUserGroupUuid = 6;
+	
+	optional string targetBrandUuid = 7;
+	
+	optional int64 createdTimestamp = 8;
+	optional int64 lastUpdatedTimestamp = 9;
+	
+	optional int64 acceptedTimestamp = 10;
+	optional int64 rejectedTimestamp = 11;
+	
+	optional bool deleted = 12;
+	
+	optional DereferencedData dereferencedData = 13;
+	
+	optional string applyingBrandName = 14;
+	optional CompanyInfo applyingUserCompanyInfo = 15;
+	
+	optional string targetEndUserGroupName = 16;
+	optional string targetEntityName = 17;
+	
+	optional int64 version = 18;
+}
+
+message AccessRequestInfo {
+	required string accessRequestUuid = 1;
+	
+	optional int64 acceptedTimestamp = 2;
+	optional int64 rejectedTimestamp = 3;
+	
+	optional AccessRequestState state = 4;
+}
+
+message AccessRequests {
+	repeated AccessRequest accessRequest = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message AccessRequestCreateSet {
+	optional string applicationMessage = 1;
+	
+	required string targetEndUserGroupUuid = 2;
+	optional EntityReference targetEntity = 3;	
+}
+
+message AccessRequestRejectSet {
+	optional string rejectionReason = 1;
+	
+	optional bool isFinal = 2;
+	
+	// optional optimistic locking
+	optional int64 version = 3;
+}
+
+message AccessRequestAcceptSet {	
+	// optional optimistic locking
+	optional int64 version = 1;
+}
+
+// join request
+
+enum JoinRequestState
+{
+	JRS_REQUEST_INITIATED = 1;        
+    JRS_REQUEST_REJECTED = 2;
+    JRS_REQUEST_FINAL_REJECTED = 3;
+    JRS_REQUEST_ACCEPTED = 4;
+}
+
+message JoinRequest {
+	required string uuid = 1;	
+	
+	optional string applyingUserUuid = 2;	
+		
+	optional JoinRequestState state = 3;
+	
+	optional string targetBrandUuid = 4;
+	
+	optional int64 createdTimestamp = 5;
+	optional int64 lastUpdatedTimestamp = 6;
+	
+	optional int64 acceptedTimestamp = 7;
+	optional int64 rejectedTimestamp = 8;
+	
+	optional bool deleted = 9;
+	
+	optional DereferencedData dereferencedData = 10;
+	
+	optional CompanyInfo applyingUserCompanyInfo = 11;
+	
+	optional string targetBrandName = 12;
+	
+	optional int64 version = 13;
+}
+
+message JoinRequestInfo {
+	required string joinRequestUuid = 1;
+	
+	optional int64 acceptedTimestamp = 2;
+	optional int64 rejectedTimestamp = 3;
+	
+	optional JoinRequestState state = 4;
+}
+
+message JoinRequests {
+	repeated JoinRequest joinRequest = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message JoinRequestCreateSet {
+	optional string applicationMessage = 1;
+	
+	required string targetBrandUuid = 2;
+}
+
+message JoinRequestRejectSet {
+	optional string rejectionReason = 1;
+	
+	optional bool isFinal = 2;
+	
+	// optional optimistic locking
+	optional int64 version = 3;
+}
+
+message JoinRequestAcceptSet {	
+	// optional optimistic locking
+	optional int64 version = 1;
+	
+	required string adminUserGroupUuid = 2;
+}
+
+// license request
+
+enum LicenseRequestState
+{
+	LRS_REQUEST_INITIATED = 1;        
+    LRS_REQUEST_REJECTED = 2;
+    LRS_REQUEST_FINAL_REJECTED = 3;
+    LRS_REQUEST_ACCEPTED = 4;
+}
+
+message LicenseRequest {
+	required string uuid = 1;	
+	
+	optional string applyingBrandUuid = 2;
+	optional string applyingUserUuid = 3;	
+		
+	optional LicenseRequestState state = 4;
+	
+	optional EntityReference targetEntity = 5;	
+	optional string targetLicenseUuid = 6;
+	
+	optional string targetBrandUuid = 7;
+	
+	optional int64 createdTimestamp = 8;
+	optional int64 lastUpdatedTimestamp = 9;
+	
+	optional int64 acceptedTimestamp = 10;
+	optional int64 rejectedTimestamp = 11;
+	
+	optional bool deleted = 12;
+	
+	optional DereferencedData dereferencedData = 13;
+	
+	optional string applyingBrandName = 14;
+	optional CompanyInfo applyingUserCompanyInfo = 15;
+	
+	optional string targetLicenseName = 16;
+	optional string targetEntityName = 17;
+	
+	optional int64 version = 18;
+}
+
+message LicenseRequestInfo {
+	required string licenseRequestUuid = 1;
+	
+	optional string targetLicenseUuid = 2;
+	
+	optional int64 acceptedTimestamp = 3;
+	optional int64 rejectedTimestamp = 4;
+	
+	optional LicenseRequestState state = 5;
+}
+
+message LicenseRequests {
+	repeated LicenseRequest licenseRequest = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message LicenseRequestCreateSet {
+	required string applicationMessage = 1;
+	
+	required string targetLicenseUuid = 2;
+	required EntityReference targetEntity = 3;	
+}
+
+message LicenseRequestRejectSet {
+	optional string rejectionReason = 1;
+	
+	optional bool isFinal = 2;
+	
+	// optional optimistic locking
+	optional int64 version = 3;
+}
+
+message LicenseRequestAcceptSet {	
+	// optional optimistic locking
+	optional int64 version = 1;
+}
+
+// publish request
+
+enum PublishRequestState
+{
+	PRS_REQUEST_INITIATED = 1;        
+    PRS_REQUEST_REJECTED = 2;
+    PRS_REQUEST_ACCEPTED = 3;
+}
+
+message PublishRequest {
+	required string uuid = 1;	
+	
+	optional string brandUuid = 2;
+	optional string userUuid = 3;	
+		
+	optional PublishRequestState state = 4;
+	
+	optional EntityReference targetEntity = 5;
+	
+	optional string targetBrandUuid = 6; 	
+	
+	optional int64 createdTimestamp = 7;
+	optional int64 lastUpdatedTimestamp = 8;
+	
+	optional int64 acceptedTimestamp = 9;
+	optional int64 rejectedTimestamp = 10;
+	
+	optional bool deleted = 11;
+	
+	optional DereferencedData dereferencedData = 12;
+	
+	optional CompanyInfo userCompanyInfo = 13;
+	
+	optional string targetEntityName = 14;	
+	
+	optional int64 version = 15;
+}
+
+message PublishRequestInfo {
+	optional string publishRequestUuid = 1;
+	
+	optional int64 acceptedTimestamp = 2;
+	optional int64 rejectedTimestamp = 3;
+	
+	optional PublishRequestState state = 4;
+}
+
+message PublishRequests {
+	repeated PublishRequest publishRequest = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message PublishRequestCreateSet {
+	optional string applicationMessage = 1;
+	
+	optional EntityReference targetEntity = 2;	
+}
+
+message PublishRequestRejectSet {
+	optional string rejectionReason = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message PublishRequestAcceptSet {	
+	// optional optimistic locking
+	optional int64 version = 1;
+}
+
+// purchase credits request
+
+enum PurchaseCreditsRequestState
+{
+	PCRS_REQUEST_INITIATED = 1;        
+    PCRS_REQUEST_REJECTED = 2;
+    PCRS_REQUEST_ACCEPTED = 3;
+}
+
+message PurchaseCreditsRequest {
+	required string uuid = 1;	
+	
+	optional string brandUuid = 2;
+	optional string userUuid = 3;	
+		
+	optional PurchaseCreditsRequestState state = 4;
+	
+	optional int32 requiredAmount = 5;
+	
+	optional int64 createdTimestamp = 6;
+	optional int64 lastUpdatedTimestamp = 7;
+	
+	optional int64 acceptedTimestamp = 8;
+	optional int64 rejectedTimestamp = 9;
+	
+	optional bool deleted = 10;
+	
+	optional DereferencedData dereferencedData = 11;
+	
+	optional CompanyInfo userCompanyInfo = 12;
+	
+	optional int64 version = 13;
+}
+
+message PurchaseCreditsRequestInfo {
+	optional string purchaseCreditsRequestUuid = 1;
+	
+	optional int64 acceptedTimestamp = 2;
+	optional int64 rejectedTimestamp = 3;
+	
+	optional PurchaseCreditsRequestState state = 4;
+}
+
+message PurchaseCreditsRequests {
+	repeated PurchaseCreditsRequest purchaseCreditsRequest = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message PurchaseCreditsRequestCreateSet {
+	optional string applicationMessage = 1;
+	
+	required int32 requiredAmount = 2;
+}
+
+message PurchaseCreditsRequestRejectSet {
+	optional string rejectionReason = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+// upgrade plan request
+
+enum UpgradePlanRequestState
+{
+	UPRS_REQUEST_INITIATED = 1;        
+    UPRS_REQUEST_REJECTED = 2;
+    UPRS_REQUEST_ACCEPTED = 3;
+}
+
+message UpgradePlanRequest {
+	required string uuid = 1;	
+	
+	optional string brandUuid = 2;
+	optional string userUuid = 3;	
+		
+	optional UpgradePlanRequestState state = 4;
+	
+	required int32 planId = 5;
+	
+	optional CreditTransactionCurrency currency = 6;
+	
+	optional int64 createdTimestamp = 7;
+	optional int64 lastUpdatedTimestamp = 8;
+	
+	optional int64 acceptedTimestamp = 9;
+	optional int64 rejectedTimestamp = 10;
+	
+	optional bool deleted = 11;
+	
+	optional DereferencedData dereferencedData = 12;
+
+	optional string brandName = 13;
+	optional CompanyInfo userCompanyInfo = 14;
+		
+	optional int64 version = 15;
+	
+	// v1.1 promo code
+	
+	optional string promoCode = 16;
+}
+
+message UpgradePlanRequestInfo {
+	optional string upgradePlanRequestUuid = 1;
+	
+	optional int64 acceptedTimestamp = 2;
+	optional int64 rejectedTimestamp = 3;
+	
+	optional UpgradePlanRequestState state = 4;
+	
+	optional int32 planId = 5;
+	
+	// v1.1 promo code
+	
+	optional string promoCode = 6;
+}
+
+message UpgradePlanRequests {
+	repeated UpgradePlanRequest upgradePlanRequest = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message UpgradePlanRequestCreateSet {
+	optional string message = 1;
+	
+	required int32 planId = 2;
+	required CreditTransactionCurrency currency = 3;
+	
+	// v1.1 promo code
+	
+	optional string promoCode = 4;	
+}
+
+message UpgradePlanRequestRejectSet {
+	optional string rejectionReason = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message UpgradePlanRequestAcceptSet {	
+	// optional optimistic locking
+	optional int64 version = 1;
+	
+	optional int32 planId = 2;
+	
+	optional int32 includedBrands = 3;
+	optional int32 includedListedAssets = 4;
+	optional int32 connectExternalContentProviders = 5;
+	optional bool jobServices = 6;
+	optional bool customWatermark = 7;
+	
+	optional CreditTransactionCurrency currency = 8;
+	optional CreditTransactionPeriod period = 9;
+	optional int32 costPerPeriod = 10;
+	
+	// v1.1 promo code
+	
+	optional string promoCode = 11;
+	
+	// v1.4 custom subdomain
+	
+	optional bool customSubdomain = 12;
+	
+	// v1.8 extended brand plans
+	
+	optional bool checkOutContent = 13;
+	optional bool reporting = 14;
+	
+	optional bool publishContent = 15;
+	optional bool versioning = 16;
+	optional bool multiLevelAdminManagement = 17;
+	optional bool externalUserManagement = 18;
+	optional bool multiLevelExternalUserManagement = 19;
+	
+	optional int32 includedAcquisitionVolume = 20;
+	optional int32 includedTotalTransactions = 21;
+	optional int32 includedTotalStorageGb = 22;
+}
+
+// upgrade plan request
+
+enum ApprovalRequestState
+{
+	APRS_REQUEST_INITIATED = 1;        
+    APRS_REQUEST_REJECTED = 2;
+    APRS_REQUEST_ACCEPTED = 3;
+}
+
+message ApprovalRequest {
+	required string uuid = 1;	
+	
+	optional string brandUuid = 2;
+	optional string userUuid = 3;	
+		
+	optional ApprovalRequestState state = 4;
+	
+	optional int64 createdTimestamp = 5;
+	optional int64 lastUpdatedTimestamp = 6;
+	
+	optional int64 acceptedTimestamp = 7;
+	optional int64 rejectedTimestamp = 8;
+	
+	optional bool deleted = 9;
+	
+	optional DereferencedData dereferencedData = 10;
+
+	optional string brandName = 11;
+	optional CompanyInfo userCompanyInfo = 12;
+		
+	optional int64 version = 13;
+}
+
+message ApprovalRequestInfo {
+	optional string approvalRequestUuid = 1;
+	
+	optional int64 acceptedTimestamp = 2;
+	optional int64 rejectedTimestamp = 3;
+	
+	optional ApprovalRequestState state = 4;
+}
+
+message ApprovalRequests {
+	repeated ApprovalRequest approvalRequest = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message ApprovalRequestCreateSet {
+	optional string message = 1;
+}
+
+message ApprovalRequestRejectSet {
+	optional string rejectionReason = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message ApprovalRequestAcceptSet {	
+	// optional optimistic locking
+	optional int64 version = 1;
+}
+
+// project child
+
+message CollectedEntity {
+	required string uuid = 1;
+	
+	optional string relatedToProjectUuid = 2;
+	optional string relatedToJobUuid = 3;
+	
+	required EntityReference entityReference = 4;
+	optional string licenseUuid = 5;
+	
+	optional int64 createdTimestamp = 6;
+	optional int64 lastUpdatedTimestamp = 7;
+	
+	optional bool deleted = 8;
+	
+	optional DereferencedData dereferencedData = 9;
+	
+	optional string projectName = 10;
+	optional string jobName = 11;
+	optional string licenseName = 12;
+	optional string entityName = 13;
+	
+	optional BinaryType entityWorkingSetBinaryType = 14;
+	
+	optional int64 version = 15;
+	
+	// v1.1 generic external data / external content providers
+	
+	optional External external = 16;
+	
+	// v1.5 cost centers 
+	
+	optional string relatedToAdminUserGroupUuid = 17;
+	
+	optional string costCenterId = 18;
+	
+	optional string adminUserGroupName = 19;
+	
+	optional string licenseGroupingKey = 20;
+}
+
+message CollectedEntityInfo {
+	required string collectedEntityUuid = 1;
+	
+	optional string projectUuid = 2;
+	optional string shoppingCartUuid = 3;
+	optional string licenseUuid = 4;
+}
+
+message CollectedEntities {
+	repeated CollectedEntity collectedEntity = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+message CollectedEntityCreateSet {
+	required EntityReference targetEntity = 1;
+
+	optional string licenseUuid = 2;
+	
+	// v1.5 cost centers
+	
+	optional string adminUserGroupUuid = 3;
+}
+
+message CollectedEntityCreateSets {
+	repeated CollectedEntityCreateSet collectedEntityCreateSet = 1;
+}
+
+message CollectedEntityChangeSet {
+	optional string collectedEntityUuid = 1;
+
+	optional string licenseUuid = 2;
+	
+	// optional optimistic locking
+	optional int64 version = 3;
+	
+	// v1.5 cost centers
+	
+	optional string adminUserGroupUuid = 4;
+	optional bool removeAdminUserGroup = 5;
+}
+
+message CollectedEntityChangeSets {
+	repeated CollectedEntityChangeSet collectedEntityChangeSet = 1;
+}
+
+message CollectedEntityCopySet {
+	required string collectedEntityUuid = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message CollectedEntityCopySets {
+	repeated CollectedEntityCopySet collectedEntityCopySet = 1;
+}
+
+message CollectedEntityMoveSet {
+	required string collectedEntityUuid = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message CollectedEntityMoveSets {
+	repeated CollectedEntityMoveSet collectedEntityMoveSet = 1;
+}
+
+message CollectedEntityDeleteSet {
+	required string collectedEntityUuid = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message CollectedEntityDeleteSets {
+	repeated CollectedEntityDeleteSet collectedEntityDeleteSet = 1;
+}
+
+// contact form
+
+message ContactFormSendSet {
+	optional string email = 1;
+	required string subject = 2;
+	required string message = 3;
+	
+	optional string recaptchaResponse = 4;
+}
+
+// history
+
+enum HistoryRecordType {
+	HRT_BRAND = 0;
+	HRT_FOLDER = 1;
+	HRT_ASSET = 2;
+	HRT_TRASH = 3;	
+	
+	HRT_JOBS = 4;
+	HRT_JOB = 5;
+	
+	HRT_PARTICIPATIONS = 6;	
+	HRT_PARTICIPATION = 7;
+	
+	HRT_PROJECTS = 8;
+	HRT_PROJECT = 9;
+	
+	HRT_TAG = 10;
+	
+	HRT_SHOPPING_CART = 11;		
+	HRT_COLLECTED_ENTITY = 12;
+	
+	HRT_ACCESS_REQUEST = 13;
+	HRT_PUBLISH_REQUEST = 14;
+	HRT_LICENSE_REQUEST = 15;
+	HRT_PURCHASE_CREDITS_REQUEST = 16;
+	HRT_UPGRADE_PLAN_REQUEST = 17;
+	HRT_JOIN_REQUEST = 18;
+	HRT_APPROVAL_REQUEST = 19;
+	
+	HRT_EXTERNAL_CONTENT_PROVIDER = 20;
+}
+
+message HistorySelectSet {
+	required HistoryRecordType recordType = 1;
+	required string recordUuid = 2;
+	
+	optional bool requestInteractive = 3;
+}
+
+message HistoryEvent {	
+	optional int64 id = 1;
+	required string userUuid = 2;
+	optional string brandUuid = 3;
+	required int64 timestamp = 4;	
+	
+	optional HistoryRecordType recordType = 5;
+	required string recordUuid = 6;
+	optional int64 recordVersion = 7;
+	
+	repeated HistoryActivity activity = 8;
+	
+	optional HistoryUserData userData = 9;
+}
+
+message HistoryEvents {	
+	repeated HistoryEvent event = 1;
+	
+	optional QuerySummary summary = 2;	
+}
+
+message HistoryActivity {
+	enum ActivityType {		
+		ENTITY_CREATED = 0;		
+		PROPERTY_CHANGED = 1;
+		TAGS_ADDED = 2;
+		TAGS_CHANGED = 3;
+		TAGS_REMOVED = 4;
+		READ_ACCESS_PERMISSION_END_USER_GROUP_ADDED = 5;
+		READ_ACCESS_PERMISSION_END_USER_GROUP_REMOVED = 6;
+		// 7 unused
+		WRITE_ACCESS_PERMISSION_ADMIN_USER_GROUP_ADDED = 8;
+		WRITE_ACCESS_PERMISSION_ADMIN_USER_GROUP_CHANGED = 9;
+		WRITE_ACCESS_PERMISSION_ADMIN_USER_GROUP_REMOVED = 10;		
+		AVAILABLE_LICENSE_ADDED = 11;
+		AVAILABLE_LICENSE_REMOVED = 12;
+		BINARIES_ADDED = 13;
+		BINARIES_CHANGED = 14;
+		BINARIES_REMOVED = 15;
+		PARENTS_ADDED = 16;
+		PARENTS_REMOVED = 17;
+		END_USER_GROUP_ADDED = 18;
+		END_USER_GROUP_CHANGED = 19;
+		END_USER_GROUP_REMOVED = 20;
+		ADMIN_USER_GROUP_ADDED = 21;
+		ADMIN_USER_GROUP_CHANGED = 22;
+		ADMIN_USER_GROUP_REMOVED = 23;
+		BINARY_VERSION_ADDED = 24;
+		ENTITY_MOVED_TO_TRASH = 25;		
+		ENTITY_DELETED = 26;
+		ENTITY_RESTORED = 27;
+		ENTITY_LOCALE_ADDED = 28;
+		ENTITY_LOCALE_REMOVED = 29;
+		ENTITY_LOCALE_CHANGED = 30;
+		USER_GROUP_LOCALE_ADDED = 31;
+		USER_GROUP_LOCALE_REMOVED = 32;
+		USER_GROUP_LOCALE_CHANGED = 33;
+		// 33-36 unused
+		NEW_WORKING_SET_ADDED = 37;		
+		TAG_CREATED = 38;
+		TAG_TRANSLATION_ADDED = 39;
+		TAG_TRANSLATION_CHANGED = 40;
+		TAG_TRANSLATION_REMOVED = 41;	
+		TAG_CONFIRMED = 42;
+		TAG_UNCONFIRMED = 43;
+		TAG_DELETED = 44;	
+		BINARY_SET_ADDED = 45;
+		BINARY_SET_CHANGED = 46;
+		BINARY_SET_REMOVED = 47;
+		ENTITY_COPIED = 48;
+		ENTITY_COPIED_FROM_ENTITY = 49;
+		STARTED_PARTICIPATION = 50;
+		PARTICIPATION_SUBMITTED = 51;			
+		ENTITY_TRASHED = 52;	
+		PARTICIPATION_REJECTED = 53;
+		PARTICIPATION_FINALLY_REJECTED = 54;
+		PARTICIPATION_ACQUIRED = 55;
+		PARTICIPATION_ACCEPTED = 56;
+		JOB_CLOSED = 57;
+		WORKINGSET_COMMITTED = 58;		
+		// 59 unused
+		ASSET_ACQUIRED = 60;
+		LICENSE_ADDED = 61;
+		LICENSE_REMOVED = 62;
+		LICENSE_CHANGED = 63;
+		LICENSE_LOCALE_ADDED = 64;
+		LICENSE_LOCALE_REMOVED = 65;
+		LICENSE_LOCALE_CHANGED = 66;
+		LICENSE_TYPE_OF_USE_ADDED = 67;
+		LICENSE_TYPE_OF_USE_REMOVED = 68;
+		USER_GROUP_REQUIRED_MEMBERSHIP_ADDED = 69;
+		USER_GROUP_REQUIRED_MEMBERSHIP_REMOVED = 70;
+		SUBMITTED_APPLICATION = 71;
+		APPLICATION_REJECTED = 72;
+		APPLICATION_ACCEPTED = 73;
+		READ_ACCESS_PERMISSION_USER_ADDED = 74;
+		READ_ACCESS_PERMISSION_USER_REMOVED = 75;
+		READ_ACCESS_PERMISSION_BRAND_ADDED = 76;
+		READ_ACCESS_PERMISSION_BRAND_REMOVED = 77;
+		MANUAL_ACCESS_REQUEST_INITIATED = 78;
+		MANUAL_ACCESS_REQUEST_ACCEPTED = 79;
+		MANUAL_ACCESS_REQUEST_REJECTED = 80;
+		MANUAL_ACCESS_REQUEST_FINALLY_REJECTED = 81;
+		AUTOMATIC_ACCESS_REQUEST_INITIATED_AND_ACCEPTED = 82;
+		END_USER_GROUP_BRAND_ADDED = 83;
+		END_USER_GROUP_BRAND_REMOVED = 84;
+		ENTITY_COPIED_TO_ENTITY = 85;
+		COLLECTED_ENTITY_CREATED = 86;
+		COLLECTED_ENTITY_DELETED = 87;
+		COLLECTED_ENTITIES_CREATED = 88;
+		COLLECTED_ENTITIES_DELETED = 89;
+		SHOPPING_CART_SUBMITTED_TO_BRAND = 90;
+		COLLECTED_ENTITY_COPIED_TO_SHOPPING_CART = 91;
+		COLLECTED_ENTITIES_COPIED_TO_SHOPPING_CART = 92;
+		COLLECTED_ENTITY_MOVED_TO_PROJECT = 93;
+		COLLECTED_ENTITY_MOVED_TO_PROJECT_BY_DELETION = 94;
+		COLLECTED_ENTITIES_MOVED_TO_PROJECT = 95;
+		SHOPPING_CART_REJECTED = 96;
+		SHOPPING_CART_ACQUIRED = 97;
+		SHOPPING_CART_FULFILLED = 98;
+		// COLLECTED_ENTITY_LICENSE_CHANGED = 99;
+		BRAND_LINK_ADDED = 100;
+		BRAND_LINK_CHANGED = 101;
+		BRAND_LINK_REMOVED = 102;
+		ENTITY_PUBLISHED = 103;
+		ENTITY_UNPUBLISHED = 104;
+		CREDITS_INCREASED = 105;
+		CREDITS_REDUCED = 106;
+		CREDIT_BALANCE_PREPAID_CHARGE_STARTED = 107;
+		CREDIT_BALANCE_PREPAID_CHARGE_PAID_AND_FULFILLED = 108;
+		CREDIT_BALANCE_INSTANT_CHARGE_STARTED_AND_FULFILLED = 109;
+		CREDIT_BALANCE_INSTANT_CHARGE_STARTED_PAID_AND_FULFILLED = 110;
+		CREDIT_BALANCE_INSTANT_CHARGE_PAID = 111;
+		CREDIT_BALANCE_PAID_OUT = 112;
+		CREDIT_BALANCE_FEE_STARTED_AND_PAID = 113;
+		PUBLISH_REQUEST_INITIATED = 114;
+		PUBLISH_REQUEST_ACCEPTED = 115;
+		PUBLISH_REQUEST_REJECTED = 116;
+		LICENSE_REQUEST_INITIATED = 117;
+		LICENSE_REQUEST_ACCEPTED = 118;
+		LICENSE_REQUEST_REJECTED = 119;
+		LICENSE_REQUEST_FINALLY_REJECTED = 120;
+		PURCHASE_CREDITS_REQUEST_INITIATED = 121;		
+		PURCHASE_CREDITS_REQUEST_REJECTED = 122;
+		PURCHASE_CREDITS_REQUEST_FULFILLED = 123;
+		PURCHASE_CREDITS_REQUEST_ACCEPTED = 124;
+		UPGRADE_PLAN_REQUEST_INITIATED = 125;
+		UPGRADE_PLAN_REQUEST_ACCEPTED = 126;
+		UPGRADE_PLAN_REQUEST_REJECTED = 127;
+		JOIN_REQUEST_INITIATED = 128;
+		JOIN_REQUEST_ACCEPTED = 129;
+		JOIN_REQUEST_REJECTED = 130;
+		JOIN_REQUEST_FINALLY_REJECTED = 131;
+		CREDIT_BALANCE_FEE_STARTED = 132;
+		CREDIT_BALANCE_FEE_PAID = 133;
+		APPROVAL_REQUEST_INITIATED = 134;
+		APPROVAL_REQUEST_ACCEPTED = 135;
+		APPROVAL_REQUEST_REJECTED = 136;
+		EXTERNAL_CONTENT_PROVIDER_SETUP_STARTED = 137;
+		EXTERNAL_CONTENT_PROVIDER_CONFIGURED = 138;
+		EXTERNAL_CONTENT_PROVIDER_CONFIGURATION_ERROR = 139;
+		EXTERNAL_CONTENT_PROVIDER_REFRESHED = 140;
+		EXTERNAL_CONTENT_PROVIDER_REFRESHED_MANUALLY = 141;
+		EXTERNAL_CONTENT_PROVIDER_EXPIRED = 142;		
+		EXTERNAL_CONTENT_PROVIDER_CHANGED = 143;
+		EXTERNAL_CONTENT_PROVIDER_PRODUCT_CHANGED = 144;
+		COLLECTED_ENTITY_CHANGED = 145;
+	}
+	
+	required ActivityType type = 1;
+	
+	repeated HistoryUserGroupData userGroupData = 2;
+	repeated HistoryLicenseData licenseData = 3;
+	repeated HistoryUserData userData = 4;
+	repeated HistoryEntityData entityData = 5;
+	repeated string localeData = 6;
+	repeated LicenseTypeOfUse licenseTypeOfUseData = 7;
+	repeated HistoryTagData tagData = 8;
+	repeated string translationData = 9;
+	repeated int64 workingSetData = 10;
+	repeated HistoryBinarySetData binarySetData = 11;
+	repeated BinaryPurpose binaryData = 12;
+	repeated HistoryParticipationData participationData = 13;
+	repeated string shoppingCartData = 14;
+	repeated string collectedEntityData = 15;
+	// 16 unused
+	repeated string creditBalanceData = 17;
+	repeated string creditTransactionData = 18;
+	repeated HistoryBrandLinkData brandLinkData = 19;
+	
+	repeated HistoryUserGroupData relatedUserGroupData = 20;
+	
+	repeated HistoryValueChange valueChange = 21;
+	
+	optional string message = 22;
+	optional int32 price = 23;
+	
+	optional int32 startPurchaseCredits = 24;
+	optional int32 endPurchaseCredits = 25;
+	optional int32 startPayoutCredits = 26;
+	optional int32 endPayoutCredits = 27;
+	
+	optional bool isInteractive = 28;
+	
+	optional HistoryExternalContentProviderData externalContentProviderData = 29;
+	optional string externalContentProviderProductData = 30;
+}
+
+message HistoryBinarySetData {
+	required int32 uuid = 1;
+	optional string name = 2;
+}
+
+message HistoryBrandLinkData {
+	required int32 uuid = 1;
+	optional string name = 2;
+}
+
+message HistoryUserGroupData {
+	required string userGroupUuid = 1;
+	optional Translations names = 3; 
+}
+
+message HistoryLicenseData {
+	required string licenseUuid = 1;
+	optional Translations names = 3;
+}
+
+message HistoryUserData {
+	required string userUuid = 1;
+	optional CompanyInfo companyInfo = 2;
+}
+
+message HistoryParticipationData {
+	required string participationUuid = 1;
+	required string brandUuid = 2;
+	optional Translations brandNames = 3;
+}
+
+message HistoryEntityData {
+	required string entityUuid = 1;
+	required EntityType entityType = 2;	
+	optional Translations names = 3;
+}
+
+message HistoryTagData {
+	required string tagUuid = 1;
+	optional Translations names = 2;
+}
+
+message HistoryExternalContentProviderData {
+	required ExternalContentProvider provider = 1;
+	optional BackendErrorCode backendErrorCode = 2;
+}
+
+message HistoryValueChange {
+	required string propertyName = 1;
+	optional HistoryValue from = 2;
+	optional HistoryValue to = 3;
+}
+
+message HistoryValue {	
+	optional int64 longValue = 1;
+	optional string stringValue = 2;
+	optional bytes bytesValue = 3;
+	optional bool boolValue = 4;
+	optional float floatValue = 5;
+	optional double doubleValue = 6;	
+}
+
+// simple translations (single string and history)
+
+message Translation {
+	enum SynonymKey {
+		DEFAULT = 1;
+		SYNONYM_1 = 2;
+		SYNONYM_2 = 3;
+		SYNONYM_3 = 4;
+	}
+	
+	required string locale = 1;
+	
+	// used for tag synonyms to identify the translation within the same locale
+	// the sub key points the translation to the right index	
+	// currently we support 1 default value + 3 synonym values (subject for increase
+	// if needed)	
+	optional SynonymKey synonymKey = 2;
+		
+	optional string text = 3;
+}
+
+message Translations {
+	repeated Translation translation = 1;
+}
+
+// query
+
+enum QueryOrderBy {
+	NATURAL_ORDER = 1;
+	MATCH_SCORE = 2;
+	LOCAL_FEATURING = 3;
+	GLOBAL_FEATURING = 4;
+	CREATED_TIMESTAMP = 5;
+	LAST_UPDATED_TIMESTAMP = 6;
+	LAST_COMMITTED_TIMESTAMP = 7;
+}
+
+enum QueryOrderDirection {
+	ASC = 1;
+	DESC = 2;
+}
+
+enum QueryPublishingState {
+	NO_UNPUBLISHED_CHANGED = 1;
+	UNPUBLISHED_CHANGES = 2;
+}
+
+enum QueryReviewState {
+	QRS_NOT_REVIEWED = 1;
+	QRS_REVIEWED_NO_RELEASE_NECESSARY = 2;
+	QRS_REVIEWED_MAYBE_RELEASE_NECESSARY_RELEASE_NOT_PRESENT = 3;
+	QRS_REVIEWED_MAYBE_RELEASE_NECESSARY_RELEASE_PRESENT = 4;
+	QRS_REVIEWED_RELEASE_NECESSARY_RELEASE_NOT_PRESENT= 5;
+	QRS_REVIEWED_RELEASE_NECESSARY_RELEASE_PRESENT= 6;
+}
+
+message QueryData {
+	optional int32 startIndex = 1;
+	optional int32 count = 2;
+	
+	optional QueryOrderBy orderBy = 3;
+	optional QueryOrderDirection orderDirection = 4;
+	
+	optional string terms = 5;
+	optional bool termsAnd = 6;
+	
+	optional bool recursive = 7;
+	
+	optional string locale = 8;
+	
+	repeated EntityType type = 9;
+	repeated string locales = 10;
+	repeated Dimension dimension = 11;
+	repeated BinaryType binaryType = 12;
+	
+	optional Uploaded uploaded = 13;
+	
+	repeated Orientation orientation = 14;
+	repeated VideoFormat videoFormat = 15;
+	repeated VideoAspectRatio videoAspectRatio = 16;
+	repeated Duration duration = 17;
+	repeated PageCount pageCount = 18;
+	optional Source source = 19;
+	
+	repeated string licenseId = 20;	
+	repeated string multiParentId = 21;
+	
+	optional bool includeContidio = 22;
+	
+	repeated ProjectState projectState = 23;
+	
+	repeated CreditTransactionType creditTransactionType = 24;
+	
+	optional int64 fromCreatedTimestamp = 25;
+	optional int64 toCreatedTimestamp = 26;
+	
+	optional int64 fromLastUpdatedTimestamp = 27;
+	optional int64 toLastUpdatedTimestamp = 28;
+	
+	optional int64 fromLastCommittedTimestamp = 29;
+	optional int64 toLastCommittedTimestamp = 30;
+	
+	repeated AutocompletedEntityType autocompletedEntityType = 31;
+	
+	repeated JobType jobType = 32;
+	repeated JobState jobState = 33;	
+	repeated ParticipationState participationState = 34;	
+	
+	repeated NotificationType notificationType = 35;
+	repeated NotificationState notificationState = 36;
+	
+	repeated ContentCategory contentCategory = 37;
+	
+	optional QueryPublishingState publishingState = 38;
+	
+	repeated AssetType assetType = 39;
+	
+	repeated BrandType brandType = 40;
+	
+	repeated QueryReviewState reviewState = 41;
+	
+	optional bool includeInactive = 42;
+	
+}
+
+message QueryAggregation {
+	required string key = 1;
+	optional int64 count = 2;
+	
+	optional string from = 3;
+	optional string to = 4;
+}
+
+message QueryAggregations {
+	required string key = 1;
+	
+	repeated QueryAggregation aggregation = 2;
+}
+
+message QuerySummary {
+	required int64 totalCount = 1;
+	
+	repeated QueryAggregations aggregation = 2;
+	
+	optional QueryData queryData = 4;	
+}
+
+enum Dimension {
+	SMALL = 1;
+	MEDIUM = 2;
+	LARGE = 3;
+	XLARGE = 4;
+	XXLARGE = 5;
+}
+
+enum Uploaded {
+	ALL_TIME = 1;
+	TODAY = 2;
+	THIS_WEEK = 3;
+	THIS_MONTH = 4;
+	LAST_3_MONTHS = 5;
+	LAST_6_MONTHS = 6;
+}
+
+enum Orientation {
+	PORTRAIT = 1;
+	LANDSCAPE = 2;
+	SQUARE = 3;
+}
+
+enum Source {
+	OTHER = 0;
+	 
+	CONTIDIO = 1;
+	GETTY = 2;
+	SHUTTERSTOCK = 3;
+	ISTOCK = 4;
+	THINKSTOCK = 5;
+	ADOBESTOCK = 6;
+	
+	SHUTTERSTOCK_CONTIDIO = 7;
+}
+
+enum VideoFormat {
+	HD = 1;
+	FULL_HD = 2;
+	FOUR_K = 3;
+	EIGHT_K = 4;
+	OTHER_FORMAT = 5;	
+}
+
+enum VideoAspectRatio {
+	FOUR_TO_THREE = 1;
+	SIXTEEN_TO_NINE = 2;
+	OTHER_RATIO = 3;
+}
+
+enum Duration {
+	SHORT = 1;
+	MEDIUM_LENGTH = 2;
+	LONG = 3;
+}
+
+enum PageCount {
+	ZERO_OR_ONE_PAGE = 1;
+	TWO_TO_FIVE_PAGES = 2;
+	SIX_TO_TEN_PAGES = 3;
+	ELEVEN_TO_FIFTY_PAGES = 4;
+	ABOVE_FIFTY_PAGES = 5;
+}
+
+// notifications
+
+enum NotificationState {
+	NS_DECISION_REQUIRED = 1;
+	NS_ACTION_REQUIRED = 2;
+	NS_FEEDBACK = 3;
+	NS_INFORMATIONAL = 4;
+	NS_DISMISSED = 5;
+	NS_WARNING = 6;
+}
+
+enum NotificationType {
+	ACCESS_REQUEST_INITIATED = 1;
+	ACCESS_REQUEST_ACCEPTED = 2;
+	ACCESS_REQUEST_REJECTED = 3;
+	ACCESS_REQUEST_FINALLY_REJECTED = 4;
+	SHOPPING_CART_SUBMITTED_TO_BRAND = 5;
+	SHOPPING_CART_ACQUISITION_REJECTED = 6;
+	SHOPPING_CART_ACQUISITION_FULFILLED = 7;
+	CREDIT_BALANCE_PREPAID_CHARGE_STARTED = 8;
+	CREDIT_BALANCE_PREPAID_CHARGE_PAID_AND_FULFILLED = 9;
+	CREDIT_BALANCE_INSTANT_CHARGE_STARTED_AND_FULFILLED = 10;
+	CREDIT_BALANCE_INSTANT_CHARGE_STARTED_PAID_AND_FULFILLED = 11;
+	CREDIT_BALANCE_INSTANT_CHARGE_PAID = 12;
+	CREDIT_BALANCE_PAID_OUT = 13;
+	CREDIT_BALANCE_FEE_STARTED_AND_PAID = 14;
+	PUBLISH_REQUEST_INITIATED = 15;
+	PUBLISH_REQUEST_ACCEPTED = 16;
+	PUBLISH_REQUEST_REJECTED = 17;
+	LICENSE_REQUEST_INITIATED = 18;
+	LICENSE_REQUEST_ACCEPTED = 19;
+	LICENSE_REQUEST_REJECTED = 20;
+	LICENSE_REQUEST_FINALLY_REJECTED = 21;
+	PURCHASE_CREDITS_REQUEST_INITIATED = 22;
+	PURCHASE_CREDITS_REQUEST_FULFILLED = 23;
+	PURCHASE_CREDITS_REQUEST_REJECTED = 24;
+	PURCHASE_CREDITS_REQUEST_ACCEPTED = 25;
+	ENTITY_CREATED = 26;
+	ENTITY_CHANGED = 27;
+	ENTITY_READ_BRAND_ACCESS_GRANTED = 28; 
+	END_USER_GROUP_BRAND_ACCESS_GRANTED = 29; 
+	ENTITY_READ_INDIVIDUAL_ACCESS_GRANTED = 30;
+	END_USER_GROUP_INDIVIDUAL_ACCESS_GRANTED = 31; 
+	ADMIN_USER_GROUP_INDIVIDUAL_ACCESS_GRANTED = 32; 
+	ENTITY_READ_INDIVIDUAL_ACCESS_INVITATION = 33;
+	END_USER_GROUP_INDIVIDUAL_ACCESS_INVITATION = 34; 
+	ADMIN_USER_GROUP_INDIVIDUAL_ACCESS_INVITATION = 35;
+	UPGRADE_PLAN_REQUEST_INITIATED = 36;
+	UPGRADE_PLAN_REQUEST_ACCEPTED = 37;
+	UPGRADE_PLAN_REQUEST_REJECTED = 38;
+	JOIN_REQUEST_INITIATED = 39;
+	JOIN_REQUEST_ACCEPTED = 40;
+	JOIN_REQUEST_REJECTED = 41;
+	JOIN_REQUEST_FINALLY_REJECTED = 42;
+	CREDIT_BALANCE_FEE_STARTED = 43;
+	CREDIT_BALANCE_FEE_PAID = 44;
+	APPROVAL_REQUEST_INITIATED = 45;
+	APPROVAL_REQUEST_ACCEPTED = 46;
+	APPROVAL_REQUEST_REJECTED = 47;
+	EXTERNAL_CONTENT_PROVIDER_PRODUCT_NO_MORE_WARNING = 48;
+	EXTERNAL_CONTENT_PROVIDER_PRODUCT_NEW_WARNING = 49;
+}
+
+message Notification {
+	required int64 notificationId = 1;
+	
+	optional int64 isDerivedFromNotificationUuid = 2;
+	
+	required NotificationType type = 3;
+	required NotificationState state = 4;
+	
+	optional EntityReference entityReference = 5;
+	
+	required string underlyingObjectUuid = 6;
+	
+	required int64 createdTimestamp = 7;
+	required int64 lastUpdatedTimestamp = 8;
+	
+	optional string targetBrandUuid = 9;
+	optional string targetUserUuid = 10;
+	
+	optional string message = 11;
+	
+	optional bool deleted = 12;
+	
+	optional string brandUuid = 13;
+	optional string userUuid = 14;
+	
+	optional DereferencedData dereferencedData = 15;	
+
+	optional string brandName = 16;	
+	optional CompanyInfo userCompanyInfo = 17;
+	
+	optional string entityName = 18;
+	optional string userGroupName = 19;
+	
+	optional int64 version = 20;
+	
+	// v1.1 external content providers
+	
+	optional ExternalNotificationData externalNotificationData = 21;
+}
+
+message Notifications {
+	repeated Notification notification = 1;
+	
+	optional QuerySummary summary = 2;
+}
+
+// plans
+
+enum BrandPlanBrandType {
+	BPBT_CUSTOM = 1;
+	BPBT_CONTENT_PUBLISHER = 2;
+	BPBT_PROCUREMENT = 3;
+}
+
+message BrandPlan {
+	optional int32 brandPlanId = 1;
+	
+	optional int32 includedBrands = 2;
+	optional int32 includedListedAssets = 3;
+	optional int32 connectExternalContentProviders = 4;
+	optional bool jobServices = 5;
+	optional bool customWatermark = 6;
+	
+	optional int32 currentlyListedAssets = 7;
+	optional int64 lastCountTimestamp = 8;
+	
+	optional CreditTransactionCurrency currency = 9;
+	optional CreditTransactionPeriod period = 10;
+	optional int32 costPerPeriod = 11;
+	
+	optional string promoCode = 12;
+	optional int64 promoCodeActiveUntil = 13;
+	
+	// v1.4 custom subdomain
+	
+	optional bool customSubdomain = 14;
+	
+	// v1.8 extended brand plans
+	
+	optional bool checkOutContent = 15;
+	optional bool reporting = 16;
+	
+	optional bool publishContent = 17;
+	optional bool versioning = 18;
+	optional bool multiLevelAdminManagement = 19;
+	optional bool externalUserManagement = 20;
+	optional bool multiLevelExternalUserManagement = 21;	
+	
+	optional int32 includedAcquisitionVolume = 22;
+	optional int32 includedTotalTransactions = 23;
+	optional int32 includedTotalStorageGb = 24;
+}
+
+// v1.1 external content providers
+
+enum ExternalContentProvider {
+	ECP_GETTY = 1;
+	ECP_SHUTTERSTOCK = 2;
+	ECP_ISTOCK = 3;
+	ECP_THINKSTOCK = 4;
+	ECP_ADOBESTOCK = 5;
+}
+
+enum ExternalContentProviderState {
+	ECPS_CREATED = 1;
+	ECPS_SETUP = 2;
+	ECPS_ACTIVE = 3;
+	ECPS_EXPIRED = 4;
+	ECPS_ERROR = 5;
+}
+
+message ExternalContentProviderSetupSet {
+	// optional optimistic locking
+	optional int64 version = 1;	
+}
+
+message ExternalContentProviderSetup {
+	optional string redirectToUrl = 1;	
+}
+
+message ExternalContentProviderConfigureSet {
+	optional string state = 1;
+	optional string accessToken = 2;
+	optional string refreshToken = 3;
+	optional int32 expiresIn = 4;	
+	optional string error = 5;
+	
+	optional string userName = 6;
+	optional string password = 7;
+	
+	optional string code = 8;
+	
+	// optional optimistic locking
+	optional int64 version = 9;
+}
+
+message ExternalContentProviderRefreshSet {
+	optional bool alsoRefreshPricingInformation = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message ExternalContentProviderConfiguration {
+	required ExternalContentProvider provider = 1;
+	
+	optional ExternalContentProviderState state = 2;
+	
+	optional int64 setupStartedTimestamp = 3;
+	optional int64 setupCompletedTimestamp = 4;
+	optional int64 lastRefreshTimestamp = 5;
+	
+	optional bool lastRefreshWasManual = 6;
+	
+	optional string userUuid = 7;
+	
+	optional int64 expiryTimestamp = 8;
+	
+	optional BackendErrorCode backendErrorCode = 9;
+	
+	optional DereferencedData dereferencedData = 10;
+	
+	optional string externalUserName = 11;
+	
+	optional CompanyInfo userCompanyInfo = 12;
+	
+	optional int64 version = 100;
+}
+
+message ExternalContentProviderConfigurationChangeSet {
+	repeated ExternalContentProviderProductChangeSet putProviderProduct = 1;
+	
+	// optional optimistic locking
+	optional int64 version = 2;
+}
+
+message ExternalContentProviderConfigurations {
+	repeated ExternalContentProviderConfiguration externalContentProviderConfiguration = 1;
+	
+	optional QuerySummary summary = 2;	
+}
+
+message ExternalContentProviderProduct {
+	required string productId = 1;
+	
+	optional int32 creditsRemaining = 2;
+	optional int32 downloadLimit = 3;
+	optional int64 downloadLimitEndTimestamp = 4;
+	optional int64 downloadLimitResetTimestamp = 5;
+	
+	optional int32 downloadsRemaining = 6;
+	
+	optional int64 expirationTimestamp = 7;
+	
+	optional string name = 8;
+	
+	optional string state = 9;
+	
+	optional string type = 10;
+	
+	optional string agreementName = 11;
+	
+	optional string resolution = 12;
+	
+	optional bool noteRequired = 13;
+	optional bool projectCodeRequired = 14;
+	
+	optional int32 overageLimit = 15;
+	optional int32 overageRemaining = 16;
+	optional int32 overageCount = 17;
+	optional bool overageReached = 18;
+	
+	optional ExternalPricingModel pricingModel = 19;
+	
+	optional int32 imageExternalCreditPriceFull = 20;
+	optional float imageMonetaryPriceFull = 21;
+	
+	optional int32 videoExternalCreditPrice4K = 22;
+	optional float videoMonetaryPrice4K = 23;
+	
+	optional int32 audioExternalCreditPrice = 24;
+	optional float audioMonetaryPrice = 25;
+	
+	optional int32 documentExternalCreditPrice = 26;
+	optional float documentMonetaryPrice = 27;
+	
+	optional int32 warningLimitDownloads = 28;
+	
+	repeated ExternalContentProviderProductFormat format = 29;
+	
+	optional int32 warningLimitDownloadsCurrentUsage = 30;
+	
+	optional bool isCreditPack = 31;
+	
+	optional int32 videoExternalCreditPriceHD = 32;
+	optional float videoMonetaryPriceHD = 33;
+	
+	optional int32 videoExternalCreditPriceSD = 34;
+	optional float videoMonetaryPriceSD = 35;
+	
+	optional int32 videoExternalCreditPriceLR = 36;
+	optional float videoMonetaryPriceLR = 37;
+	
+	optional bool isInactive = 38;
+	
+	optional int32 imageExternalCreditPriceMedium = 39;
+	optional float imageMonetaryPriceMedium = 40;
+	
+	optional int32 imageExternalCreditPriceSmall = 41;
+	optional float imageMonetaryPriceSmall = 42;
+	
+	optional int32 warningLimitCredits = 43;
+	optional int32 warningLimitCreditsCurrentUsage = 44;
+}
+
+message ExternalContentProviderProductChangeSet {
+	required string productId = 1;
+	
+	optional ExternalPricingModel pricingModel = 2;
+	
+	optional int32 imageExternalCreditPriceFull = 3;
+	optional float imageMonetaryPriceFull = 4;
+	
+	optional int32 videoExternalCreditPrice4K = 5;
+	optional float videoMonetaryPrice4K = 6;
+	
+	optional int32 audioExternalCreditPrice = 7;
+	optional float audioMonetaryPrice = 8;
+	
+	optional int32 documentExternalCreditPrice = 9;
+	optional float documentMonetaryPrice = 10;
+	
+	optional int32 warningLimitDownloads = 11;
+	optional bool removeWarningLimitDownloads = 12;
+	
+	optional int32 videoExternalCreditPriceHD = 13;
+	optional float videoMonetaryPriceHD = 14;
+	
+	optional int32 videoExternalCreditPriceSD = 15;
+	optional float videoMonetaryPriceSD = 16;
+	
+	optional int32 videoExternalCreditPriceLR = 17;
+	optional float videoMonetaryPriceLR = 18;	
+	
+	optional int32 imageExternalCreditPriceMedium = 19;
+	optional float imageMonetaryPriceMedium = 20;
+	
+	optional int32 imageExternalCreditPriceSmall = 21;
+	optional float imageMonetaryPriceSmall = 22;
+	
+	optional int32 warningLimitCredits = 23;
+	optional bool removeWarningLimitCredits = 24;
+}
+
+message ExternalContentProviderProducts {
+	repeated ExternalContentProviderProduct product = 1;
+	
+	optional QuerySummary summary = 2;	
+}
+
+message ExternalContentProviderProductFormat {
+	optional string size = 1;
+	optional string format = 2;
+	
+	optional string mediaType = 3;
+	optional int32 minResolution = 4;
+	optional string description = 5;
+}
+
+message ExternalContentProviderInfo {
+	required ExternalContentProvider provider = 1;
+	
+	optional ExternalContentProviderState state = 2;
+}
+
+// v1.1 generic external data / external content providers
+
+message External {
+	required Source source = 59;
+	
+	optional string link = 60;
+	
+}
+
+message ExternalLicensedLicense {	
+	optional string productId = 1;
+	optional string productType = 2;
+	optional string agreementName = 3;
+	optional string accountName = 4;
+}
+
+
+enum ExternalPricingModel {
+	EPM_NO_PRICE = 1;
+	EPM_EXTERNAL_CREDITS = 2;
+	EPM_EUR = 3;
+	EPM_USD = 4;
+}
+
+message ExternalLink {
+	required string name = 1;
+	required string link = 2;
+}
+
+message ExternalNotificationData {
+	optional ExternalContentProvider provider = 1;
+	
+	optional string productId = 2;
+	
+	optional string productName = 3;
+	
+	optional int32 warningLimitDownloadsCurrentUsage = 4;
+	optional int32 warningLimitDownloads = 5;
+	
+	optional int32 warningLimitCreditsCurrentUsage = 6;
+	optional int32 warningLimitCredits = 7;
+}
+	
+// errors
+
+enum BackendErrorCode {
+	UNKNOWN = 0;
+	
+	INSUFFICIENT_PRIVILEGES = 1;
+	INVALID_CREDENTIALS = 2;	
+	WOULD_CAUSE_SELF_LOCKOUT = 3;
+	WOULD_CAUSE_CIRCULAR_DEPENDENCY = 4;
+	SYSTEM_GENERATED_CHANGE_NOT_POSSIBLE = 5;
+	DELETE_CONFIRMATION_MISSING = 6;
+	TRASH_DELETE_RESTORE_ONLY_ON_TOP_LEVEL = 7;
+	OPTIMISTIC_LOCKING_FAILED = 8;
+	TEMPORARY_UNAVAILABLE = 9;
+	WRONG_API = 10;
+	UUID_INVALID = 11;	
+	SYSTEM_VALUE_USE_NOT_POSSIBLE = 12;
+	BRAND_UUID_MISSING = 13;
+	BRAND_UUID_NOT_ALLOWED = 14;
+	ACCOUNT_IS_NOT_APPROVED = 15;	
+	RECAPTCHA_INVALID = 16;
+	RECAPTCHA_VALIDATION_ISSUE = 17;
+	BRAND_UUID_INVALID = 18;
+	ENTITY_EXTERNALLY_MANAGED = 19;
+	
+	ENTITY_TYPE_INVALID = 1000;
+	ENTITY_NOT_PUBLISHED = 1001;	
+	ENTITY_TRASHED = 1002;
+	ENTITY_STILL_IN_USE = 1003;	
+	ENTITY_NOT_FOUND = 1004;
+	ENTITY_ALREADY_EXISTS = 1005;
+	ENTITY_ALREADY_DELETED = 1006;
+	
+	ASSET_TYPE_INVALID = 1100;
+	
+	ANONYMOUS_DOWNLOAD_NOT_POSSIBLE = 1150;
+	ANONYMOUS_DOWNLOAD_LICENSE_MISSING = 1151;
+	ANONYMOUS_DOWNLOAD_LICENSE_NOT_AVAILABLE = 1152;
+	ANONYMOUS_DOWNLOAD_LICENSE_INVALID = 1153;
+	
+	TAG_ALREADY_EXISTS = 2000;
+	TAG_NOT_CONFIRMED = 2001;
+	TAG_NOT_FOUND = 2002;
+	
+	USER_ALREADY_EXISTS = 2500;
+	USER_NOT_FOUND = 2501;
+	USER_ALREADY_DISABLED = 2502;
+	USER_ALREADY_ENABLED = 2503;	
+	
+	ACCESS_REQUEST_NOT_FOUND = 2600;
+	ACCESS_REQUEST_ALREADY_EXISTS = 2601;
+	ACCESS_REQUEST_PREREQUISITE_NOT_SATISFIED = 2602;
+	ACCESS_REQUEST_ALREADY_ACCEPTED = 2603;
+	ACCESS_REQUEST_ALREADY_REJECTED = 2604;
+	ACCESS_REQUEST_ENTITY_REFERENCE_MISSING = 2605;
+	ACCESS_REQUEST_READ_PERMISSION_ALREADY_PRESENT = 2606;
+	ACCESS_REQUEST_ALREADY_MEMBER_OF_GROUP = 2607;
+	ACCESS_REQUEST_WILL_NOT_GIVE_ADDITIONAL_PERMISSIONS = 2608;
+	ACCESS_REQUEST_APPLICATION_MESSAGE_MISSING = 2609;
+	
+	NOTIFICATION_NOT_FOUND = 2700;
+	NOTIFICATION_ALREADY_EXISTS = 2701;
+	
+	COLLECTED_ENTITY_NOT_FOUND = 2800;
+	COLLECTED_ENTITY_ALREADY_EXISTS = 2801;
+	COLLECTED_ENTITY_IS_OWN_ENTITY = 2802;
+	COLLECTED_ENTITY_ONLY_JOB_OR_ASSET_ALLOWED = 2803;
+	COLLECTED_ENTITY_ASSET_TYPE_INVALID = 2804;
+	COLLECTED_ENTITY_LICENSE_NOT_AVAILABLE = 2805;
+	COLLECTED_ENTITY_LICENSE_NOT_ALLOWED = 2806;
+	COLLECTED_ENTITY_TARGET_BRAND_INVALID = 2807;
+	COLLECTED_ENTITY_ONLY_PARTICIPATION_OR_ASSET_ALLOWED = 2808;
+	COLLECTED_ENTITY_LICENSE_MISSING = 2809;
+	COLLECTED_ENTITY_NO_LICENSE_FOR_PARTICIPATIONS_ALLOWED = 2810;
+	COLLECTED_ENTITY_PARTICIPATION_IS_NO_JOB_ISSUER_COPY = 2811;
+	COLLECTED_ENTITY_PARTICIPATION_STATE_INVALID = 2812;
+	COLLECTED_ENTITY_NO_LICENSE_FOR_JOBS_ALLOWED = 2813;
+	COLLECTED_ENTITY_JOB_ALREADY_CLOSED = 2814;
+	COLLECTED_ENTITY_WAS_ACQUIRED_IN_THE_MEANWHILE = 2815;
+	COLLECTED_ENTITY_PREVIEW_BINARIES_NOT_READY = 2816;
+	COLLECTED_ENTITY_LICENSE_NOT_RELEASED = 2817;
+	
+	SHOPPING_CART_NOT_FOUND = 2900;
+	SHOPPING_CART_ALREADY_EXISTS = 2901;
+	SHOPPING_CART_NOT_OPEN = 2902;
+	SHOPPING_CART_NOT_SUBMITTED = 2903;
+	SHOPPING_CART_NOT_READY_FOR_SUBMIT = 2904;
+	SHOPPING_CART_IS_EMPTY = 2905;
+
+	CREDIT_BALANCE_NOT_FOUND = 3000;
+	CREDIT_BALANCE_ALREADY_EXISTS = 3001;
+	CREDIT_BALANCE_CHANGE_AMOUNT_INVALID = 3002;
+	CREDIT_BALANCE_CHANGE_TRANSACTION_TYPE_NOT_POSSIBLE = 3003;
+	CREDIT_BALANCE_NOT_ENOUGH_CREDITS = 3004;
+	CREDIT_BALANCE_MONETARY_CURRENCY_MISSING = 3005;
+	CREDIT_BALANCE_MONETARY_PAYMENT_METHOD_MISSING = 3006;
+	CREDIT_BALANCE_MONETARY_PAYMENT_METHOD_NOT_ALLOWED = 3007;
+	CREDIT_BALANCE_MONETARY_TRANSFER_UUID_MISSING = 3008;
+	CREDIT_BALANCE_MONETARY_TRANSFER_UUID_NOT_ALLOWED = 3009;
+	CREDIT_BALANCE_MONETARY_TRANSFER_UUID_INVALID = 3010;
+	CREDIT_BALANCE_ADDITIONAL_MONETARY_TRANSFER_UUID_NOT_ALLOWED = 3011;
+	CREDIT_BALANCE_BRAND_NOT_TRUSTED = 3012;
+	CREDIT_BALANCE_POSITIVE_LIMIT_EXCEEDED = 3013;
+	CREDIT_BALANCE_TRANSACTION_LIMIT_EXCEEDED = 3014;
+	CREDIT_BALANCE_INSTANT_CHARGE_TRUSTED_LIMIT_EXCEEDED = 3015;
+	
+	CREDIT_TRANSACTION_NOT_FOUND = 3100;
+	CREDIT_TRANSACTION_ALREADY_EXISTS = 3101;
+	CREDIT_TRANSACTION_TYPE_INVALID = 3102;
+	CREDIT_TRANSACTION_IS_ALREADY_PAID = 3103;
+	
+	USER_FOLLOW_SETTING_NOT_FOUND = 3200;
+	USER_FOLLOW_SETTING_ALREADY_EXISTS = 3201;
+	
+	PUBLISH_REQUEST_NOT_FOUND = 3300;
+	PUBLISH_REQUEST_ALREADY_EXISTS = 3301;
+	PUBLISH_REQUEST_PREREQUISITE_NOT_SATISFIED = 3302;
+	PUBLISH_REQUEST_ALREADY_ACCEPTED = 3303;
+	PUBLISH_REQUEST_ALREADY_REJECTED = 3304;
+	PUBLISH_REQUEST_ENTITY_REFERENCE_MISSING = 3305;
+	PUBLISH_REQUEST_NO_CHANGES_TO_PUBLISH = 3306;
+	PUBLISH_REQUEST_SELF_PUBLISH_POSSIBLE = 3307;
+	
+	LICENSE_REQUEST_NOT_FOUND = 3400;
+	LICENSE_REQUEST_ALREADY_EXISTS = 3401;
+	LICENSE_REQUEST_CANNOT_BE_LICENSED = 3402;
+	LICENSE_REQUEST_ALREADY_ACCEPTED = 3403;
+	LICENSE_REQUEST_ALREADY_REJECTED = 3404;
+	LICENSE_REQUEST_ENTITY_REFERENCE_MISSING = 3405;
+	LICENSE_REQUEST_LICENSE_ALREADY_PRESENT = 3406;
+	LICENSE_REQUEST_APPLICATION_MESSAGE_INVALID = 3407;	
+	
+	PARENT_REQUIRED = 3500;
+	CROSS_BRAND_RELATION_NOT_POSSIBLE = 3501;
+	TOO_MANY_PARENTS = 3502;
+	NO_PARENTS_POSSIBLE = 3503;
+	CANNOT_REMOVE_PARENTS_WHILE_CREATING = 3504;
+	PARENT_CHILD_RELATION_INVALID = 3505;
+	PARENT_CHILD_RELATION_ALREADY_EXISTS = 3506;
+	PARENT_CHILD_RELATION_NOT_FOUND = 3507;
+	TOO_MANY_CHILDS = 3508;
+	
+	PURCHASE_CREDITS_REQUEST_NOT_FOUND = 3600;	
+	PURCHASE_CREDITS_REQUEST_ALREADY_ACCEPTED = 3601;
+	PURCHASE_CREDITS_REQUEST_ALREADY_REJECTED = 3602;
+	PURCHASE_CREDITS_REQUEST_SELF_PURCHASE_POSSIBLE = 3603;
+	PURCHASE_CREDITS_REQUEST_ALREADY_EXISTS = 3604;
+	PURCHASE_CREDITS_REQUEST_REQUIRED_AMOUNT_INVALID = 3605;
+	PURCHASE_CREDITS_REQUEST_AMOUNT_ALREADY_AVAILABLE = 3606;
+	PURCHASE_CREDITS_REQUEST_TRANSACTION_LIMIT_EXCEEDED = 3607;
+	PURCHASE_CREDITS_REQUEST_NOT_FULFILLED = 3608;
+	
+	PLAN_NOT_FOUND = 3700;
+	
+	BRAND_PLAN_NOT_FOUND = 3800;
+	BRAND_PLAN_ALREADY_EXISTS = 3801;
+	BRAND_PLAN_INCLUDED_BRANDS_EXCEEDED = 3802;
+	BRAND_PLAN_INCLUDED_LISTED_ASSETS_EXCEEDED = 3803;
+	BRAND_PLAN_CONNECT_EXTERNAL_CONTENT_PROVIDERS_NOT_ALLOWED = 3804;
+	BRAND_PLAN_JOB_SERVICES_NOT_ALLOWED = 3805;
+	BRAND_PLAN_CUSTOM_SUBDOMAIN_NOT_ALLOWED = 3806;
+	
+	BRAND_TRANSACTIONS_LOCKED = 3900;
+	BRAND_UPLOAD_LOCKED = 3901;
+	BRAND_CONNECT_EXTERNAL_CONTENT_PROVIDERS_LOCKED = 3902;	
+	BRAND_JOB_SERVICES_LOCKED = 3903;	
+	BRAND_LISTED_ASSET_QUOTA_EXCEEDED = 3904;
+	BRAND_JOB_SERVICES_NOT_IN_PLAN = 3905;
+	BRAND_CONNECT_EXTERNAL_CONTENT_PROVIDERS_NOT_IN_PLAN = 3906;
+	BRAND_CUSTOM_WATERMARK_NOT_IN_PLAN = 3907;
+	BRAND_CUSTOM_SUBDOMAIN_LOCKED = 3908;
+	BRAND_CUSTOM_SUBDOMAIN_NOT_IN_PLAN = 3909;
+	BRAND_CHECK_OUT_CONTENT_LOCKED = 3910;
+	BRAND_CHECK_OUT_CONTENT_NOT_IN_PLAN = 3911;
+	BRAND_REPORTING_LOCKED = 3912;
+	BRAND_REPORTING_NOT_IN_PLAN = 3913;
+	BRAND_PUBLISH_CONTENT_LOCKED = 3914;
+	BRAND_PUBLISH_CONTENT_NOT_IN_PLAN = 3915;
+	BRAND_VERSIONING_LOCKED = 3916;
+	BRAND_VERSIONING_NOT_IN_PLAN = 3917;
+	BRAND_MULTI_LEVEL_ADMIN_MANAGEMENT_LOCKED = 3918;
+	BRAND_MULTI_LEVEL_ADMIN_MANAGEMENT_NOT_IN_PLAN = 3919;
+	BRAND_EXTERNAL_USER_MANAGEMENT_LOCKED = 3920;
+	BRAND_EXTERNAL_USER_MANAGEMENT_NOT_IN_PLAN = 3921;
+	BRAND_MULTI_LEVEL_EXTERNAL_USER_MANAGEMENT_LOCKED = 3922;
+	BRAND_MULTI_LEVEL_EXTERNAL_USER_MANAGEMENT_NOT_IN_PLAN = 3923;	
+
+	RESTORE_ENTITY_NOT_FOUND = 4000;
+	RESTORE_PARENTS_NOT_FOUND = 4001;
+	
+	UPGRADE_PLAN_REQUEST_NOT_FOUND = 4100;
+	UPGRADE_PLAN_REQUEST_ALREADY_EXISTS = 4101;	
+	UPGRADE_PLAN_REQUEST_ALREADY_ACCEPTED = 4102;
+	UPGRADE_PLAN_REQUEST_ALREADY_REJECTED = 4103;
+	UPGRADE_PLAN_REQUEST_PLAN_INVALID = 4104;
+	UPGRADE_PLAN_REQUEST_ALREADY_ON_SAME_OR_BETTER_PLAN = 4105;
+	UPGRADE_PLAN_REQUEST_PROMO_CODE_INVALID = 4106;	
+	
+	JOIN_REQUEST_NOT_FOUND = 4200;
+	JOIN_REQUEST_ALREADY_EXISTS = 4201;
+	JOIN_REQUEST_PREREQUISITE_NOT_SATISFIED = 4202;
+	JOIN_REQUEST_ALREADY_ACCEPTED = 4203;
+	JOIN_REQUEST_ALREADY_REJECTED = 4204;
+	JOIN_REQUEST_ALREADY_MEMBER_OF_BRAND = 4205;
+	JOIN_REQUEST_ALREADY_MEMBER_OF_GROUP = 4206;
+	JOIN_REQUEST_USER_GROUP_IS_NO_ADMIN_USER_GROUP = 4207;
+	
+	APPROVAL_REQUEST_NOT_FOUND = 4300;
+	APPROVAL_REQUEST_ALREADY_EXISTS = 4301;	
+	APPROVAL_REQUEST_ALREADY_ACCEPTED = 4302;
+	APPROVAL_REQUEST_ALREADY_REJECTED = 4303;
+	APPROVAL_REQUEST_ALREADY_APPROVED = 4304;
+
+	FOLDER_LAYOUT_MODEL_MISSING = 4400;
+	
+	ASSET_LAYOUT_MODEL_MISSING = 4500;
+	ASSET_CANONICAL_URL_INVALID = 4501;
+	
+	PUBLISH_CONDITION_MODEL_MISSING = 4600;
+	PUBLISH_CONDITION_FROM_TIMESTAMP_MUST_BE_BEFORE_TO_TIMESTAMP = 4601;
+	PUBLISH_CONDITION_TO_TIMESTAMP_MUST_BE_AFTER_FROM_TIMESTAMP = 4602;
+	PUBLISH_CONDITION_NOT_POSSIBLE_ON_BRAND_LEVEL = 4603;
+	
+	BRAND_NOT_FOUND = 5000;
+	FOLDER_NOT_FOUND = 5001;
+	ASSET_NOT_FOUND = 5002;
+	TRASH_NOT_FOUND = 5003;
+	JOBS_NOT_FOUND = 5004;
+	JOB_NOT_FOUND = 5005;
+	PARTICIPATIONS_NOT_FOUND = 5006;
+	PARTICIPATION_NOT_FOUND = 5007;	
+	PROJECTS_NOT_FOUND = 5008;
+	PROJECT_NOT_FOUND = 5009;
+
+	USER_GROUP_CANNOT_DELETE_LAST_USER = 6000;
+	USER_GROUP_UUID_INVALID = 6001;
+	USER_GROUP_LOCALE_MISSING = 6002;
+	USER_GROUP_UUID_IN_USE = 6003;
+	USER_GROUP_USER_ALREADY_EXISTS = 6004;
+	USER_GROUP_USER_NOT_FOUND = 6005;
+	USER_GROUP_NAME_INVALID = 6006;
+	USER_GROUP_NOT_FOUND = 6007;
+	USER_GROUP_ALREADY_EXISTS = 6008;
+	USER_GROUP_STILL_IN_USE_BY_USERS = 6009;
+	USER_GROUP_STILL_IN_USE_BY_ENTITIES = 6011;
+	USER_GROUP_STILL_IN_USE_BY_USER_GROUPS = 6012;
+	USER_GROUP_DOES_NOT_SUPPORT_DEPENDENCIES = 6013;
+	USER_GROUP_ALREADY_DELETED = 6014;
+	USER_GROUP_NAME_TOO_LONG = 6015;
+	USER_GROUP_DOES_NOT_SUPPORT_REQUIRES_MANUAL_COMMIT = 6016;
+	USER_GROUP_DOES_NOT_SUPPORT_REQUIRES_APPLICATION_MESSAGE = 6017;
+	USER_GROUP_APPLICATION_MESSAGES_ONLY_POSSIBLE_FOR_MANUAL_COMMITS = 6018;
+	USER_GROUP_DOES_NOT_SUPPORT_COST_CENTER = 6019;
+	USER_GROUP_COST_CENTER_ID_TOO_LONG = 6020;
+	
+	USER_UUID_INVALID = 6500;	
+	USER_EMAIL_MISSING = 6501;
+	USER_EMAIL_INVALID = 6502;
+	
+	TARGET_UUID_INVALID = 6600;
+	
+	CONTACT_FORM_EMAIL_MISSING = 6700;
+	CONTACT_FORM_EMAIL_INVALID = 6701;
+	CONTACT_FORM_EMAIL_NOT_NECESSARY = 6702;
+	CONTACT_FORM_SUBJECT_TOO_SHORT = 6703;
+	CONTACT_FORM_SUBJECT_TOO_LONG = 6704;
+	CONTACT_FORM_SUBJECT_INVALID = 6705;
+	CONTACT_FORM_MESSAGE_TOO_SHORT = 6706;
+	CONTACT_FORM_MESSAGE_TOO_LONG = 6707;
+	CONTACT_FORM_MESSAGE_INVALID = 6708;
+	CONTACT_FORM_NO_RECIPIENT_AVAILABLE = 6709;
+	
+	ADMIN_USER_GROUP_ACCESS_FLAGS_INVALID = 7000;
+	
+	BINARY_CONTAINER_NAME_INVALID = 9000;
+	BINARY_FILE_NAME_INVALID = 9001;
+	BINARY_FILE_EXTENSION_INVALID = 9002;
+
+	COMPANY_INFO_MISSING = 10000;
+	COMPANY_INFO_COMPANY_NAME_MISSING = 10001;
+	COMPANY_INFO_CONTACT_PERSON_GIVEN_NAME_MISSING = 10002;
+	COMPANY_INFO_CONTACT_PERSON_FAMILY_NAME_MISSING = 10003;
+	COMPANY_INFO_CONTACT_PERSON_JOB_TITLE_MISSING = 10004;
+	COMPANY_INFO_STREET_MISSING = 10005;
+	COMPANY_INFO_POSTAL_CODE_MISSING = 10006;
+	COMPANY_INFO_CITY_MISSING = 10007;
+	COMPANY_INFO_COUNTRY_CODE_MISSING = 10008;
+	COMPANY_INFO_COUNTRY_CODE_INVALID = 10009;
+	COMPANY_INFO_EMAIL_MISSING = 10010;
+	COMPANY_INFO_EMAIL_INVALID = 10011;
+	COMPANY_INFO_WEBSITE_INVALID = 10012;
+	COMPANY_INFO_PUBLICATION_NAME_MISSING = 10013;
+	
+	BILLING_INFO_MISSING = 10250;
+	BILLING_INFO_COMPANY_NAME_MISSING = 10251;
+	BILLING_INFO_CONTACT_PERSON_GIVEN_NAME_MISSING = 10252;
+	BILLING_INFO_CONTACT_PERSON_FAMILY_NAME_MISSING = 10253;
+	BILLING_INFO_CONTACT_PERSON_JOB_TITLE_MISSING = 10254;
+	BILLING_INFO_STREET_MISSING = 10255;
+	BILLING_INFO_POSTAL_CODE_MISSING = 10256;
+	BILLING_INFO_CITY_MISSING = 10257;
+	BILLING_INFO_COUNTRY_CODE_MISSING = 10258;
+	BILLING_INFO_COUNTRY_CODE_INVALID = 10259;
+	BILLING_INFO_EMAIL_MISSING = 10260;
+	BILLING_INFO_EMAIL_INVALID = 10261;
+	BILLING_INFO_WEBSITE_INVALID = 10262;
+	
+	USER_TYPE_MISSING = 10500;
+	
+	COUNTRY_NOT_FOUND = 11000;
+	
+	TRANSLATION_TEXT_INVALID = 12000;
+	
+	WORKING_SET_LOCALE_MISSING = 13000;
+	WORKING_SET_NAME_MISSING = 13001;
+	WORKING_SET_DESCRIPTION_MISSING = 13002;
+	WORKING_SET_BINARY_MISSING = 13003;
+	WORKING_SET_MISSING = 13004;
+	WORKING_SET_ENTITY_LOCALE_MISSING = 13005;
+	WORKING_SET_CONTACT_INFO_NAME_MISSING = 13006;
+	WORKING_SET_CONTACT_INFO_STREET_MISSING = 13007;
+	WORKING_SET_CONTACT_INFO_POSTAL_CODE_MISSING = 13008;
+	WORKING_SET_CONTACT_INFO_CITY_MISSING = 13009;
+	WORKING_SET_CONTACT_INFO_COUNTRY_CODE_MISSING = 13010;
+	WORKING_SET_CONTACT_INFO_COUNTRY_CODE_INVALID = 13011;
+	WORKING_SET_CONTACT_INFO_EMAIL_MISSING = 13012;	
+	WORKING_SET_CONTACT_INFO_EMAIL_INVALID = 13013;
+	WORKING_SET_CONTACT_INFO_WEBSITE_INVALID = 13014;
+	WORKING_SET_NAME_TOO_LONG = 13015;
+	WORKING_SET_DESCRIPTION_TOO_LONG = 13016;
+	WORKING_SET_CONTEXT_TEXT_1_TOO_LONG = 13017;
+	WORKING_SET_BINARY_SET_NAME_TOO_LONG = 13018;
+	WORKING_SET_BINARY_SET_MISSING = 13019;
+	WORKING_SET_ASSET_BINARY_MISSING = 13020;
+	WORKING_SET_LOGO_MISSING = 13021;
+	WORKING_SET_BRAND_BACKGROUND_MISSING = 13022;
+	WORKING_SET_BRAND_BACKGROUND_TALL_MISSING = 13023;
+	WORKING_SET_FOLDER_BACKGROUND_MISSING = 13024;
+	WORKING_SET_FOLDER_BACKGROUND_TALL_MISSING = 13025;
+	WORKING_SET_FOLDER_LIST_PREVIEW_MISSING = 13026;
+	
+	FEATURE_PRIORITY_INVALID = 14000;
+		
+	BRAND_TYPE_INVALID = 15000;
+	
+	BRAND_CUSTOM_SUBDOMAIN_INVALID = 15250;
+	BRAND_CUSTOM_SUBDOMAIN_ALREADY_IN_USE = 15251;	
+	
+	CONTENT_CATEGORY_INVALID = 15500;
+	
+	ORDER_INVALID = 16000;
+	COLOR_INVALID = 16001;
+	
+	BRAND_LINK_NAME_INVALID = 16500;
+	BRAND_LINK_LINK_INVALID = 16501;
+	BRAND_LINK_NAME_TOO_LONG = 16502;
+	
+	READ_ACCESS_MODEL_CHANGE_NOT_POSSIBLE = 17000;
+	READ_ACCESS_MODEL_NOT_POSSIBLE = 17001;
+	READ_ACCESS_MODEL_MISSING = 17002;
+	
+	WRITE_ACCESS_MODEL_CHANGE_NOT_POSSIBLE = 18000;
+	WRITE_ACCESS_MODEL_MISSING = 18001;
+	
+	PUBLISH_FLAG_CHANGE_NOT_POSSIBLE = 19000;
+	
+	LOCALE_NOT_SUPPORTED = 20000;
+	
+	BRAND_SET_MISSING = 21000;
+	JOB_SET_MISSING = 21001;
+	PROJECT_SET_MISSING = 21002;
+	
+	DELETE_SET_INVALID = 22000;
+	RESTORE_SET_INVALID = 22001;
+	CHANGE_SET_INVALID = 22002;
+	PARTICIPATION_SET_INVALID = 22003;
+	CLOSE_SET_INVALID = 22004;
+	SUBMIT_SET_INVALID = 22005;
+	REJECT_SET_INVALID = 22006;
+	ACCEPT_SET_INVALID = 22007;
+	HISTORY_ENTRY_GROUP_INVALID = 22008;
+	APPLICATION_SET_INVALID = 22009;
+	CREATE_SET_INVALID = 22010;
+	COPY_SET_INVALID = 22011;
+	MOVE_SET_INVALID = 22012;
+	ACQUIRE_SET_INVALID = 22013;
+	SELECT_SET_INVALID = 22014;
+	PAID_SET_INVALID = 22015;
+	COMPLETED_SET_INVALID = 22016;
+	PROGRESS_SET_INVALID = 22017;
+	SEND_SET_INVALID = 22018;
+	MERGE_SET_INVALID = 22019;
+	SETUP_SET_INVALID = 22020;
+	CONFIGURE_SET_INVALID = 22021;
+	REFRESH_SET_INVALID = 22022;	
+	IMPORT_SET_INVALID = 22023;
+	
+	BINARY_MIME_TYPE_INVALID = 23000;
+	BINARY_TYPE_INVALID = 23001;	
+	BINARY_METATAGS_MISSING = 23002;
+	BINARY_FILE_MISSING = 23003;
+	BINARY_TOO_MANY_BINARY_FILES = 23004;
+	BINARY_RESOLUTION_TOO_LOW = 23005;
+	BINARY_LENGTH_TOO_LOW = 23006;
+	BINARY_INVALID_PRESET_CROP_INVALID = 23007;
+	BINARY_INVALID_PRESET_THUMBNAIL_PERCENTAGE_INVALID = 23008;
+	BINARY_INVALID_PRESET_THUMBNAIL_NOT_POSSIBLE = 23009;
+	BINARY_INVALID_PRESET_PREVIEW_PAGE = 23010;
+	BINARY_PURPOSE_INVALID = 23011;
+	BINARY_CANNOT_REMOVE_WHILE_CREATING = 23012;
+	BINARY_ANALYZATION_ISSUE = 23013;
+	BINARY_NAME_INVALID = 23014;
+	BINARY_EMPTY = 23015;
+	BINARY_METADATA_TO_FILES_COUNT_DOES_NOT_MATCH = 23016;
+	BINARY_UPDATE_BINARY_NOT_FOUND = 23017;
+	BINARY_WIDTH_NOT_EVEN = 23018;
+	BINARY_HEIGHT_NOT_EVEN = 23019;
+	BINARY_INVALID_PRESET_LIMIT_PREVIEW_NOT_POSSIBLE = 23020;
+	BINARY_TOO_MANY_PAGES = 23021;
+	BINARY_IMAGE_FILE_SIZE_EXCEEDED = 23022;
+	BINARY_VIDEO_FILE_SIZE_EXCEEDED = 23023;
+	BINARY_AUDIO_FILE_SIZE_EXCEEDED = 23024;
+	BINARY_DOCUMENT_FILE_SIZE_EXCEEDED = 23025;
+	BINARY_INVALID_PRESET_NUMBER_OF_PREVIEW_PARAGRAPHS_NOT_POSSIBLE = 23026;
+	BINARY_INVALID_NUMBER_OF_PREVIEW_PARAGRAPHS = 23027;
+	
+	JOB_HAS_PARTICIPATIONS = 24000;
+	JOB_ALREADY_ENDED = 24001;
+	JOB_ALREADY_CLOSED = 24002;
+	JOB_RUNNING = 24003;
+	JOB_TYPE_INVALID = 24004;
+	JOB_LICENSE_INVALID = 24005;
+	JOB_END_TIMESTAMP_INVALID = 24006;
+	JOB_REWARD_MISSING = 24007;
+    JOB_REWARD_NOT_ALLOWED = 24008;
+	JOB_REWARD_INVALID = 24009;
+	JOB_PRICE_INVALID = 24010;
+	JOB_PRICING_TYPE_INVALID = 24011;
+	JOB_PARTICIPATION_TYPE_INVALID = 24012;
+	JOB_CLOSE_REASON_INVALID = 24013;
+	JOB_REJECTION_REASON_INVALID = 24014;
+	JOB_NO_HANDIN_ASSETS = 24015;
+	JOB_PARENT_CHANGE_NOT_POSSIBLE = 24016;
+	JOB_CANNOT_BE_CLOSED = 24017;
+	JOB_CANNOT_BE_PUBLISHED_BECAUSE_JOB_ASSET_IS_NOT_COMMITTED = 24018;
+	
+	JOBS_CHANGE_NOT_POSSIBLE = 26000;
+	
+	PARTICIPATIONS_CHANGE_NOT_POSSIBLE = 27000;
+	
+	PARTICIPATION_READ_ONLY = 28000;
+	PARTICIPATION_NOT_ACQUIRED = 28001;
+	PARTICIPATION_STATE_INVALID = 28002;
+	PARTICIPATION_PRICE_DEFINED_BY_JOB_ISSUER = 28003;
+	PARTICIPATION_PRICE_ALREADY_AGREED = 28004;
+	PARTICIPATION_PRICE_INVALID = 28005;
+	PARTICIPATION_NOT_POSSIBLE = 28006;
+	PARTICIPATION_NOT_CONFIRMED = 28007;
+	PARTICIPATION_PREVIEW_BINARIES_NOT_READY = 28008;
+		
+	APPLICATION_STATE_INVALID = 28500;
+	APPLICATION_PRICE_INVALID = 28501;
+	APPLICATION_NOT_POSSIBLE = 28502;
+	
+	TAG_TEXT_AMBIGUOUS = 29000;
+	TAG_TRANSLATION_MISSING = 29001;
+	// 29002 unused
+	
+	// 30000 unused
+	
+	ACQUISITION_NOT_ENOUGH_CREDITS = 31000;
+	
+	PROJECTS_CHANGE_NOT_POSSIBLE = 32000;
+
+	PROJECT_CANNOT_BE_DELETED = 33000;
+	PROJECT_NOT_OPEN = 33001;
+	PROJECT_NAME_MISSING = 33002;
+	PROJECT_CANNOT_BE_COMMITTED = 33003;	
+	
+	LICENSING_MODEL_CHANGE_NOT_POSSIBLE = 34000;
+	LICENSING_MODEL_MISSING = 34001;
+	
+	LICENSE_UUID_INVALID = 35000;
+	LICENSE_LOCALE_MISSING = 35001;
+	LICENSE_UUID_IN_USE = 35002;
+	LICENSE_NAME_INVALID = 35003;
+	LICENSE_TYPE_MISSING = 35004;
+	LICENSE_TYPE_OF_USE_MISSING = 35005;
+	LICENSE_NOT_ALLOWED = 35006;
+	LICENSE_TERMS_OF_USE_INVALID = 35007;
+	LICENSE_RESTRICTED_PUBLISHING_TOPICS_INVALID = 35008;
+	LICENSE_RESTRICTED_INDUSTRIES_INVALID = 35009;
+	LICENSE_RESTRICTED_GEO_USE_INVALID = 35010;
+	LICENSE_NOT_FOUND = 35011;
+	LICENSE_ALREADY_EXISTS = 35012;
+	LICENSE_IMAGE_PRICE_INVALID = 35013;
+	LICENSE_VIDEO_PRICE_INVALID = 35014;
+	LICENSE_AUDIO_PRICE_INVALID = 35015;
+	LICENSE_DOCUMENT_PRICE_INVALID = 35016;
+	LICENSE_IMAGE_TRANSACTION_FEE_INVALID = 35017;
+	LICENSE_VIDEO_TRANSACTION_FEE_INVALID = 35018;
+	LICENSE_AUDIO_TRANSACTION_FEE_INVALID = 35019;
+	LICENSE_DOCUMENT_TRANSACTION_FEE_INVALID = 35020;
+	LICENSE_STILL_IN_USE_BY_ENTITIES = 35021;
+	LICENSE_ALREADY_DELETED = 35022;
+	LICENSE_EXCLUSIVITY_TYPE_NOT_ALLOWED = 35023;
+	LICENSE_NAME_TOO_LONG = 35024;
+	LICENSE_SUMMARY_TOO_LONG = 35025;
+	
+	// v1.1 external content providers
+	
+	ECP_ALREADY_SETUP = 36000;	
+	ECP_ACCESS_TOKEN_MISSING = 36001;
+	ECP_ACCESS_TOKEN_INVALID = 36002;
+	ECP_REFRESH_TOKEN_MISSING = 36003;
+	ECP_REFRESH_TOKEN_INVALID = 36004;
+	ECP_STATE_INVALID = 36005;
+	ECP_ACCESS_TOKEN_EXPIRED = 36006;
+	ECP_REFRESH_TOKEN_EXPIRED = 36007;
+	ECP_NOT_FOUND = 36008;
+	ECP_ALREADY_EXISTS = 36009;
+	ECP_USER_NAME_MISSING = 36010;
+	ECP_USER_NAME_INVALID = 36011;
+	ECP_PASSWORD_MISSING = 36012;
+	ECP_PASSWORD_INVALID = 36013;
+	ECP_CREDENTIALS_INVALID = 36014;
+	ECP_VALIDATION_ISSUE = 36015;
+	ECP_CODE_MISSING = 36016;
+	ECP_CODE_INVALID = 36017;
+	ECP_AUTHORIZATION_DENIED = 36018;
+	ECP_ACCOUNT_NOT_ELIGIBLE = 36019;
+	ECP_NOT_CONFIGURED = 36020;
+	ECP_NOT_CORRECTLY_CONFIGURED = 36021;
+	ECP_REFRESH_ISSUE = 36022;
+	ECP_SEARCH_ISSUE = 36023;
+	ECP_GET_ISSUE = 36024;
+	ECP_PROVIDER_INVALID = 36025;
+	ECP_PRODUCT_NOT_FOUND = 36026;
+	ECP_PRODUCT_WARNING_VALUE_DOWNLOADS_INVALID = 36027;
+	ECP_PRODUCT_IMAGE_EXTERNAL_CREDIT_PRICE_FULL_INVALID = 36028;
+	ECP_PRODUCT_VIDEO_EXTERNAL_CREDIT_PRICE_4K_INVALID = 36031;
+	ECP_PRODUCT_IMAGE_MONETARY_PRICE_FULL_INVALID = 36029;
+	ECP_PRODUCT_VIDEO_MONETARY_PRICE_4K_INVALID = 36032;
+	ECP_PRODUCT_AUDIO_EXTERNAL_CREDIT_PRICE_INVALID = 36034;
+	ECP_PRODUCT_AUDIO_MONETARY_PRICE_INVALID = 36035;
+	ECP_PRODUCT_DOCUMENT_EXTERNAL_CREDIT_PRICE_INVALID = 36037;
+	ECP_PRODUCT_DOCUMENT_MONETARY_PRICE_INVALID = 36038;
+	ECP_PRODUCT_ALREADY_EXISTS = 36040;
+	ECP_PRODUCT_INVALID = 36041;
+	ECP_ID_INVALID = 36042;
+	ECP_GET_PRODUCT_ISSUE = 36043;
+	ECP_NO_PRODUCTS_AVAILABLE = 36044;
+	ECP_PRODUCT_FORMAT_NOT_FOUND = 36045;
+	ECP_PRODUCT_FORMAT_ALREADY_EXISTS = 36046;
+	ECP_GET_USER_ISSUE = 36047;
+	ECP_LICENSE_NOT_AVAILABLE_ANYMORE = 36048;
+	ECP_FULFILLMENT_DOWNLOAD_ISSUE = 36049;
+	ECP_FULFILLMENT_DOWNLOAD_QUOTA_EXCEEDED = 36050;
+	ECP_FULFILLMENT_AUTHORIZATION_ISSUE = 36051;
+	ECP_FULFILLMENT_GENERIC_ISSUE = 36052;
+	ECP_ACQUISITION_DOWNLOAD_QUOTA_EXCEEDED = 36053;
+	ECP_ACQUISITION_CREDIT_BALANCE_TOO_LOW = 36054;
+	ECP_FULFILLMENT_CREDIT_BALANCE_TOO_LOW = 36055;
+	ECP_PRODUCT_VIDEO_EXTERNAL_CREDIT_PRICE_HD_INVALID = 36056;
+	ECP_PRODUCT_VIDEO_EXTERNAL_CREDIT_PRICE_SD_INVALID = 36057;
+	ECP_PRODUCT_VIDEO_EXTERNAL_CREDIT_PRICE_LR_INVALID = 36058;
+	ECP_PRODUCT_VIDEO_MONETARY_PRICE_HD_INVALID = 36059;
+	ECP_PRODUCT_VIDEO_MONETARY_PRICE_SD_INVALID = 36060;
+	ECP_PRODUCT_VIDEO_MONETARY_PRICE_LR_INVALID = 36061;
+	ECP_PRODUCT_IMAGE_EXTERNAL_CREDIT_PRICE_MEDIUM_INVALID = 36062;
+	ECP_PRODUCT_IMAGE_EXTERNAL_CREDIT_PRICE_SMALL_INVALID = 36063;
+	ECP_PRODUCT_IMAGE_MONETARY_PRICE_MEDIUM_INVALID = 36064;
+	ECP_PRODUCT_IMAGE_MONETARY_PRICE_SMALL_INVALID = 36065;
+	ECP_ACQUISITION_NO_PURCHASE_POSSIBLE_THROUGH_CONTIDIO = 36066;
+	ECP_PRODUCT_WARNING_VALUE_CREDITS_INVALID = 36067;
+	ECP_IMPORT_ISSUE = 36068;
+	ECP_GET_DOWNLOADS_ISSUE = 36069;
+	ECP_COMPANY_DOWNLOADS_NOT_POSSIBLE = 36070;
+	ECP_IMPORT_START_TIMESTAMP_INVALID = 36071;
+	ECP_IMPORT_END_TIMESTAMP_INVALID = 36072;
+	ECP_IMPORT_START_TIMESTAMP_MUST_BE_BEFORE_END_TIMESTAMP = 36073;
+	ECP_IMPORT_IMPORT_ID_INVALID = 36074;
+	ECP_FULFILLMENT_REDOWNLOAD_ISSUE = 36075;
+	
+	FULFILLMENT_NOTHING_TO_FULFILL = 37000;
+	
+	TASK_INVALID = 50000;
+	TASK_NOT_SUPPORTED = 50001;
+	POSTPONE_EXECUTION = 50002;
+	STOP_EXECUTION = 50003;
+	
+	QUERY_START_INDEX_INVALID = 60000;
+	QUERY_COUNT_INVALID = 60001;
+	QUERY_ORDER_BY_INVALID = 60002;
+	QUERY_ORDER_DIRECTION_INVALID = 60003;
+	QUERY_TYPE_INVALID = 60004;
+	QUERY_LOCALE_INVALID = 60005;
+	QUERY_DIMENSION_INVALID = 60006;
+	QUERY_BINARY_TYPE_INVALID = 60007;
+	QUERY_UPLOADED_INVALID = 60008;
+	QUERY_ORIENTATION_INVALID = 60009;
+	QUERY_VIDEO_FORMAT_INVALID = 60010;
+	QUERY_VIDEO_ASPECT_RATIO_INVALID = 60011;
+	QUERY_DURATION_INVALID = 60012;
+	QUERY_PAGE_COUNT_INVALID = 60013;
+	QUERY_SOURCE_INVALID = 60014;
+	QUERY_LICENSE_ID_INVALID = 60015;
+	QUERY_MULTI_PARENT_ID_INVALID = 60016;
+	QUERY_TERMS_INVALID = 60017;
+	QUERY_PROJECT_STATE_INVALID = 60018;
+	QUERY_CREDIT_TRANSACTION_TYPE_INVALID = 60019;
+	QUERY_FROM_CREATED_TIMESTAMP_INVALID = 60020;
+	QUERY_TO_CREATED_TIMESTAMP_INVALID = 60021;
+	QUERY_FROM_LAST_UPDATED_TIMESTAMP_INVALID = 60022;
+	QUERY_TO_LAST_UPDATED_TIMESTAMP_INVALID = 60023;
+	QUERY_CREATED_TIMESTAMPS_INVALID = 60024;
+	QUERY_LAST_UPDATED_TIMESTAMPS_INVALID = 60025;
+	QUERY_CANNOT_FILTER_BY_DIFFERENT_TIMESTAMP_CRITERIA = 60026;
+	QUERY_AUTOCOMPLETED_ENTITY_TYPES_INVALID = 60027;
+	QUERY_JOB_TYPE_INVALID = 60028;
+	QUERY_JOB_STATE_INVALID = 60029;
+	QUERY_PARTICIPATION_STATE_INVALID = 60030;
+	QUERY_NOTIFICATION_TYPE_INVALID = 60031;
+	QUERY_NOTIFICATION_STATE_INVALID = 60032;
+	QUERY_FROM_LAST_COMMITTED_TIMESTAMP_INVALID = 60033;
+	QUERY_TO_LAST_COMMITTED_TIMESTAMP_INVALID = 60034;
+	QUERY_LAST_COMMITTED_TIMESTAMPS_INVALID = 60035;
+	QUERY_CONTENT_CATEGORY_INVALID = 60036;
+	QUERY_PUBLISHING_STATE_INVALID = 60037;
+	QUERY_ASSET_TYPE_INVALID = 60038;
+	QUERY_BRAND_TYPE_INVALID = 60039;
+	QUERY_REVIEW_STATE_INVALID = 60040;
+	QUERY_INVALID = 60999;
+	
+	DOWNLOAD_NOT_AVAILABLE = 61000;
+	
+	SDK_IDENTIFIER_MISSING = 65534;
+	NOT_SUPPORTED = 65535;
+	GENERIC_ERROR = 65536;
+}
+
+message Error {
+	required int32 httpStatusCode = 1;
+	required BackendErrorCode backendErrorCode = 2;
+	required string exceptionType = 3;
+	required string errorMessage = 4;	
+}
+
+// web socket notifications
+
+enum ServerTaskType {
+	STT_UNKNOWN = 0;
+
+	STT_ENTITY_CHANGE = 1;		
+	STT_ENTITY_CHANGE_AFFECTS_SUBTREE = 2;	
+	STT_BINARY_CHANGE = 3;
+	STT_TAG_CHANGE = 4;
+	STT_TAG_CHANGE_AFFECTS_SUBTREE = 5;
+	STT_USER_CHANGE = 6;
+	STT_FULFILL_ACQUISITION = 7;
+	STT_PREPARE_DOWNLOAD = 8;
+}
+
+message ServerTask {
+	required string taskUuid = 1;
+	required int64 issuedTimestamp = 2;
+	
+	optional ServerTaskType type = 3;
+	
+	optional int32 completedPercentage = 4;
+}
+
+message ServerTaskProgress {
+	required string transactionUuid = 1;
+	 
+	repeated ServerTask serverTaskProgressTask = 2;	
+	repeated ServerTask serverTaskCreated = 3;
+	
+	optional BackendErrorCode backendErrorCode = 4;
+	optional string backendErrorMessage = 5;
+	
+	optional bool hasError = 6;
+}
+
+message EventBusMessage {
+	optional ServerTaskProgress serverTaskProgress = 1;
+}
+
+message ServerTaskResponse {
+	required string uuid = 1;
+	optional EntityType entityType = 2;
+	optional int64 version = 3;
+	
+	optional string transactionUuid = 4;
+	repeated ServerTask serverTaskCreated = 5;
+	
+	optional string resultLink = 6;
+	
+	repeated string createdAdminUserGroupUuid = 7;	
+	repeated string createdEndUserGroupUuid = 8;
+	repeated string createdLicenseUuid = 9;
+}
+
+message ServerTaskResponses {
+	repeated ServerTaskResponse serverTaskResponse = 1;
+}
+

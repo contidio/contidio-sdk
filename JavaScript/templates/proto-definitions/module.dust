@@ -1,0 +1,9 @@
+declare namespace {package} {
+	export interface Message {
+	}
+}
+
+{#messages}
+{>interface:./}{/messages}{#enums}
+{>enum:./}
+{/enums}

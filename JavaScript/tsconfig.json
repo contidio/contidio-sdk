@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib/",
+    "sourceMap": false,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "preserveConstEnums": false,
+    "declaration": false,
+    "lib": ["es2015", "es2017", "dom"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["./node_modules", "./definitions", "./test", "./lib"]
+}
