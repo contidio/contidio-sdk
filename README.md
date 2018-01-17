@@ -1,2 +1,2 @@
 # contidio-sdk
-Contidio Java SDK
+Contidio SDK
